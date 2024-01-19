@@ -86,11 +86,27 @@ const Sidebar = () => {
           <Circle>1</Circle>
         </Home>
       </NavLink>
+
+      <Logout>
+        Logout
+      </Logout>
     </Container>
   )
 }
 
 export default Sidebar
+const Logout = styled.div`
+  width: 100%;
+  height: 50px;
+  background-color: #C7C7C7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+`
 const Circle = styled.div`
   width: 20px;
   height: 20px;
@@ -123,4 +139,5 @@ const Container = styled.div`
   flex-direction: column;
   padding-top: 30px;
   align-items: center;
+  position: relative;
 `
