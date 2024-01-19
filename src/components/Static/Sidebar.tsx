@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import img from "../../assets/KAO_Logo_PNG.png"
 import { FiHome } from "react-icons/fi";
+import { BiStoreAlt } from "react-icons/bi";
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -28,6 +29,24 @@ const Sidebar = () => {
           <h3>Home</h3>
         </Home>
       </NavLink>
+
+      <NavLink to="" style={({ isActive }) => {
+        return {
+          height: isActive ? "50px" : "50px",
+          width: isActive ? "100%" : "100%",
+          backgroundColor: isActive ? "#fff" : "",
+          marginTop: isActive ? "15px" : "15px",
+          paddingLeft: isActive ? "30px" : "30px",
+          color: isActive ? "#0030AD" : "#fff",
+          alignItems: isActive ? "center" : "center",
+          display: isActive ? "flex" : "flex"
+        }
+      }}>
+        <Home>
+          <Icon><BiStoreAlt /></Icon>
+          <h3>Stores</h3>
+        </Home>
+      </NavLink>
     </Container>
   )
 }
@@ -40,7 +59,7 @@ const Home = styled.div`
   display: flex;
   cursor: pointer;
   h3{
-    margin-left: 25px;
+    margin-left: 20px;
     font-size: 18px;
   }
 `
