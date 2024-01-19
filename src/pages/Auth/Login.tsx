@@ -1,6 +1,7 @@
 import React from 'react'
 import img from "../../assets/Design stats-amico.png"
 import img2 from "../../assets/design.png"
+import img3 from "../../assets/KAO_Logo_PNG.png"
 import styled from "styled-components"
 
 const Login = () => {
@@ -13,12 +14,31 @@ const Login = () => {
             <Card>
                 <img src={img} alt="" />
             </Card>
+            <Circle>
+                <img src={img3} alt="" />
+            </Circle>
         </Left>
     </Container>
   )
 }
 
 export default Login
+const Circle = styled.div`
+    display: flex;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #0031ade4;
+    top: 15px;
+    border-radius: 100px;
+    right: -33px;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 93%;
+        height: 93%;
+    }
+`
 const Imageholder = styled.div`
     width: 100%;
     height: 100%;
