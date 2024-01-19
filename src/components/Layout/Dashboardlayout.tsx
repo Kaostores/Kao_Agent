@@ -28,5 +28,6 @@ const Container = styled.div`
   height: auto;
   min-height: 100vh !important;
   display: flex;
+  background-color: #F3F3F3;
   /* flex-direction: column; */
 `
