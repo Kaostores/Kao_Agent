@@ -18,11 +18,19 @@ const Login = () => {
                 <img src={img3} alt="" />
             </Circle>
         </Left>
+        
+        <Right>
+            
+        </Right>
     </Container>
   )
 }
 
 export default Login
+const Right = styled.div`
+    width: 50%;
+    height: 100%;
+`
 const Circle = styled.div`
     display: flex;
     position: absolute;
@@ -64,10 +72,12 @@ const Left = styled.div`
     width: 50%;
     height: 100%;
     position: relative;
+    padding-top: 308px;
+    padding-bottom: 309px;
 `
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
 `
