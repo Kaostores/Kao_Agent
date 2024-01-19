@@ -15,7 +15,7 @@ const Routes = () => {
             element: <Welcome />
         },
         {
-           path: "/agent",
+           path: "/dashboard",
            element: <Dashboardlayout />,
            children: [
                {
