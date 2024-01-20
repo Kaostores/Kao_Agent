@@ -20,7 +20,6 @@ const Main = styled.div`
   max-height: 100vh;
   height: 100%;
   width: 100%;
-  background-color: green;
 `
 
 const Container = styled.div`
