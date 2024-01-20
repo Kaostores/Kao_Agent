@@ -75,6 +75,25 @@ const Dashboardhome = () => {
           <Sales>
             <h3>Sales over time</h3>
           </Sales>
+
+          <Holder>
+            <LineChart
+            width={970} height={250}
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              bottom: 5
+            }}>
+            <CartesianGrid strokeDasharray='3 3' />
+            <XAxis dataKey='name' />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="c2" stroke="red" activeDot={{ r: 12 }} />
+                <Line type="monotone" dataKey="c3" stroke="green" />
+          </LineChart>
+          </Holder>
         </Chartholder>
       </Wrapper>
     </Container>
@@ -82,6 +101,10 @@ const Dashboardhome = () => {
 }
 
 export default Dashboardhome
+const Holder = styled.div`
+  width: 100%;
+  margin-top: 10px;
+`
 const Sales = styled.div`
   margin-top: 23px;
   h3{
