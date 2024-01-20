@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
+import { TiArrowDown } from "react-icons/ti";
 
 const data = [
   {
@@ -55,10 +56,20 @@ const Dashboardhome = () => {
           <Top>
             <h3>Total Sales</h3>
             <Current>
-              <Dot></Dot>
+              <Dot bg="#0030AD"></Dot>
               <p>Current Week</p>
               <h3>N31.00</h3>
             </Current>
+            <Current>
+              <Dot bg="#CED6DE"></Dot>
+              <p>Previous Week</p>
+              <h3>N31.00</h3>
+            </Current>
+            <Since>
+              <Icon><TiArrowDown /></Icon>
+              <p>16.21%</p>
+              <h4>Since last week</h4>
+            </Since>
           </Top>
         </Chartholder>
       </Wrapper>
@@ -67,11 +78,26 @@ const Dashboardhome = () => {
 }
 
 export default Dashboardhome
-const Dot = styled.div`
+const Icon = styled.div`
+  color: #FF0000;
+`
+const Since = styled.div`
+  display: flex;
+  align-items: center;
+  h4{
+    font-size: 14px;
+    color: #797979;
+  }
+  p{
+    font-size: 14px;
+    color: #FF0000;
+  }
+`
+const Dot = styled.div<{bg: string}>`
   width: 10px;
   height: 10px;
   border-radius: 50px;
-  background-color: #0030AD;
+  background-color: ${({bg}) => bg};
 `
 const Current = styled.div`
   display: flex;
@@ -84,6 +110,8 @@ const Current = styled.div`
   h3{
     font-size: 18px;
     color: #000;
+    font-weight: 500;
+    margin-left: 15px;
   }
 `
 const Top = styled.div`
