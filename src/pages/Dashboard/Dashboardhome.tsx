@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   width: 95%;
   display: flex;
   background-color: yellow;
+  flex-direction: column;
 `
 
 const Container = styled.div`

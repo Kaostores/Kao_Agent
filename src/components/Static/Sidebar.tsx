@@ -14,7 +14,7 @@ const Sidebar = () => {
         <img src={img} alt="" />
       </Imageholder>
 
-      <NavLink to="" style={({ isActive }) => {
+      <NavLink to="/dashboard" style={({ isActive }) => {
         return {
           height: isActive ? "50px" : "50px",
           width: isActive ? "100%" : "100%",
@@ -32,7 +32,7 @@ const Sidebar = () => {
         </Home>
       </NavLink>
 
-      <NavLink to="" style={({ isActive }) => {
+      <NavLink to="/dashboard/stores" style={({ isActive }) => {
         return {
           height: isActive ? "50px" : "50px",
           width: isActive ? "100%" : "100%",
@@ -50,7 +50,7 @@ const Sidebar = () => {
         </Home>
       </NavLink>
 
-      <NavLink to="" style={({ isActive }) => {
+      <NavLink to="/dashboard/wallet" style={({ isActive }) => {
         return {
           height: isActive ? "50px" : "50px",
           width: isActive ? "100%" : "100%",
@@ -68,7 +68,7 @@ const Sidebar = () => {
         </Home>
       </NavLink>
 
-      <NavLink to="" style={({ isActive }) => {
+      <NavLink to="/dashboard/messages" style={({ isActive }) => {
         return {
           height: isActive ? "50px" : "50px",
           width: isActive ? "100%" : "100%",
