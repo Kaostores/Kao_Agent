@@ -71,6 +71,10 @@ const Dashboardhome = () => {
               <h4>Since last week</h4>
             </Since>
           </Top>
+
+          <Sales>
+            <h3>Sales over time</h3>
+          </Sales>
         </Chartholder>
       </Wrapper>
     </Container>
@@ -78,6 +82,13 @@ const Dashboardhome = () => {
 }
 
 export default Dashboardhome
+const Sales = styled.div`
+  margin-top: 23px;
+  h3{
+    font-size: 14px;
+    color: #797979;
+  }
+`
 const Icon = styled.div`
   color: #FF0000;
 `
@@ -87,6 +98,7 @@ const Since = styled.div`
   h4{
     font-size: 14px;
     color: #797979;
+    margin-left: 10px;
   }
   p{
     font-size: 14px;
@@ -118,15 +130,16 @@ const Top = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   h3{
     font-size: 16px;
+    color: #797979;
   }
 `
 const Chartholder = styled.div`
   width: 100%;
   display: flex;
   background-color: #fff;
-  height: 40px;
   flex-direction: column;
   padding-top: 10px;
   padding-bottom: 10px;
