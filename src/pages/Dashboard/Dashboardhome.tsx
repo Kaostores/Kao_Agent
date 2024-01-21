@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import { TiArrowDown } from "react-icons/ti";
+import Cardhold from './Cardhold';
 
 const data = [
   {
@@ -90,11 +91,13 @@ const Dashboardhome = () => {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="c2" stroke="red" activeDot={{ r: 12 }} />
-                <Line type="monotone" dataKey="c3" stroke="green" />
+            <Line type="monotone" dataKey="c2" stroke="#CED6DE" activeDot={{ r: 12 }} />
+                <Line type="monotone" dataKey="c3" stroke="#0030AD" />
           </LineChart>
           </Holder>
         </Chartholder>
+
+        <Cardhold />
       </Wrapper>
     </Container>
   )
