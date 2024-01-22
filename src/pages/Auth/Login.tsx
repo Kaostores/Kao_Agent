@@ -5,6 +5,7 @@ import img3 from "../../assets/KAO_Logo_PNG.png"
 import styled from "styled-components"
 import { GoPerson } from "react-icons/go";
 import { CiLock } from "react-icons/ci";
+import { NavLink } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -42,9 +43,11 @@ const Login = () => {
                 <Button bg="#0030AD" cl="#fff" fs="16px">
                     Log In
                 </Button>
-                <Button bg="" cl="#0030AD" fs="14px">
+                  <NavLink to="/welcome">
+                      <Button bg="" cl="#0030AD" fs="14px">
                     Sign Up
                 </Button>
+                </NavLink>
             </Box>
         </Right>
     </Container>

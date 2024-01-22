@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import { TiArrowDown } from "react-icons/ti";
 import Cardhold from './Cardhold';
+import Tableholds from './Tableholds';
 
 const data = [
   {
@@ -96,7 +97,7 @@ const Dashboardhome = () => {
           </LineChart>
           </Holder>
         </Chartholder>
-
+        <Tableholds />
         <Cardhold />
       </Wrapper>
     </Container>

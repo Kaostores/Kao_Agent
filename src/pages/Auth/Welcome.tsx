@@ -4,6 +4,7 @@ import img2 from "../../assets/design.png"
 import img3 from "../../assets/KAO_Logo_PNG.png"
 import styled from "styled-components"
 import { CiLock } from "react-icons/ci";
+import { NavLink } from 'react-router-dom'
 
 const Welcome = () => {
   return (
@@ -30,9 +31,11 @@ const Welcome = () => {
                 <Forgot>
                     <p>Forgot Password?</p>
                 </Forgot>
-                <Button bg="#0030AD" cl="#fff" fs="16px">
+                  <NavLink to="/dashboard">
+                    <Button bg="#0030AD" cl="#fff" fs="16px">
                     Log In
                 </Button>
+                  </NavLink>
                 <Button bg="" cl="#0030AD" fs="14px">
                     Different User
                 </Button>

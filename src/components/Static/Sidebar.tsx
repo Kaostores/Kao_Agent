@@ -140,4 +140,6 @@ const Container = styled.div`
   padding-top: 30px;
   align-items: center;
   position: relative;
+  position: static;
+  top: 0;
 `
