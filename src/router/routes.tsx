@@ -26,7 +26,7 @@ const Routes = () => {
                 element: <Dashboardhome />
                },
                {
-                   path: "/dashboard/stores",
+                   path: "stores",
                    element: <Stores />
                },
                {

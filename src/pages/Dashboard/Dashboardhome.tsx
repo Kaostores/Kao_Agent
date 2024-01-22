@@ -80,7 +80,7 @@ const Dashboardhome = () => {
 
           <Holder>
             <LineChart
-            width={970} height={250}
+            width={920} height={250}
             data={data}
             margin={{
               top: 5,

@@ -32,7 +32,7 @@ const Sidebar = () => {
         </Home>
       </NavLink>
 
-      <NavLink to="/dashboard/stores" style={({ isActive }) => {
+      <NavLink to="stores" style={({ isActive }) => {
         return {
           height: isActive ? "50px" : "50px",
           width: isActive ? "100%" : "100%",
@@ -132,7 +132,7 @@ const Home = styled.div`
 `
 const Imageholder = styled.div``
 const Container = styled.div`
-  width: 260px;
+  width: 100%;
   height: 100vh;
   background-color: #0030AD;
   display: flex;
@@ -140,6 +140,4 @@ const Container = styled.div`
   padding-top: 30px;
   align-items: center;
   position: relative;
-  position: static;
-  top: 0;
 `
