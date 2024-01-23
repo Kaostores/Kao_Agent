@@ -56,7 +56,15 @@ const Tableholds = () => {
             </Hold>
             
             <Table>
+              <Dotholder>
+                <Holder>
+                  <Dot bg="#0030AD"></Dot>
+                  <p>Transfer</p>
+                </Holder>
+                <h3>65.17%</h3>
+              </Dotholder>
               
+              <Line></Line>
             </Table>
             
           {/* <div className="mt-12 relative h-max overflow-auto">
@@ -83,18 +91,53 @@ const Tableholds = () => {
 }
 
 export default Tableholds
+const Line = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #D5DBDF;
+  margin-top: 10px;
+`
+const Holder = styled.div`
+  display: flex;
+  align-items: center;
+  p{
+    color: #797979;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+`
+const Dot = styled.div<{bg: string}>`
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  background-color: ${({bg}) => bg};
+`
+const Dotholder = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3{
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+  }
+`
 const Table = styled.div`
-  width: 200px;
-  height: 10px;
+  width: 150px;
   background-color: red;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-top: 10px;
 `
 const Hold = styled.div`
-  margin-top: 20px;
+  
 `
 const Chartholder = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-top: 20px;
 `
 const Icon = styled.div`
   cursor: pointer;
