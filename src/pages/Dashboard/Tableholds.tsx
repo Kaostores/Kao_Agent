@@ -69,9 +69,9 @@ const Tableholds = () => {
               <Dotholder mt="7px">
                 <Holder>
                   <Dot bg="#0030AD"></Dot>
-                  <p>Transfer</p>
+                  <p>Crypto</p>
                 </Holder>
-                <h3>65.17%</h3>
+                <h3>19.85%</h3>
               </Dotholder>
               
               <Line></Line>
@@ -79,29 +79,29 @@ const Tableholds = () => {
               <Dotholder mt="7px">
                 <Holder>
                   <Dot bg="#0030AD"></Dot>
-                  <p>Transfer</p>
+                  <p>Debit Card</p>
                 </Holder>
-                <h3>65.17%</h3>
+                <h3>26.21%</h3>
               </Dotholder>
               
               <Line></Line>
               
               <Dotholder mt="7px">
                 <Holder>
-                  <Dot bg="#0030AD"></Dot>
-                  <p>Transfer</p>
+                  <Dot bg="#88A9FF"></Dot>
+                  <p>Credit Card</p>
                 </Holder>
-                <h3>65.17%</h3>
+                <h3>10.97%</h3>
               </Dotholder>
               
               <Line></Line>
               
               <Dotholder mt="7px">
                 <Holder>
-                  <Dot bg="#0030AD"></Dot>
-                  <p>Transfer</p>
+                  <Dot bg="#EED600"></Dot>
+                  <p>5-Crypto</p>
                 </Holder>
-                <h3>65.17%</h3>
+                <h3>9.85%</h3>
               </Dotholder>
             </Table>
             
