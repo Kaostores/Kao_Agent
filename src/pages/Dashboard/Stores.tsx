@@ -1,32 +1,56 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const Stores = () => {
+  const [show, setShow] = useState(true);
+  const [show2, setShow2] = useState(false)
+
+  const Toogle = () => {
+    setShow(true)
+    setShow2(false)
+  }
+  const Toogle2 = () => {
+    setShow2(true)
+    setShow(false)
+  }
   return (
     <Container>
       <Wrapper>
         <Top>
           <Boxholder>
-            <Store bg=""><h3>My Stores</h3></Store>
-            <Verified><h3>Not Verified</h3></Verified>
+            <Store bg={show ? "bb" : ""} onClick={Toogle}><h3>My Stores</h3></Store>
+            <Store bg={show2 ? "bb" : ""} onClick={Toogle2}><h3>Not Verified</h3></Store>
           </Boxholder>
         </Top>
+
+        {show ? (
+          <Storetableholder>
+
+        </Storetableholder>
+        ) : null}
+
+        {show2 ? (
+          <Verifiedtableholder>
+
+        </Verifiedtableholder>
+        ) : null}
       </Wrapper>
     </Container>
   )
 }
 
 export default Stores
-const Verified = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  h3{
-    font-size: 16px;
-    color: #797979;
-  }
+const Verifiedtableholder = styled.div`
+  width: 100%;
+  height: 40px;
+  background-color: green;
+  margin-top: 20px;
+`
+const Storetableholder = styled.div`
+  width: 100%;
+  height: 40px;
+  background-color: red;
+  margin-top: 20px;
 `
 const Store = styled.div<{bg: string}>`
   width: 50%;
@@ -34,11 +58,11 @@ const Store = styled.div<{bg: string}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({bg}) => (bg ? "#fff" : "#0030AD")};
+  background-color: ${({bg}) => (bg ? "#0030AD" : "#fff")};
   cursor: pointer;
+  color: ${({bg}) => (bg ? "#fff" : "#797979")};
   h3{
     font-size: 16px;
-    color: #fff;
   }
 `
 const Boxholder = styled.div`
