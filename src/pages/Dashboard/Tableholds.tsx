@@ -5,6 +5,22 @@ import { BarChart, Bar, XAxis, YAxis } from 'recharts';
 import { CartesianGrid } from 'recharts';
 
 const Tableholds = () => {
+  const tableItems = [
+        {
+            name: "Solo learn app",
+            date: "Oct 9, 2023",
+            status: "Active",
+            price: "$35.000",
+            plan: "Monthly subscription"
+        },
+        {
+            name: "Window wrapper",
+            date: "Oct 12, 2023",
+            status: "Active",
+            price: "$12.000",
+            plan: "Monthly subscription"
+        },
+      ]
   const data = [
     { name: 'Mon', x: 45, y: 12, z: 0 },
 
@@ -38,6 +54,28 @@ const Tableholds = () => {
                 <Bar dataKey="x" stackId="a" fill='#0030AD' barSize={10}/>
               </BarChart>
             </Hold>
+            
+            <Table>
+              
+            </Table>
+            
+          {/* <div className="mt-12 relative h-max overflow-auto">
+                <table className="w-full table-auto text-sm text-left">
+                    <thead className="text-gray-600 font-medium border-b">
+                        
+                    </thead>
+                    <tbody className="text-gray-600 divide-y">
+                        {
+                            tableItems.map((item, idx) => (
+                                <tr key={idx}>
+                                    <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
+                                    <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div> */}
           </Chartholder>
         </First>
     </Container>
@@ -45,12 +83,18 @@ const Tableholds = () => {
 }
 
 export default Tableholds
+const Table = styled.div`
+  width: 200px;
+  height: 10px;
+  background-color: red;
+`
 const Hold = styled.div`
   margin-top: 20px;
 `
 const Chartholder = styled.div`
   display: flex;
   width: 100%;
+  justify-content: space-between;
 `
 const Icon = styled.div`
   cursor: pointer;
