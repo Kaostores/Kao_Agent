@@ -56,7 +56,7 @@ const Tableholds = () => {
             </Hold>
             
             <Table>
-              <Dotholder>
+              <Dotholder mt="">
                 <Holder>
                   <Dot bg="#0030AD"></Dot>
                   <p>Transfer</p>
@@ -65,6 +65,44 @@ const Tableholds = () => {
               </Dotholder>
               
               <Line></Line>
+              
+              <Dotholder mt="7px">
+                <Holder>
+                  <Dot bg="#0030AD"></Dot>
+                  <p>Transfer</p>
+                </Holder>
+                <h3>65.17%</h3>
+              </Dotholder>
+              
+              <Line></Line>
+              
+              <Dotholder mt="7px">
+                <Holder>
+                  <Dot bg="#0030AD"></Dot>
+                  <p>Transfer</p>
+                </Holder>
+                <h3>65.17%</h3>
+              </Dotholder>
+              
+              <Line></Line>
+              
+              <Dotholder mt="7px">
+                <Holder>
+                  <Dot bg="#0030AD"></Dot>
+                  <p>Transfer</p>
+                </Holder>
+                <h3>65.17%</h3>
+              </Dotholder>
+              
+              <Line></Line>
+              
+              <Dotholder mt="7px">
+                <Holder>
+                  <Dot bg="#0030AD"></Dot>
+                  <p>Transfer</p>
+                </Holder>
+                <h3>65.17%</h3>
+              </Dotholder>
             </Table>
             
           {/* <div className="mt-12 relative h-max overflow-auto">
@@ -95,7 +133,7 @@ const Line = styled.div`
   width: 100%;
   height: 1px;
   background-color: #D5DBDF;
-  margin-top: 10px;
+  margin-top: 5px;
 `
 const Holder = styled.div`
   display: flex;
@@ -112,10 +150,11 @@ const Dot = styled.div<{bg: string}>`
   border-radius: 50px;
   background-color: ${({bg}) => bg};
 `
-const Dotholder = styled.div`
+const Dotholder = styled.div<{mt: string}>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: ${({mt}) => mt};
   h3{
     font-size: 12px;
     color: #000;
@@ -124,7 +163,6 @@ const Dotholder = styled.div`
 `
 const Table = styled.div`
   width: 150px;
-  background-color: red;
   display: flex;
   flex-direction: column;
   padding-left: 10px;
