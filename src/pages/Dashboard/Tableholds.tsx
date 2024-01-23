@@ -7,29 +7,29 @@ import { CartesianGrid } from 'recharts';
 const Tableholds = () => {
   const tableItems = [
         {
-            name: "Solo learn app",
-            items: "Oct 9, 2023",
-            amount: "Active",
+            name: "Mera mera",
+            items: "7,540",
+            amount: "N1,898,000",
         },
         {
-            name: "Window wrapper",
-            items: "Oct 12, 2023",
-            amount: "Active",
+            name: "Philip Morris International",
+            items: "6011",
+            amount: "N1,898,000",
         },
         {
-            name: "Window wrapper",
-            items: "Oct 12, 2023",
-            amount: "Active",
+            name: "Donna Karan",
+            items: "6001",
+            amount: "N1,898,000",
         },
         {
-            name: "Window wrapper",
-            items: "Oct 12, 2023",
-            amount: "Active",
+            name: "Marco Pollo",
+            items: "4500",
+            amount: "N1,898,000",
         },
         {
-            name: "Window wrapper",
-            items: "Oct 12, 2023",
-            amount: "Active",
+            name: "Dolce  Gabbana",
+            items: "3000",
+            amount: "N1,898,000",
         },
       ]
   const data = [
@@ -138,9 +138,9 @@ const Tableholds = () => {
                         {
                             tableItems.map((item, idx) => (
                                 <tr key={idx}>
-                                    <td className="pr-6 py-2 whitespace-nowrap">{item.name}</td>
-                                    <td className="pr-6 py-2 whitespace-nowrap">{item.items}</td>
-                                    <td className="pr-6 py-2 whitespace-nowrap">{item.amount}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.name}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.items}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.amount}</td>
                                 </tr>
                             ))
                         }

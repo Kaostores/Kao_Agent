@@ -184,4 +184,5 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 15px;
+  padding-bottom: 15px;
 `
