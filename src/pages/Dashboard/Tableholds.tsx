@@ -125,7 +125,7 @@ const Tableholds = () => {
             <Icon><BsThreeDotsVertical /></Icon>
           </Paymentholder>
           
-          <div className="relative h-max overflow-auto">
+          <div className="relative h-max overflow-auto mt-[10px]">
                 <table className="w-full table-auto text-sm text-left">
                     <thead className="text-gray-600 font-medium border-b">
                         <tr>
