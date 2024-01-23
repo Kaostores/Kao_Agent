@@ -97,8 +97,8 @@ const Dashboardhome = () => {
           </LineChart>
           </Holder>
         </Chartholder>
-        <Tableholds />
         <Cardhold />
+        <Tableholds />
       </Wrapper>
     </Container>
   )

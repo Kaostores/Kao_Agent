@@ -18,7 +18,7 @@ const Sidebar = () => {
         return {
           height: isActive ? "50px" : "50px",
           width: isActive ? "100%" : "100%",
-          backgroundColor: isActive ? "#fff" : "",
+          backgroundColor: isActive ? "#fff" : "transparent",
           marginTop: isActive ? "50px" : "50px",
           paddingLeft: isActive ? "30px" : "30px",
           color: isActive ? "#0030AD" : "#fff",
