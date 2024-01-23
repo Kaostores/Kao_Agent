@@ -8,17 +8,28 @@ const Tableholds = () => {
   const tableItems = [
         {
             name: "Solo learn app",
-            date: "Oct 9, 2023",
-            status: "Active",
-            price: "$35.000",
-            plan: "Monthly subscription"
+            items: "Oct 9, 2023",
+            amount: "Active",
         },
         {
             name: "Window wrapper",
-            date: "Oct 12, 2023",
-            status: "Active",
-            price: "$12.000",
-            plan: "Monthly subscription"
+            items: "Oct 12, 2023",
+            amount: "Active",
+        },
+        {
+            name: "Window wrapper",
+            items: "Oct 12, 2023",
+            amount: "Active",
+        },
+        {
+            name: "Window wrapper",
+            items: "Oct 12, 2023",
+            amount: "Active",
+        },
+        {
+            name: "Window wrapper",
+            items: "Oct 12, 2023",
+            amount: "Active",
         },
       ]
   const data = [
@@ -105,30 +116,51 @@ const Tableholds = () => {
               </Dotholder>
             </Table>
             
-          {/* <div className="mt-12 relative h-max overflow-auto">
+          </Chartholder>
+        </First>
+        
+        <Second>
+          <Paymentholder>
+            <h3>My Stores</h3>
+            <Icon><BsThreeDotsVertical /></Icon>
+          </Paymentholder>
+          
+          <div className="relative h-max overflow-auto">
                 <table className="w-full table-auto text-sm text-left">
                     <thead className="text-gray-600 font-medium border-b">
-                        
+                        <tr>
+                            <th className="py-3 pr-6 text-[14px] text-[#000]">Name</th>
+                            <th className="py-3 pr-6 text-[14px] text-[#000]">Items</th>
+                            <th className="py-3 pr-6 text-[14px] text-[#000]">Amount</th>
+                        </tr>
                     </thead>
                     <tbody className="text-gray-600 divide-y">
                         {
                             tableItems.map((item, idx) => (
                                 <tr key={idx}>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap">{item.name}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap">{item.items}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap">{item.amount}</td>
                                 </tr>
                             ))
                         }
                     </tbody>
                 </table>
-            </div> */}
-          </Chartholder>
-        </First>
+            </div>
+        </Second>
     </Container>
   )
 }
 
 export default Tableholds
+const Second = styled.div`
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  padding: 13px 13px;
+  background-color: #fff;
+  border-radius: 5px;
+`
 const Line = styled.div`
   width: 100%;
   height: 1px;
@@ -201,4 +233,5 @@ const First = styled.div`
 const Container = styled.div`
     display: flex;
     margin-top: 20px;
+    justify-content: space-between;
 `
