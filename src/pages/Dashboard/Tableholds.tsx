@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { BarChart, Bar, XAxis, YAxis } from 'recharts';
-import { CartesianGrid } from 'recharts';
+import { BarChart, Bar, XAxis } from 'recharts';
 
 const Tableholds = () => {
   const tableItems = [
