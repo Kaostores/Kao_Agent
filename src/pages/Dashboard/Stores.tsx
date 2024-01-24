@@ -5,36 +5,71 @@ import { MdOutlineStorefront } from "react-icons/md";
 const Stores = () => {
   const tableItems = [
         {
-            name: "Solo learn app",
-            date: "Oct 9, 2023",
+            name: "1",
+            date: "2356477",
             status: "Active",
             price: "$35.000",
             plan: "Monthly subscription"
         },
         {
-            name: "Window wrapper",
-            date: "Oct 12, 2023",
+            name: "2",
+            date: "7688801",
             status: "Active",
             price: "$12.000",
             plan: "Monthly subscription"
         },
         {
-            name: "Unity loroin",
-            date: "Oct 22, 2023",
+            name: "3",
+            date: "0032648",
             status: "Archived",
             price: "$20.000",
             plan: "Annually subscription"
         },
         {
-            name: "Background remover",
-            date: "Jan 5, 2023",
+            name: "4",
+            date: "9237584",
             status: "Active",
             price: "$5.000",
             plan: "Monthly subscription"
         },
         {
-            name: "Colon tiger",
-            date: "Jan 6, 2023",
+            name: "5",
+            date: "02938423",
+            status: "Active",
+            price: "$9.000",
+            plan: "Annually subscription"
+        },
+        {
+            name: "6",
+            date: "02938423",
+            status: "Active",
+            price: "$9.000",
+            plan: "Annually subscription"
+        },
+        {
+            name: "7",
+            date: "09365322",
+            status: "Active",
+            price: "$9.000",
+            plan: "Annually subscription"
+        },
+        {
+            name: "8",
+            date: "09533555",
+            status: "Active",
+            price: "$9.000",
+            plan: "Annually subscription"
+        },
+        {
+            name: "9",
+            date: "23322222",
+            status: "Active",
+            price: "$9.000",
+            plan: "Annually subscription"
+        },
+        {
+            name: "10",
+            date: "23322222",
             status: "Active",
             price: "$9.000",
             plan: "Annually subscription"
