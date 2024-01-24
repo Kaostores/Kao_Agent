@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import { MdOutlineStorefront } from "react-icons/md";
 
 const Stores = () => {
   const [show, setShow] = useState(true);
@@ -21,6 +22,8 @@ const Stores = () => {
             <Store bg={show ? "bb" : ""} onClick={Toogle}><h3>My Stores</h3></Store>
             <Store bg={show2 ? "bb" : ""} onClick={Toogle2}><h3>Not Verified</h3></Store>
           </Boxholder>
+
+          <Icon><MdOutlineStorefront /></Icon>
         </Top>
 
         {show ? (
@@ -40,6 +43,11 @@ const Stores = () => {
 }
 
 export default Stores
+const Icon = styled.div`
+  font-size: 28px;
+  color: #0030AD;
+  cursor: pointer;
+`
 const Verifiedtableholder = styled.div`
   width: 100%;
   height: 40px;
@@ -77,6 +85,7 @@ const Top = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `
 const Wrapper = styled.div`
   width: 95%;
