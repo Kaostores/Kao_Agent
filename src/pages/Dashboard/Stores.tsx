@@ -9,70 +9,90 @@ const Stores = () => {
             date: "2356477",
             status: "Active",
             price: "Zoro Roronoa",
-            plan: "Small Village, East Blue"
+            plan: "Small Village, East Blue",
+            phone: "+234 02356477",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "2",
             date: "7688801",
             status: "Active",
             price: "Nico Robin",
-            plan: "The Lost Island, Grandline"
+            plan: "The Lost Island, Grandline",
+            phone: "+234 07688801",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "3",
             date: "0032648",
             status: "Archived",
             price: "Sanji Vinsmoke",
-            plan: "The Lost Island, Grandline"
+            plan: "The Lost Island, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "4",
             date: "9237584",
             status: "Active",
             price: "Tony Chopper",
-            plan: "Vinsmoke Island, East Blue"
+            plan: "Vinsmoke Island, East Blue",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "5",
             date: "02938423",
             status: "Active",
             price: "General Franky",
-            plan: "Drum Island, Castle, Geandline"
+            plan: "Drum Island, Castle, Geandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "6",
             date: "02938423",
             status: "Active",
             price: "General Franky",
-            plan: "Water 7, Grandline"
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "7",
             date: "09365322",
             status: "Active",
             price: "Brook",
-            plan: "Water 7, Grandline"
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "8",
             date: "09533555",
             status: "Active",
             price: "Jinbe",
-            plan: "Lost Ship, Park"
+            plan: "Lost Ship, Park",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "9",
             date: "23322222",
             status: "Active",
             price: "Usopp",
-            plan: "Atlantia,   Sea barrel "
+            plan: "Atlantia,   Sea barrel ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
         {
             name: "10",
             date: "23322222",
             status: "Active",
             price: "Usopp",
-            plan: "Small Village "
+            plan: "Small Village ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
         },
     ]
 
@@ -109,7 +129,7 @@ const Stores = () => {
                             <th className="py-3 pr-6">#</th>
                             <th className="py-3 pr-6">Store ID</th>
                             <th className="py-3 pr-6">Store Name</th>
-                            <th className="py-3 pr-6">Address</th>
+                            <th className="py-3">Address</th>
                             <th className="py-3 pr-6">Phone No</th>
                             <th className="py-3 pr-6">Email</th>
                             <th className="py-3 pr-6">Status</th>
@@ -123,17 +143,15 @@ const Stores = () => {
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.plan}</td>
+                                    <td className="pr-6 py-4">{item.plan}</td>
+                                    <td className=" py-4">{item.phone}</td>
+                                    <td className="pr-6 py-4">{item.email}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">
-                                        <span className={`px-3 py-2 rounded-full font-semibold text-xs ${item.status == "Active" ? "text-green-600 bg-green-50" : "text-blue-600 bg-blue-50"}`}>
+                                        <span className={`px-3 py-2 rounded-[3px] font-semibold text-xs ${item.status === "Active" ? "text-green-600 bg-green-50" : "text-blue-600 bg-blue-50"}`}>
                                             {item.status}
                                         </span>
                                     </td>
-                                    <td className="text-right whitespace-nowrap">
-                                        <a href="javascript:void()" className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">
-                                            Manage
-                                        </a>
-                                    </td>
+                                    <td className="pr-6 py-4"></td>
                                 </tr>
                             ))
                         }
