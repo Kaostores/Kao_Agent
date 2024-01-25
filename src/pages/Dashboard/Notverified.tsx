@@ -16,7 +16,7 @@ const Notverified = () => {
         {
             name: "2",
             date: "7688801",
-            status: "Verified",
+            status: "Inspect",
             price: "Nico Robin",
             plan: "The Lost Island, Grandline",
             phone: "+234 07688801",
@@ -25,7 +25,7 @@ const Notverified = () => {
         {
             name: "3",
             date: "0032648",
-            status: "Verified",
+            status: "Inspect",
             price: "Sanji Vinsmoke",
             plan: "The Lost Island, Grandline",
             phone: "+234 00032648",
@@ -34,7 +34,7 @@ const Notverified = () => {
         {
             name: "4",
             date: "9237584",
-            status: "Verified",
+            status: "Inspect",
             price: "Tony Chopper",
             plan: "Vinsmoke Island, East Blue",
             phone: "+234 00032648",
@@ -43,7 +43,7 @@ const Notverified = () => {
         {
             name: "5",
             date: "02938423",
-            status: "Verified",
+            status: "Awaiting",
             price: "General Franky",
             plan: "Drum Island, Castle, Geandline",
             phone: "+234 00032648",
@@ -52,7 +52,7 @@ const Notverified = () => {
         {
             name: "6",
             date: "02938423",
-            status: "Verified",
+            status: "Awaiting",
             price: "General Franky",
             plan: "Water 7, Grandline",
             phone: "+234 00032648",
@@ -61,7 +61,7 @@ const Notverified = () => {
         {
             name: "7",
             date: "09365322",
-            status: "Verified",
+            status: "Not Verified",
             price: "Brook",
             plan: "Water 7, Grandline",
             phone: "+234 00032648",
@@ -70,7 +70,7 @@ const Notverified = () => {
         {
             name: "8",
             date: "09533555",
-            status: "Verified",
+            status: "Not Verified",
             price: "Jinbe",
             plan: "Lost Ship, Park",
             phone: "+234 00032648",
@@ -79,7 +79,7 @@ const Notverified = () => {
         {
             name: "9",
             date: "23322222",
-            status: "Verified",
+            status: "Awaiting",
             price: "Usopp",
             plan: "Atlantia,   Sea barrel ",
             phone: "+234 00032648",
@@ -88,7 +88,7 @@ const Notverified = () => {
         {
             name: "10",
             date: "23322222",
-            status: "Verified",
+            status: "Not Verified",
             price: "Usopp",
             plan: "Small Village ",
             phone: "+234 00032648",
@@ -408,9 +408,9 @@ const Notverified = () => {
                                     <td className="pr-6 py-4 whitespace-nowrap">
                                         <span className={`px-3 py-2 rounded-[3px] font-semibold text-xs ${
                                             item.status === "Verified" ? "text-[#0030AD] bg-[#0031ad1c]" :
-                                            item.status === "Inspect" ? "text-blue-600 bg-blue-50" :
-                                            item.status === "Not Verified" ? "text-purple-600 bg-purple-50" :
-                                            "text-yellow-600 bg-yellow-50"
+                                            item.status === "Inspect" ? "text-[#008348] bg-[#00834838]" :
+                                            item.status === "Not Verified" ? "text-[#FF0000] bg-[#ff00002f]" :
+                                            "text-[#797979] bg-[#79797941]"
                                           }`}>{item.status}
                                           </span>
                                     </td>
