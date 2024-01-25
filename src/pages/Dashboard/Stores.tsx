@@ -151,9 +151,8 @@ const Stores = () => {
                         </tr>
                     </thead>
                     <tbody className="text-gray-600 divide-y">
-                        {
-                            tableItems.map((item, idx) => (
-                                <tr key={idx}>
+                            {currentData.map((item, idx) => (
+                              <tr key={idx}>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
@@ -171,8 +170,7 @@ const Stores = () => {
                                     </td>
                                     <td className="pr-6 py-4 text-[19px] text-[#0030AD] cursor-pointer"><MdOutlineStorefront /></td>
                                 </tr>
-                            ))
-                        }
+                            ))}
                     </tbody>
                 </table>
             </div>
@@ -180,6 +178,7 @@ const Stores = () => {
         
         <Down>
           <h3>Showing 10 of 40</h3>
+              <Pagination totalItems={totalItems} itemsPerPage={ItemsPerPage} onPageChange={handlePageChange} />
         </Down>
         </Storetableholder>
         ) : null}
