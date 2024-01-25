@@ -7,7 +7,7 @@ const Stores = () => {
         {
             name: "1",
             date: "2356477",
-            status: "Active",
+            status: "Verified",
             price: "Zoro Roronoa",
             plan: "Small Village, East Blue",
             phone: "+234 02356477",
@@ -16,7 +16,7 @@ const Stores = () => {
         {
             name: "2",
             date: "7688801",
-            status: "Active",
+            status: "Verified",
             price: "Nico Robin",
             plan: "The Lost Island, Grandline",
             phone: "+234 07688801",
@@ -25,7 +25,7 @@ const Stores = () => {
         {
             name: "3",
             date: "0032648",
-            status: "Archived",
+            status: "Verified",
             price: "Sanji Vinsmoke",
             plan: "The Lost Island, Grandline",
             phone: "+234 00032648",
@@ -34,7 +34,7 @@ const Stores = () => {
         {
             name: "4",
             date: "9237584",
-            status: "Active",
+            status: "Verified",
             price: "Tony Chopper",
             plan: "Vinsmoke Island, East Blue",
             phone: "+234 00032648",
@@ -43,7 +43,7 @@ const Stores = () => {
         {
             name: "5",
             date: "02938423",
-            status: "Active",
+            status: "Verified",
             price: "General Franky",
             plan: "Drum Island, Castle, Geandline",
             phone: "+234 00032648",
@@ -52,7 +52,7 @@ const Stores = () => {
         {
             name: "6",
             date: "02938423",
-            status: "Active",
+            status: "Verified",
             price: "General Franky",
             plan: "Water 7, Grandline",
             phone: "+234 00032648",
@@ -61,7 +61,7 @@ const Stores = () => {
         {
             name: "7",
             date: "09365322",
-            status: "Active",
+            status: "Verified",
             price: "Brook",
             plan: "Water 7, Grandline",
             phone: "+234 00032648",
@@ -70,7 +70,7 @@ const Stores = () => {
         {
             name: "8",
             date: "09533555",
-            status: "Active",
+            status: "Verified",
             price: "Jinbe",
             plan: "Lost Ship, Park",
             phone: "+234 00032648",
@@ -79,7 +79,7 @@ const Stores = () => {
         {
             name: "9",
             date: "23322222",
-            status: "Active",
+            status: "Verified",
             price: "Usopp",
             plan: "Atlantia,   Sea barrel ",
             phone: "+234 00032648",
@@ -88,7 +88,7 @@ const Stores = () => {
         {
             name: "10",
             date: "23322222",
-            status: "Active",
+            status: "Verified",
             price: "Usopp",
             plan: "Small Village ",
             phone: "+234 00032648",
@@ -147,9 +147,13 @@ const Stores = () => {
                                     <td className=" py-4">{item.phone}</td>
                                     <td className="pr-6 py-4">{item.email}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">
-                                        <span className={`px-3 py-2 rounded-[3px] font-semibold text-xs ${item.status === "Active" ? "text-green-600 bg-green-50" : "text-blue-600 bg-blue-50"}`}>
-                                            {item.status}
-                                        </span>
+                                        <span className={`px-3 py-2 rounded-[3px] font-semibold text-xs ${
+                                            item.status === "Verified" ? "text-[#0030AD] bg-[#0031ad1c]" :
+                                            item.status === "Inspect" ? "text-blue-600 bg-blue-50" :
+                                            item.status === "Not Verified" ? "text-purple-600 bg-purple-50" :
+                                            "text-yellow-600 bg-yellow-50"
+                                          }`}>{item.status}
+                                          </span>
                                     </td>
                                     <td className="pr-6 py-4 text-[19px] text-[#0030AD] cursor-pointer"><MdOutlineStorefront /></td>
                                 </tr>
