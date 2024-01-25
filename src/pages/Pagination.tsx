@@ -19,9 +19,19 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage }) => 
     const renderPaginationInfo = () => {
         const startIndex = (currentPage - 1) * itemsPerPage + 1;
         const endIndex = Math.min(startIndex + itemsPerPage - 1, totalItems)
+
+        return `Showing ${startIndex} - ${endIndex} of ${totalItems}`
     }
   return (
-    <div>Pagination</div>
+    <div style={{marginTop: "20px"}}>
+        <span>{renderPaginationInfo()}</span>
+        <button onClick={() => handlePageChange(currentPage - 1)}>
+            Previous
+        </button>
+        <button onClick={() => handlePageChange(currentPage + 1)}>
+            Next
+        </button>
+    </div>
   )
 }
 
