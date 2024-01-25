@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront } from "react-icons/md";
+import Notverified from './Notverified';
 
 const Stores = () => {
   const tableItems = [
@@ -468,9 +469,7 @@ const Stores = () => {
         ) : null}
 
         {show2 ? (
-          <Verifiedtableholder>
-
-        </Verifiedtableholder>
+          <Notverified />
         ) : null}
       </Wrapper>
     </Container>
@@ -516,12 +515,6 @@ const Icon = styled.div`
   font-size: 28px;
   color: #0030AD;
   cursor: pointer;
-`
-const Verifiedtableholder = styled.div`
-  width: 100%;
-  height: 40px;
-  background-color: green;
-  margin-top: 20px;
 `
 const Storetableholder = styled.div`
   width: 100%;

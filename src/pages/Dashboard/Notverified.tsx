@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import styled from 'styled-components';
+import { MdOutlineStorefront } from "react-icons/md";
 
 const Notverified = () => {
     const tableItems = [
@@ -363,9 +365,122 @@ const Notverified = () => {
             email: "revolutionarmy.gmail.com"
         },
   ]
+  
+  const itemsPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const totalPages = Math.ceil(tableItems.length / itemsPerPage)
+
+  const paginatedItems = tableItems.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  )
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
   return (
-    <div>Notverified</div>
+    <Container>
+        <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+            <div className="mt-12 relative h-max overflow-auto">
+                <table className="w-full table-auto text-sm text-left">
+                    <thead className="text-gray-600 font-medium border-b">
+                        <tr>
+                            <th className="py-3 pr-6">#</th>
+                            <th className="py-3 pr-6">Store ID</th>
+                            <th className="py-3 pr-6">Store Name</th>
+                            <th className="py-3">Address</th>
+                            <th className="py-3 pr-6">Phone No</th>
+                            <th className="py-3 pr-6">Email</th>
+                            <th className="py-3 pr-6">Status</th>
+                            <th className="py-3 pr-6"></th>
+                        </tr>
+                    </thead>
+                    <tbody className="text-gray-600 divide-y">
+                    {paginatedItems.map((item, idx) => (
+                          <tr key={idx}>
+                                    <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
+                                    <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
+                                    <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
+                                    <td className="pr-6 py-4">{item.plan}</td>
+                                    <td className=" py-4">{item.phone}</td>
+                                    <td className="pr-6 py-4">{item.email}</td>
+                                    <td className="pr-6 py-4 whitespace-nowrap">
+                                        <span className={`px-3 py-2 rounded-[3px] font-semibold text-xs ${
+                                            item.status === "Verified" ? "text-[#0030AD] bg-[#0031ad1c]" :
+                                            item.status === "Inspect" ? "text-blue-600 bg-blue-50" :
+                                            item.status === "Not Verified" ? "text-purple-600 bg-purple-50" :
+                                            "text-yellow-600 bg-yellow-50"
+                                          }`}>{item.status}
+                                          </span>
+                                    </td>
+                                    <td className="pr-6 py-4 text-[19px] text-[#0030AD] cursor-pointer"><MdOutlineStorefront /></td>
+                                </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <Down>
+              <h3>Showing {Math.min(currentPage * itemsPerPage, tableItems.length)} of{' '} {tableItems.length}</h3>
+              <Pagination>
+              <ul>
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handlePageChange(index + 1)}
+                    className={currentPage === index + 1 ? 'active' : ''}
+                  >
+                    {index + 1}
+                  </li>
+                ))}
+              </ul>
+              </Pagination>
+              <Button>gfgfgfgfgfgffg</Button>
+        </Down>
+    </Container>
   )
 }
 
 export default Notverified
+const Button = styled.div`
+  visibility: hidden;
+`
+const Pagination = styled.div`
+  margin-top: 10px;
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    li {
+      cursor: pointer;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      &.active {
+        background-color: #0030ad;
+        color: #fff;
+      }
+    }
+  }
+`
+const Down = styled.div`
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+  }
+`
+const Container = styled.div`
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+    flex-direction: column;
+`
