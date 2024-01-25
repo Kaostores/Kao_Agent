@@ -381,7 +381,7 @@ const Notverified = () => {
   }
   return (
     <Container>
-        <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+        <div className="max-w-screen-xl mx-auto px-2 md:px-8">
             <div className="mt-12 relative h-max overflow-auto">
                 <table className="w-full table-auto text-sm text-left">
                     <thead className="text-gray-600 font-medium border-b">
@@ -405,7 +405,7 @@ const Notverified = () => {
                                     <td className="pr-6 py-4">{item.plan}</td>
                                     <td className=" py-4">{item.phone}</td>
                                     <td className="pr-6 py-4">{item.email}</td>
-                                    <td className="pr-6 py-4 whitespace-nowrap">
+                                    <td className="w-[80px] h-[30px] flex justify-center items-center mt-[20px] whitespace-nowrap">
                                         <span className={`px-3 py-2 rounded-[3px] font-semibold text-xs ${
                                             item.status === "Verified" ? "text-[#0030AD] bg-[#0031ad1c]" :
                                             item.status === "Inspect" ? "text-[#008348] bg-[#00834838]" :
@@ -414,14 +414,14 @@ const Notverified = () => {
                                           }`}>{item.status}
                                           </span>
                                     </td>
-                                    <td className="pr-6 py-4 text-[19px] text-[#0030AD] cursor-pointer"><MdOutlineStorefront /></td>
+                                    <td className="px-6 py-4 text-[19px] text-[#0030AD] cursor-pointer ml-[30px]"><MdOutlineStorefront /></td>
                                 </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
         </div>
-        
+        <p>There can only be three (3) stores inspected at once.</p>
         <Down>
               <h3>Showing {Math.min(currentPage * itemsPerPage, tableItems.length)} of{' '} {tableItems.length}</h3>
               <Pagination>
@@ -483,4 +483,11 @@ const Container = styled.div`
     margin-top: 20px;
     padding-top: 10px;
     flex-direction: column;
+    p{
+        font-size: 14px;
+        font-style: italic;
+        color: #000000;
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
 `
