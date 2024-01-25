@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront } from "react-icons/md";
+import Pagination from '../Pagination';
 
 const Stores = () => {
   const tableItems = [
@@ -94,7 +95,20 @@ const Stores = () => {
             phone: "+234 00032648",
             email: "revolutionarmy.gmail.com"
         },
-    ]
+  ]
+  
+  const [currentPage, setCurrentPage] = useState(1);
+  const ItemsPerPage = 10;
+
+  const totalItems = tableItems.length
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage)
+  };
+
+  const startIndex = (currentPage - 1) * ItemsPerPage;
+  const endIndex = startIndex + ItemsPerPage;
+  const currentData = tableItems.slice(startIndex, endIndex)
 
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(false)
