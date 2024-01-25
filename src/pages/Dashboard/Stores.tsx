@@ -460,7 +460,8 @@ const Stores = () => {
                   </li>
                 ))}
               </ul>
-            </Pagination>
+              </Pagination>
+              <Button>gfgfgfgfgfgffg</Button>
         </Down>
 
         </Storetableholder>
@@ -477,6 +478,9 @@ const Stores = () => {
 }
 
 export default Stores
+const Button = styled.div`
+  visibility: hidden;
+`
 const Pagination = styled.div`
   margin-top: 10px;
   ul {
