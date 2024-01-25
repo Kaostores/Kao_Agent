@@ -151,7 +151,7 @@ const Stores = () => {
                                             {item.status}
                                         </span>
                                     </td>
-                                    <td className="pr-6 py-4"></td>
+                                    <td className="pr-6 py-4 text-[19px] text-[#0030AD] cursor-pointer"><MdOutlineStorefront /></td>
                                 </tr>
                             ))
                         }
