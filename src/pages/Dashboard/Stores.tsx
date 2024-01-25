@@ -9,70 +9,70 @@ const Stores = () => {
             date: "2356477",
             status: "Active",
             price: "Zoro Roronoa",
-            plan: "Monthly subscription"
+            plan: "Small Village, East Blue"
         },
         {
             name: "2",
             date: "7688801",
             status: "Active",
             price: "Nico Robin",
-            plan: "Monthly subscription"
+            plan: "The Lost Island, Grandline"
         },
         {
             name: "3",
             date: "0032648",
             status: "Archived",
             price: "Sanji Vinsmoke",
-            plan: "Annually subscription"
+            plan: "The Lost Island, Grandline"
         },
         {
             name: "4",
             date: "9237584",
             status: "Active",
             price: "Tony Chopper",
-            plan: "Monthly subscription"
+            plan: "Vinsmoke Island, East Blue"
         },
         {
             name: "5",
             date: "02938423",
             status: "Active",
             price: "General Franky",
-            plan: "Annually subscription"
+            plan: "Drum Island, Castle, Geandline"
         },
         {
             name: "6",
             date: "02938423",
             status: "Active",
             price: "General Franky",
-            plan: "Annually subscription"
+            plan: "Water 7, Grandline"
         },
         {
             name: "7",
             date: "09365322",
             status: "Active",
             price: "Brook",
-            plan: "Annually subscription"
+            plan: "Water 7, Grandline"
         },
         {
             name: "8",
             date: "09533555",
             status: "Active",
             price: "Jinbe",
-            plan: "Annually subscription"
+            plan: "Lost Ship, Park"
         },
         {
             name: "9",
             date: "23322222",
             status: "Active",
             price: "Usopp",
-            plan: "Annually subscription"
+            plan: "Atlantia,   Sea barrel "
         },
         {
             name: "10",
             date: "23322222",
             status: "Active",
             price: "Usopp",
-            plan: "Annually subscription"
+            plan: "Small Village "
         },
     ]
 
@@ -203,6 +203,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  padding: 13px 13px;
 `
 
 const Container = styled.div`
