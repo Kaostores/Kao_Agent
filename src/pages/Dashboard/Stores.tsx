@@ -123,6 +123,7 @@ const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 350ms ease-in-out;
 `
 
 const Icon = styled.div`
