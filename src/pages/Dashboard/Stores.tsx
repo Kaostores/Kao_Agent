@@ -108,6 +108,7 @@ const Stores = () => {
                         <tr>
                             <th className="py-3 pr-6">#</th>
                             <th className="py-3 pr-6">Store ID</th>
+                            <th className="py-3 pr-6">Store Name</th>
                             <th className="py-3 pr-6">Address</th>
                             <th className="py-3 pr-6">Phone No</th>
                             <th className="py-3 pr-6">Email</th>
@@ -121,12 +122,12 @@ const Stores = () => {
                                 <tr key={idx}>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
+                                    <td className="pr-6 py-4 whitespace-nowrap">{item.plan}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">
                                         <span className={`px-3 py-2 rounded-full font-semibold text-xs ${item.status == "Active" ? "text-green-600 bg-green-50" : "text-blue-600 bg-blue-50"}`}>
                                             {item.status}
                                         </span>
                                     </td>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.plan}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
                                     <td className="text-right whitespace-nowrap">
                                         <a href="javascript:void()" className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">
@@ -167,7 +168,6 @@ const Verifiedtableholder = styled.div`
 `
 const Storetableholder = styled.div`
   width: 100%;
-  background-color: red;
   margin-top: 20px;
   padding-top: 10px;
 `
