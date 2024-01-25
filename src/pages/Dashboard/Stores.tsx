@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront } from "react-icons/md";
-import Pagination from '../Pagination';
 
 const Stores = () => {
   const tableItems = [
@@ -95,20 +94,291 @@ const Stores = () => {
             phone: "+234 00032648",
             email: "revolutionarmy.gmail.com"
         },
+        {
+            name: "1",
+            date: "2356477",
+            status: "Verified",
+            price: "Zoro Roronoa",
+            plan: "Small Village, East Blue",
+            phone: "+234 02356477",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "2",
+            date: "7688801",
+            status: "Verified",
+            price: "Nico Robin",
+            plan: "The Lost Island, Grandline",
+            phone: "+234 07688801",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "3",
+            date: "0032648",
+            status: "Verified",
+            price: "Sanji Vinsmoke",
+            plan: "The Lost Island, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "4",
+            date: "9237584",
+            status: "Verified",
+            price: "Tony Chopper",
+            plan: "Vinsmoke Island, East Blue",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "5",
+            date: "02938423",
+            status: "Verified",
+            price: "General Franky",
+            plan: "Drum Island, Castle, Geandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "6",
+            date: "02938423",
+            status: "Verified",
+            price: "General Franky",
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "7",
+            date: "09365322",
+            status: "Verified",
+            price: "Brook",
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "8",
+            date: "09533555",
+            status: "Verified",
+            price: "Jinbe",
+            plan: "Lost Ship, Park",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "9",
+            date: "23322222",
+            status: "Verified",
+            price: "Usopp",
+            plan: "Atlantia,   Sea barrel ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "10",
+            date: "23322222",
+            status: "Verified",
+            price: "Usopp",
+            plan: "Small Village ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "1",
+            date: "2356477",
+            status: "Verified",
+            price: "Zoro Roronoa",
+            plan: "Small Village, East Blue",
+            phone: "+234 02356477",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "2",
+            date: "7688801",
+            status: "Verified",
+            price: "Nico Robin",
+            plan: "The Lost Island, Grandline",
+            phone: "+234 07688801",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "3",
+            date: "0032648",
+            status: "Verified",
+            price: "Sanji Vinsmoke",
+            plan: "The Lost Island, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "4",
+            date: "9237584",
+            status: "Verified",
+            price: "Tony Chopper",
+            plan: "Vinsmoke Island, East Blue",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "5",
+            date: "02938423",
+            status: "Verified",
+            price: "General Franky",
+            plan: "Drum Island, Castle, Geandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "6",
+            date: "02938423",
+            status: "Verified",
+            price: "General Franky",
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "7",
+            date: "09365322",
+            status: "Verified",
+            price: "Brook",
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "8",
+            date: "09533555",
+            status: "Verified",
+            price: "Jinbe",
+            plan: "Lost Ship, Park",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "9",
+            date: "23322222",
+            status: "Verified",
+            price: "Usopp",
+            plan: "Atlantia,   Sea barrel ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "10",
+            date: "23322222",
+            status: "Verified",
+            price: "Usopp",
+            plan: "Small Village ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "1",
+            date: "2356477",
+            status: "Verified",
+            price: "Zoro Roronoa",
+            plan: "Small Village, East Blue",
+            phone: "+234 02356477",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "2",
+            date: "7688801",
+            status: "Verified",
+            price: "Nico Robin",
+            plan: "The Lost Island, Grandline",
+            phone: "+234 07688801",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "3",
+            date: "0032648",
+            status: "Verified",
+            price: "Sanji Vinsmoke",
+            plan: "The Lost Island, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "4",
+            date: "9237584",
+            status: "Verified",
+            price: "Tony Chopper",
+            plan: "Vinsmoke Island, East Blue",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "5",
+            date: "02938423",
+            status: "Verified",
+            price: "General Franky",
+            plan: "Drum Island, Castle, Geandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "6",
+            date: "02938423",
+            status: "Verified",
+            price: "General Franky",
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "7",
+            date: "09365322",
+            status: "Verified",
+            price: "Brook",
+            plan: "Water 7, Grandline",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "8",
+            date: "09533555",
+            status: "Verified",
+            price: "Jinbe",
+            plan: "Lost Ship, Park",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "9",
+            date: "23322222",
+            status: "Verified",
+            price: "Usopp",
+            plan: "Atlantia,   Sea barrel ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
+        {
+            name: "10",
+            date: "23322222",
+            status: "Verified",
+            price: "Usopp",
+            plan: "Small Village ",
+            phone: "+234 00032648",
+            email: "revolutionarmy.gmail.com"
+        },
   ]
   
-  const [currentPage, setCurrentPage] = useState(1);
-  const ItemsPerPage = 10;
+  const itemsPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1)
 
-  const totalItems = tableItems.length
+  const totalPages = Math.ceil(tableItems.length / itemsPerPage)
 
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage)
-  };
+  const paginatedItems = tableItems.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  )
 
-  const startIndex = (currentPage - 1) * ItemsPerPage;
-  const endIndex = startIndex + ItemsPerPage;
-  const currentData = tableItems.slice(startIndex, endIndex)
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
 
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(false)
@@ -151,8 +421,8 @@ const Stores = () => {
                         </tr>
                     </thead>
                     <tbody className="text-gray-600 divide-y">
-                            {currentData.map((item, idx) => (
-                              <tr key={idx}>
+                    {paginatedItems.map((item, idx) => (
+                          <tr key={idx}>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
@@ -170,16 +440,29 @@ const Stores = () => {
                                     </td>
                                     <td className="pr-6 py-4 text-[19px] text-[#0030AD] cursor-pointer"><MdOutlineStorefront /></td>
                                 </tr>
-                            ))}
+                        ))}
                     </tbody>
                 </table>
             </div>
         </div>
         
         <Down>
-          <h3>Showing 10 of 40</h3>
-              <Pagination totalItems={totalItems} itemsPerPage={ItemsPerPage} onPageChange={handlePageChange} />
+              <h3>Showing {Math.min(currentPage * itemsPerPage, tableItems.length)} of{' '} {tableItems.length}</h3>
+              <Pagination>
+              <ul>
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handlePageChange(index + 1)}
+                    className={currentPage === index + 1 ? 'active' : ''}
+                  >
+                    {index + 1}
+                  </li>
+                ))}
+              </ul>
+            </Pagination>
         </Down>
+
         </Storetableholder>
         ) : null}
 
@@ -194,9 +477,31 @@ const Stores = () => {
 }
 
 export default Stores
+const Pagination = styled.div`
+  margin-top: 10px;
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    li {
+      cursor: pointer;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      &.active {
+        background-color: #0030ad;
+        color: #fff;
+      }
+    }
+  }
+`
 const Down = styled.div`
-  width: 60%;
+  width: 100%;
   margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   h3{
     font-size: 15px;
     font-weight: 500;

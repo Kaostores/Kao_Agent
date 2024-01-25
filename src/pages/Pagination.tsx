@@ -3,9 +3,10 @@ import React, { useState } from 'react'
 interface PaginationProps {
     totalItems: number;
     itemsPerPage: number;
+    onPageChange: (newPage: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage }) => {
+const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, onPageChange }) => {
     
     const totalPages = Math.ceil(totalItems / itemsPerPage)
     const [currentPage, setCurrentPage] = useState(1);
