@@ -8,70 +8,70 @@ const Stores = () => {
             name: "1",
             date: "2356477",
             status: "Active",
-            price: "$35.000",
+            price: "Zoro Roronoa",
             plan: "Monthly subscription"
         },
         {
             name: "2",
             date: "7688801",
             status: "Active",
-            price: "$12.000",
+            price: "Nico Robin",
             plan: "Monthly subscription"
         },
         {
             name: "3",
             date: "0032648",
             status: "Archived",
-            price: "$20.000",
+            price: "Sanji Vinsmoke",
             plan: "Annually subscription"
         },
         {
             name: "4",
             date: "9237584",
             status: "Active",
-            price: "$5.000",
+            price: "Tony Chopper",
             plan: "Monthly subscription"
         },
         {
             name: "5",
             date: "02938423",
             status: "Active",
-            price: "$9.000",
+            price: "General Franky",
             plan: "Annually subscription"
         },
         {
             name: "6",
             date: "02938423",
             status: "Active",
-            price: "$9.000",
+            price: "General Franky",
             plan: "Annually subscription"
         },
         {
             name: "7",
             date: "09365322",
             status: "Active",
-            price: "$9.000",
+            price: "Brook",
             plan: "Annually subscription"
         },
         {
             name: "8",
             date: "09533555",
             status: "Active",
-            price: "$9.000",
+            price: "Jinbe",
             plan: "Annually subscription"
         },
         {
             name: "9",
             date: "23322222",
             status: "Active",
-            price: "$9.000",
+            price: "Usopp",
             plan: "Annually subscription"
         },
         {
             name: "10",
             date: "23322222",
             status: "Active",
-            price: "$9.000",
+            price: "Usopp",
             plan: "Annually subscription"
         },
     ]
@@ -122,13 +122,13 @@ const Stores = () => {
                                 <tr key={idx}>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
+                                    <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">{item.plan}</td>
                                     <td className="pr-6 py-4 whitespace-nowrap">
                                         <span className={`px-3 py-2 rounded-full font-semibold text-xs ${item.status == "Active" ? "text-green-600 bg-green-50" : "text-blue-600 bg-blue-50"}`}>
                                             {item.status}
                                         </span>
                                     </td>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
                                     <td className="text-right whitespace-nowrap">
                                         <a href="javascript:void()" className="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg">
                                             Manage
@@ -202,6 +202,7 @@ const Wrapper = styled.div`
   width: 95%;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 `
 
 const Container = styled.div`
