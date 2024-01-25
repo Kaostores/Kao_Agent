@@ -95,7 +95,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "1",
+            name: "11",
             date: "2356477",
             status: "Verified",
             price: "Zoro Roronoa",
@@ -104,7 +104,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "2",
+            name: "12",
             date: "7688801",
             status: "Verified",
             price: "Nico Robin",
@@ -113,7 +113,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "3",
+            name: "13",
             date: "0032648",
             status: "Verified",
             price: "Sanji Vinsmoke",
@@ -122,7 +122,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "4",
+            name: "14",
             date: "9237584",
             status: "Verified",
             price: "Tony Chopper",
@@ -131,7 +131,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "5",
+            name: "15",
             date: "02938423",
             status: "Verified",
             price: "General Franky",
@@ -140,7 +140,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "6",
+            name: "16",
             date: "02938423",
             status: "Verified",
             price: "General Franky",
@@ -149,7 +149,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "7",
+            name: "17",
             date: "09365322",
             status: "Verified",
             price: "Brook",
@@ -158,7 +158,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "8",
+            name: "18",
             date: "09533555",
             status: "Verified",
             price: "Jinbe",
@@ -167,7 +167,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "9",
+            name: "19",
             date: "23322222",
             status: "Verified",
             price: "Usopp",
@@ -176,7 +176,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "10",
+            name: "20",
             date: "23322222",
             status: "Verified",
             price: "Usopp",
@@ -185,7 +185,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "1",
+            name: "21",
             date: "2356477",
             status: "Verified",
             price: "Zoro Roronoa",
@@ -194,7 +194,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "2",
+            name: "22",
             date: "7688801",
             status: "Verified",
             price: "Nico Robin",
@@ -203,7 +203,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "3",
+            name: "23",
             date: "0032648",
             status: "Verified",
             price: "Sanji Vinsmoke",
@@ -212,7 +212,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "4",
+            name: "24",
             date: "9237584",
             status: "Verified",
             price: "Tony Chopper",
@@ -221,7 +221,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "5",
+            name: "25",
             date: "02938423",
             status: "Verified",
             price: "General Franky",
@@ -230,7 +230,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "6",
+            name: "26",
             date: "02938423",
             status: "Verified",
             price: "General Franky",
@@ -239,7 +239,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "7",
+            name: "27",
             date: "09365322",
             status: "Verified",
             price: "Brook",
@@ -248,7 +248,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "8",
+            name: "28",
             date: "09533555",
             status: "Verified",
             price: "Jinbe",
@@ -257,7 +257,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "9",
+            name: "29",
             date: "23322222",
             status: "Verified",
             price: "Usopp",
@@ -266,7 +266,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "10",
+            name: "30",
             date: "23322222",
             status: "Verified",
             price: "Usopp",
@@ -275,7 +275,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "1",
+            name: "31",
             date: "2356477",
             status: "Verified",
             price: "Zoro Roronoa",
@@ -284,7 +284,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "2",
+            name: "32",
             date: "7688801",
             status: "Verified",
             price: "Nico Robin",
@@ -293,7 +293,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "3",
+            name: "33",
             date: "0032648",
             status: "Verified",
             price: "Sanji Vinsmoke",
@@ -302,7 +302,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "4",
+            name: "34",
             date: "9237584",
             status: "Verified",
             price: "Tony Chopper",
@@ -311,7 +311,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "5",
+            name: "35",
             date: "02938423",
             status: "Verified",
             price: "General Franky",
@@ -320,7 +320,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "6",
+            name: "36",
             date: "02938423",
             status: "Verified",
             price: "General Franky",
@@ -329,7 +329,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "7",
+            name: "37",
             date: "09365322",
             status: "Verified",
             price: "Brook",
@@ -338,7 +338,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "8",
+            name: "38",
             date: "09533555",
             status: "Verified",
             price: "Jinbe",
@@ -347,7 +347,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "9",
+            name: "39",
             date: "23322222",
             status: "Verified",
             price: "Usopp",
@@ -356,7 +356,7 @@ const Stores = () => {
             email: "revolutionarmy.gmail.com"
         },
         {
-            name: "10",
+            name: "40",
             date: "23322222",
             status: "Verified",
             price: "Usopp",
