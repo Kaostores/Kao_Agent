@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
+import { IoCameraOutline } from "react-icons/io5";
 import Notverified from './Notverified';
 import Mystore from './Mystore';
 
@@ -12,6 +13,9 @@ const Stores = () => {
 
   const openModal = () => {
     setOpen(!open)
+  }
+  const closeModal = () => {
+    setOpen(false)
   }
 
   const Toogle = () => {
@@ -34,12 +38,16 @@ const Stores = () => {
           <Icon onClick={openModal}><MdOutlineStorefront /></Icon>
 
           {open ? (
-            <Modal>
+            <Modal onClick={closeModal}>
               <Card>
                 <Add>
                   <h3>Add Store</h3>
-                  <Cancle><MdOutlineCancel /></Cancle>
+                  <Cancle onClick={closeModal}><MdOutlineCancel /></Cancle>
                 </Add>
+                <Camerahold>
+                  <Circle><IoCameraOutline /></Circle>
+                  <h3>Store ID - 0002930</h3>
+                </Camerahold>
               </Card>
           </Modal>
           ) : null}
@@ -58,8 +66,33 @@ const Stores = () => {
 }
 
 export default Stores
+const Circle = styled.div`
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  background-color: #F2F2F2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  color: #0030AD;
+  font-size: 22px;
+`
+const Camerahold = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  h3{
+    color: #0030AD;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+`
 const Cancle = styled.div`
   color: #0030AD;
+  cursor: pointer;
 `
 const Add = styled.div`
   width: 100%;
