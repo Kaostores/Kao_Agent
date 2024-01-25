@@ -163,6 +163,10 @@ const Stores = () => {
                 </table>
             </div>
         </div>
+        
+        <Down>
+          <h3>Showing 10 of 40</h3>
+        </Down>
         </Storetableholder>
         ) : null}
 
@@ -177,6 +181,15 @@ const Stores = () => {
 }
 
 export default Stores
+const Down = styled.div`
+  width: 60%;
+  margin-top: 12px;
+  h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+  }
+`
 const Icon = styled.div`
   font-size: 28px;
   color: #0030AD;
@@ -192,6 +205,7 @@ const Storetableholder = styled.div`
   width: 100%;
   margin-top: 20px;
   padding-top: 10px;
+  flex-direction: column;
 `
 const Store = styled.div<{bg: string}>`
   width: 50%;
