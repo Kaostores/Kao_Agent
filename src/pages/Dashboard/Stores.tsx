@@ -64,6 +64,10 @@ const Stores = () => {
                       <input type="email" placeholder='drlawdtrafalgar.gmail.com'/>
                     </Number>
                   </Phone>
+                  <Address>
+                    <h3>Address</h3>
+                    <input type="text" placeholder='First Name'/>
+                  </Address>
                 </Inputhold>
               </Card>
           </Modal>
@@ -83,6 +87,26 @@ const Stores = () => {
 }
 
 export default Stores
+const Address = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  h3{
+    font-size: 14px;
+    color: #797979;
+  }
+  input{
+    width: 100%;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid #DEE3E9;
+    padding-left: 10px;
+    font-size: 12px;
+    margin-top: 3px;
+    outline: none;
+  }
+`
 const Number = styled.div`
   width: 48%;
   display: flex;
@@ -97,7 +121,7 @@ const Number = styled.div`
     border-radius: 5px;
     border: 1px solid #DEE3E9;
     padding-left: 10px;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 3px;
     outline: none;
   }
@@ -122,7 +146,7 @@ const Name = styled.div`
     border-radius: 5px;
     border: 1px solid #DEE3E9;
     padding-left: 10px;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 3px;
     outline: none;
   }
