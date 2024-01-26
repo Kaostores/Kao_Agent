@@ -457,6 +457,13 @@ const Mystore = () => {
                   <Circle><IoCameraOutline /></Circle>
                   <h3>Store ID - 0002930</h3>
                 </Camerahold>
+                
+                <Inputhold>
+                    <Name>
+                    <h3>Name</h3>
+                    <input type="text" placeholder='Revolutionary Army'/>
+                  </Name>
+                </Inputhold>
             </Card>
         </Modal>
         ) : null}
@@ -465,6 +472,31 @@ const Mystore = () => {
 }
 
 export default Mystore
+const Name = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  h3{
+    font-size: 14px;
+    color: #797979;
+  }
+  input{
+    width: 100%;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid #DEE3E9;
+    padding-left: 10px;
+    font-size: 12px;
+    margin-top: 3px;
+    outline: none;
+  }
+`
+const Inputhold = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+`
 const Circle = styled.div`
   width: 55px;
   height: 55px;
