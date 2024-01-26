@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
+import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
 
 const Mystore = () => {
     const [show, setShow] = useState(false)
@@ -471,6 +472,12 @@ const Mystore = () => {
                     <h3>Address</h3>
                     <input type="text" placeholder='First Name'/>
                   </Address>
+                  <Address>
+                    <h3>
+                        <h4> <HiOutlineDocumentArrowUp />Upload</h4>
+                    </h3>
+                    <input type="text" placeholder='First Name'/>
+                  </Address>
                 </Inputhold>
             </Card>
         </Modal>
@@ -485,9 +492,12 @@ const Address = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 15px;
-  h3{
+  h4{
     font-size: 14px;
-    color: #797979;
+    color: #0030AD;
+  }
+  h3{
+    justify-content: space-between;
   }
   input{
     width: 100%;
