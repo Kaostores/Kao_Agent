@@ -128,7 +128,7 @@ const Stores: React.FC = () => {
                     <h3>CAC DOCUMENT</h3>
                     <input id='fileinput' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange} style={{ display: "none" }} />
                     
-                    <Button2>
+                    <Button2 htmlFor='fileinput'>
                       {selectedFile ? `File Selected: ${selectedFile.name}` : 'Upload File'}
                     </Button2>
                 </Name>
@@ -152,7 +152,16 @@ const Stores: React.FC = () => {
 
 export default Stores
 const Button2 = styled.label`
-  
+  cursor: pointer;
+  width: 100%;
+  height: 33px;
+  border: 1px solid #0030AD;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #797979;
+  font-size: 14px;
 `
 const Documentmodal = styled.div`
   position: absolute;
