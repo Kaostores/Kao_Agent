@@ -467,6 +467,10 @@ const Mystore = () => {
                     <h3>Phone Number</h3>
                     <input type="text" placeholder='(234) 708 967 6060'/>
                   </Address>
+                  <Address>
+                    <h3>Address</h3>
+                    <input type="text" placeholder='First Name'/>
+                  </Address>
                 </Inputhold>
             </Card>
         </Modal>
