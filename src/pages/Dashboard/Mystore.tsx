@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
 import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
+import { BsArrowRight } from "react-icons/bs";
 
 const Mystore = () => {
     const [show, setShow] = useState(false)
@@ -475,6 +476,7 @@ const Mystore = () => {
                   <Address>
                     <h5>
                         <h4> <HiOutlineDocumentArrowUp />Upload</h4>
+                        <Right><BsArrowRight /></Right>
                     </h5>
                     <input type="text" placeholder='First Name'/>
                   </Address>
@@ -487,6 +489,9 @@ const Mystore = () => {
 }
 
 export default Mystore
+const Right = styled.div`
+    color: #0030AD;
+`
 const Address = styled.div`
   width: 100%;
   display: flex;
