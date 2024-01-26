@@ -10,7 +10,7 @@ interface FileUploadButtonProps {
   onFileUpload: (file: File) => void
 }
 
-const Stores: React.FC<FileUploadButtonProps> = ({onFileUpload}) => {
+const Stores: React.FC = () => {
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(false)
   const [open, setOpen] = useState(false)
@@ -39,15 +39,7 @@ const Stores: React.FC<FileUploadButtonProps> = ({onFileUpload}) => {
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
 
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-
-    if (files && files.length > 0) {
-      const selected = files[0];
-      setSelectedFile(selected);
-      onFileUpload(selected)
-    }
-  }
+  
   return (
     <Container>
       <Wrapper>
