@@ -93,6 +93,8 @@ const Stores = () => {
                 <h3>Upload documents</h3>
                 <Cancle onClick={closeModal}><MdOutlineCancel /></Cancle>
               </Add>
+              <p>Revolutionary Army</p>
+              <h4>Store ID - 0002930</h4>
             </Card>
           </Documentmodal>
           ) : null}
@@ -262,6 +264,16 @@ const Card = styled.div`
   border-radius: 10px;
   border: 1px solid #0030AD;
   flex-direction: column;
+  h4{
+    color: #0030AD;
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  p{
+    color: #797979;
+    font-size: 14px;
+    margin-top: 5px;
+  }
 `
 const Modal = styled.div`
   position: absolute;
