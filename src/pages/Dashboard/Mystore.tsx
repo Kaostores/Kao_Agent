@@ -463,6 +463,10 @@ const Mystore = () => {
                     <h3>Name</h3>
                     <input type="text" placeholder='Revolutionary Army'/>
                   </Name>
+                  <Address>
+                    <h3>Phone Number</h3>
+                    <input type="text" placeholder='(234) 708 967 6060'/>
+                  </Address>
                 </Inputhold>
             </Card>
         </Modal>
@@ -472,6 +476,26 @@ const Mystore = () => {
 }
 
 export default Mystore
+const Address = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  h3{
+    font-size: 14px;
+    color: #797979;
+  }
+  input{
+    width: 100%;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid #DEE3E9;
+    padding-left: 10px;
+    font-size: 12px;
+    margin-top: 3px;
+    outline: none;
+  }
+`
 const Name = styled.div`
   width: 100%;
   display: flex;
