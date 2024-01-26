@@ -151,7 +151,7 @@ const Stores: React.FC = () => {
 }
 
 export default Stores
-const Button2 = styled.labwl`
+const Button2 = styled.label`
   
 `
 const Documentmodal = styled.div`
