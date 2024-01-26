@@ -10,13 +10,18 @@ const Stores = () => {
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(false)
   const [open, setOpen] = useState(false)
+  const [documentopen, setDocumentopen] = useState(false)
 
-
+  const document = () => {
+    setDocumentopen(true)
+    setOpen(false)
+  }
   const openModal = () => {
     setOpen(!open)
   }
   const closeModal = () => {
     setOpen(false)
+    setDocumentopen(false)
   }
 
   const Toogle = () => {
@@ -72,13 +77,24 @@ const Stores = () => {
                 </Inputhold>
                 <Buttonhold>
                   <Button bg="#0030AD" cl="#fff" pl="" br="">Save</Button>
-                  <Button bg="#fff" cl="#0030AD" pl="15px" br="1px solid #0030AD">
+                  <Button onClick={document} bg="#fff" cl="#0030AD" pl="15px" br="1px solid #0030AD">
                     <I><HiOutlineDocumentArrowUp /></I>
                     Upload
                   </Button>
                 </Buttonhold>
               </Card>
           </Modal>
+          ) : null}
+
+          {documentopen ? (
+            <Documentmodal>
+            <Card>
+              <Add>
+                <h3>Upload documents</h3>
+                <Cancle onClick={closeModal}><MdOutlineCancel /></Cancle>
+              </Add>
+            </Card>
+          </Documentmodal>
           ) : null}
         </Top>
 
@@ -95,6 +111,19 @@ const Stores = () => {
 }
 
 export default Stores
+const Documentmodal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f3f3b2;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 350ms ease-in-out;
+`
 const I = styled.div`
   margin-right: 7px;
 `
