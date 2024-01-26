@@ -100,7 +100,7 @@ const Stores: React.FC = () => {
                     <input type="text" placeholder='First Name'/>
                   </Address>
                 </Inputhold>
-                <Buttonhold>
+                <Buttonhold ju="flex-end">
                   <Button bg="#0030AD" cl="#fff" pl="" br="">Save</Button>
                   <Button onClick={document} bg="#fff" cl="#0030AD" pl="15px" br="1px solid #0030AD">
                     <I><HiOutlineDocumentArrowUp /></I>
@@ -194,6 +194,12 @@ const Stores: React.FC = () => {
                     </Button2>
                 </Name2>
               </Inputhold>
+              <Buttonhold ju="space-between">
+                  <Button onClick={document} bg="#0030AD" cl="#fff" pl="" br="">
+                    <I><HiOutlineDocumentArrowUp /></I>
+                    Upload
+                  </Button>
+              </Buttonhold>
             </Card>
           </Documentmodal>
           ) : null}
@@ -259,11 +265,11 @@ const Button = styled.button<{ bg: string; cl: string; pl: string;  br: string}>
   justify-content: center;
   align-items: center;
 `
-const Buttonhold = styled.div`
+const Buttonhold = styled.div<{ju: string}>`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: ${({ju}) => ju};
   margin-top: 15px;
 `
 const Address = styled.div`
