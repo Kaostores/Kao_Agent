@@ -39,7 +39,19 @@ const Stores: React.FC = () => {
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
 
-  
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+
+    if (files && files.length > 0) {
+      const selected = files[0];
+      setSelectedFile(selected);
+      handleFileUpload(selected);
+    }
+  };
+  const handleFileUpload = (file: File) => {
+    // Handle the uploaded file, for example, send it to a server, etc.
+    console.log('File uploaded:', file);
+  };
   return (
     <Container>
       <Wrapper>
