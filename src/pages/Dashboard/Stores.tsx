@@ -34,6 +34,7 @@ const Stores: React.FC = () => {
   }
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [selectedFile2, setSelectedFile2] = useState<File | null>(null)
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -41,11 +42,11 @@ const Stores: React.FC = () => {
     if (files && files.length > 0) {
       const selected = files[0];
       setSelectedFile(selected);
+      setSelectedFile2(selected);
       handleFileUpload(selected);
     }
   };
   const handleFileUpload = (file: File) => {
-    // Handle the uploaded file, for example, send it to a server, etc.
     console.log('File uploaded:', file);
   };
   return (
@@ -119,17 +120,35 @@ const Stores: React.FC = () => {
                     
                     <Button2 htmlFor='fileinput'>
                       {selectedFile ? (
-            <>
-              File Selected: {selectedFile.name}
-            </>
-          ) : (
-            <>
-              Revolutionary ArmyCAC
-              <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
-            </>
-          )}
+                        <>
+                          {selectedFile.name}
+                        </>
+                      ) : (
+                        <>
+                          Revolutionary ArmyCAC
+                          <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
+                        </>
+                      )}
                     </Button2>
                 </Name>
+                
+                <Name2>
+                    <h3>KYC</h3>
+                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange} style={{ display: "none" }} />
+                    
+                    <Button2 htmlFor='fileinput2'>
+                      {selectedFile2 ? (
+                        <>
+                          {selectedFile2.name}
+                        </>
+                      ) : (
+                        <>
+                          <p>Upload the titled document here</p>
+                          <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
+                        </>
+                      )}
+                    </Button2>
+                </Name2>
               </Inputhold>
             </Card>
           </Documentmodal>
@@ -161,6 +180,11 @@ const Button2 = styled.label`
   color: #797979;
   font-size: 14px;
   margin-top: 5px;
+  p{
+    color: #0030AD;
+    font-size: 14px;
+    font-style: italic;
+  }
 `
 const Documentmodal = styled.div`
   position: absolute;
@@ -242,6 +266,26 @@ const Phone = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+`
+const Name2 = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 13px;
+  h3{
+    font-size: 14px;
+    color: #797979;
+  }
+  input{
+    width: 100%;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid #DEE3E9;
+    padding-left: 10px;
+    font-size: 12px;
+    margin-top: 3px;
+    outline: none;
+  }
 `
 const Name = styled.div`
   width: 100%;
