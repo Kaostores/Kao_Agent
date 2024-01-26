@@ -1,14 +1,10 @@
-import React, {useState, ChangeEvent, useRef} from 'react'
+import React, {useState, ChangeEvent} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
 import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
 import Notverified from './Notverified';
 import Mystore from './Mystore';
-
-interface FileUploadButtonProps {
-  onFileUpload: (file: File) => void
-}
 
 const Stores: React.FC = () => {
   const [show, setShow] = useState(true);
@@ -38,13 +34,6 @@ const Stores: React.FC = () => {
   }
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const triggerFileInput = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
-  };
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -129,7 +118,16 @@ const Stores: React.FC = () => {
                     <input id='fileinput' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange} style={{ display: "none" }} />
                     
                     <Button2 htmlFor='fileinput'>
-                      {selectedFile ? `File Selected: ${selectedFile.name}` : 'Upload File'}
+                      {selectedFile ? (
+            <>
+              File Selected: {selectedFile.name}
+            </>
+          ) : (
+            <>
+              Revolutionary ArmyCAC
+              <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
+            </>
+          )}
                     </Button2>
                 </Name>
               </Inputhold>
@@ -162,6 +160,7 @@ const Button2 = styled.label`
   padding-left: 10px;
   color: #797979;
   font-size: 14px;
+  margin-top: 5px;
 `
 const Documentmodal = styled.div`
   position: absolute;
