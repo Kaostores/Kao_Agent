@@ -36,6 +36,18 @@ const Stores: React.FC<FileUploadButtonProps> = ({onFileUpload}) => {
     setShow2(true)
     setShow(false)
   }
+
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+
+    if (files && files.length > 0) {
+      const selected = files[0];
+      setSelectedFile(selected);
+      onFileUpload(selected)
+    }
+  }
   return (
     <Container>
       <Wrapper>
