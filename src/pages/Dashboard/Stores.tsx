@@ -33,6 +33,10 @@ const Stores: React.FC = () => {
     setShow2(true)
     setShow(false)
   }
+  const Goback = () => {
+    setOpen(true)
+    setDocumentopen(false)
+  }
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [selectedFile2, setSelectedFile2] = useState<File | null>(null)
@@ -216,7 +220,7 @@ const Stores: React.FC = () => {
                 </Name2>
               </Inputhold>
               <Buttonhold ju="space-between">
-                  <Arrowleft><BsArrowLeft /></Arrowleft>
+                  <Arrowleft onClick={Goback}><BsArrowLeft /></Arrowleft>
                   <Button onClick={document} bg="#0030AD" cl="#fff" pl="" br="">
                     <I><HiOutlineDocumentArrowUp /></I>
                     Upload
