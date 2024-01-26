@@ -157,6 +157,42 @@ const Stores: React.FC = () => {
                       )}
                     </Button2>
                 </Name2>
+                
+                <Name2>
+                    <h3>Business</h3>
+                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange2} style={{ display: "none" }} />
+                    
+                    <Button2 htmlFor='fileinput2'>
+                      {selectedFile2 ? (
+                        <>
+                          {selectedFile2.name}
+                        </>
+                      ) : (
+                        <>
+                          <p>Upload the titled document here</p>
+                          <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
+                        </>
+                      )}
+                    </Button2>
+                </Name2>
+                
+                <Name2>
+                    <h3>Utility Bill</h3>
+                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange2} style={{ display: "none" }} />
+                    
+                    <Button2 htmlFor='fileinput2'>
+                      {selectedFile2 ? (
+                        <>
+                          {selectedFile2.name}
+                        </>
+                      ) : (
+                        <>
+                          <p>Upload the titled document here</p>
+                          <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
+                        </>
+                      )}
+                    </Button2>
+                </Name2>
               </Inputhold>
             </Card>
           </Documentmodal>
