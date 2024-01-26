@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
 import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
+import { BsArrowLeft } from "react-icons/bs";
 import Notverified from './Notverified';
 import Mystore from './Mystore';
 
@@ -35,7 +36,27 @@ const Stores: React.FC = () => {
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [selectedFile2, setSelectedFile2] = useState<File | null>(null)
+  const [selectedFile3, setSelectedFile3] = useState<File | null>(null)
+  const [selectedFile4, setSelectedFile4] = useState<File | null>(null)
 
+  const handleFileChange4 = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+
+    if (files && files.length > 0) {
+      const selected = files[0];
+      setSelectedFile4(selected);
+      handleFileUpload(selected);
+    }
+  };
+  const handleFileChange3 = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+
+    if (files && files.length > 0) {
+      const selected = files[0];
+      setSelectedFile3(selected);
+      handleFileUpload(selected);
+    }
+  };
   const handleFileChange2 = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
 
@@ -160,12 +181,12 @@ const Stores: React.FC = () => {
                 
                 <Name2>
                     <h3>Business</h3>
-                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange2} style={{ display: "none" }} />
+                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange3} style={{ display: "none" }} />
                     
                     <Button2 htmlFor='fileinput2'>
-                      {selectedFile2 ? (
+                      {selectedFile3 ? (
                         <>
-                          {selectedFile2.name}
+                          {selectedFile3.name}
                         </>
                       ) : (
                         <>
@@ -178,12 +199,12 @@ const Stores: React.FC = () => {
                 
                 <Name2>
                     <h3>Utility Bill</h3>
-                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange2} style={{ display: "none" }} />
+                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange4} style={{ display: "none" }} />
                     
                     <Button2 htmlFor='fileinput2'>
-                      {selectedFile2 ? (
+                      {selectedFile4 ? (
                         <>
-                          {selectedFile2.name}
+                          {selectedFile4.name}
                         </>
                       ) : (
                         <>
@@ -195,6 +216,7 @@ const Stores: React.FC = () => {
                 </Name2>
               </Inputhold>
               <Buttonhold ju="space-between">
+                  <Arrowleft><BsArrowLeft /></Arrowleft>
                   <Button onClick={document} bg="#0030AD" cl="#fff" pl="" br="">
                     <I><HiOutlineDocumentArrowUp /></I>
                     Upload
@@ -218,6 +240,10 @@ const Stores: React.FC = () => {
 }
 
 export default Stores
+const Arrowleft = styled.div`
+  color: #0030AD;
+  cursor: pointer;
+`
 const Button2 = styled.label`
   cursor: pointer;
   width: 100%;
