@@ -473,9 +473,9 @@ const Mystore = () => {
                     <input type="text" placeholder='First Name'/>
                   </Address>
                   <Address>
-                    <h3>
+                    <h5>
                         <h4> <HiOutlineDocumentArrowUp />Upload</h4>
-                    </h3>
+                    </h5>
                     <input type="text" placeholder='First Name'/>
                   </Address>
                 </Inputhold>
@@ -492,12 +492,21 @@ const Address = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  h3{
+    font-size: 14px;
+    color: #797979;
+  }
   h4{
     font-size: 14px;
     color: #0030AD;
+    display: flex;
+    align-items: center;
   }
-  h3{
+  h5{
     justify-content: space-between;
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
   input{
     width: 100%;
