@@ -1,4 +1,4 @@
-import React, {useState, ChangeEvent} from 'react'
+import React, {useState, ChangeEvent, useRef} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
@@ -38,6 +38,13 @@ const Stores: React.FC = () => {
   }
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const triggerFileInput = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -118,7 +125,12 @@ const Stores: React.FC = () => {
               
               <Inputhold>
                 <Name>
-                  <h3>CAC DOCUMENT</h3>
+                    <h3>CAC DOCUMENT</h3>
+                    <input id='fileinput' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange} style={{ display: "none" }} />
+                    
+                    <Button2>
+                      {selectedFile ? `File Selected: ${selectedFile.name}` : 'Upload File'}
+                    </Button2>
                 </Name>
               </Inputhold>
             </Card>
@@ -139,6 +151,9 @@ const Stores: React.FC = () => {
 }
 
 export default Stores
+const Button2 = styled.labwl`
+  
+`
 const Documentmodal = styled.div`
   position: absolute;
   width: 100%;
