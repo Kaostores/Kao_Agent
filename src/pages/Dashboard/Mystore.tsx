@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { MdOutlineStorefront } from "react-icons/md";
 
 const Mystore = () => {
+    const [show, setShow] = useState(false)
+
+    const Toggle = () => {
+        setShow(!show)
+    }
     const tableItems = [
         {
             name: "1",
@@ -414,7 +419,7 @@ const Mystore = () => {
                                           }`}>{item.status}
                                           </span>
                                     </td>
-                                    <td className="px-6 py-4 text-[19px] text-[#0030AD] cursor-pointer ml-[30px]"><MdOutlineStorefront /></td>
+                                    <td  className="px-6 py-4 text-[19px] text-[#0030AD] cursor-pointer ml-[30px]"><MdOutlineStorefront onClick={Toggle}/></td>
                                 </tr>
                         ))}
                     </tbody>
@@ -438,11 +443,30 @@ const Mystore = () => {
               </Pagination>
               <Button>gfgfgfgfgfgffg</Button>
         </Down>
+        
+        {show ? (
+            <Modal>
+            
+        </Modal>
+        ) : null}
     </Container>
   )
 }
 
 export default Mystore
+const Modal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f3f3b2;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 350ms ease-in-out;
+`
 const Button = styled.div`
   visibility: hidden;
 `
