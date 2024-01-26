@@ -36,13 +36,21 @@ const Stores: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [selectedFile2, setSelectedFile2] = useState<File | null>(null)
 
+  const handleFileChange2 = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+
+    if (files && files.length > 0) {
+      const selected = files[0];
+      setSelectedFile2(selected);
+      handleFileUpload(selected);
+    }
+  };
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
 
     if (files && files.length > 0) {
       const selected = files[0];
       setSelectedFile(selected);
-      setSelectedFile2(selected);
       handleFileUpload(selected);
     }
   };
@@ -134,7 +142,7 @@ const Stores: React.FC = () => {
                 
                 <Name2>
                     <h3>KYC</h3>
-                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange} style={{ display: "none" }} />
+                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange2} style={{ display: "none" }} />
                     
                     <Button2 htmlFor='fileinput2'>
                       {selectedFile2 ? (
