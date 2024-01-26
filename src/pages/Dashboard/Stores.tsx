@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
+import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
 import Notverified from './Notverified';
 import Mystore from './Mystore';
 
@@ -69,6 +70,13 @@ const Stores = () => {
                     <input type="text" placeholder='First Name'/>
                   </Address>
                 </Inputhold>
+                <Buttonhold>
+                  <Button bg="#0030AD" cl="#fff" pl="" br="">Save</Button>
+                  <Button bg="#fff" cl="#0030AD" pl="15px" br="1px solid #0030AD">
+                    <I><HiOutlineDocumentArrowUp /></I>
+                    Upload
+                  </Button>
+                </Buttonhold>
               </Card>
           </Modal>
           ) : null}
@@ -87,6 +95,29 @@ const Stores = () => {
 }
 
 export default Stores
+const I = styled.div`
+  margin-right: 7px;
+`
+const Button = styled.button<{ bg: string; cl: string; pl: string;  br: string}>`
+  width: 100px;
+  height: 35px;
+  background-color: ${({bg}) => bg};
+  color: ${({cl}) => cl};
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: ${({ pl }) => pl};
+  border: ${({ br }) => br};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const Buttonhold = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 15px;
+`
 const Address = styled.div`
   width: 100%;
   display: flex;
