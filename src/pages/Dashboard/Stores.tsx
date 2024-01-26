@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, ChangeEvent} from 'react'
 import styled from 'styled-components'
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
@@ -6,7 +6,11 @@ import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
 import Notverified from './Notverified';
 import Mystore from './Mystore';
 
-const Stores = () => {
+interface FileUploadButtonProps {
+  onFileUpload: (file: File) => void
+}
+
+const Stores: React.FC<FileUploadButtonProps> = ({onFileUpload}) => {
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(false)
   const [open, setOpen] = useState(false)
@@ -95,6 +99,12 @@ const Stores = () => {
               </Add>
               <p>Revolutionary Army</p>
               <h4>Store ID - 0002930</h4>
+              
+              <Inputhold>
+                <Name>
+                  <h3>CAC DOCUMENT</h3>
+                </Name>
+              </Inputhold>
             </Card>
           </Documentmodal>
           ) : null}
