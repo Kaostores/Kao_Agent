@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { MdOutlineStorefront } from "react-icons/md";
+import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 
 const Mystore = () => {
     const [show, setShow] = useState(false)
@@ -446,7 +446,12 @@ const Mystore = () => {
         
         {show ? (
             <Modal>
-            
+            <Card>
+                <Add>
+                  <h3>Edit Store</h3>
+                  <Cancle><MdOutlineCancel /></Cancle>
+                </Add>
+            </Card>
         </Modal>
         ) : null}
     </Container>
@@ -454,6 +459,38 @@ const Mystore = () => {
 }
 
 export default Mystore
+const Cancle = styled.div`
+  color: #0030AD;
+  cursor: pointer;
+`
+const Add = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3{
+    color: #797979;
+    font-size: 16px;
+  }
+`
+const Card = styled.div`
+  width: 350px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #0030AD;
+  flex-direction: column;
+  h4{
+    color: #0030AD;
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  p{
+    color: #797979;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+`
 const Modal = styled.div`
   position: absolute;
   width: 100%;
