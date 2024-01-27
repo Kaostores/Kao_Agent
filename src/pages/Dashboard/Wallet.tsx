@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { IoWalletOutline } from "react-icons/io5";
 import { IoIosArrowDown, IoMdArrowUp } from "react-icons/io";
+import { MdOutlineArrowDownward } from "react-icons/md";
 
 const Wallet = () => {
   return (
@@ -41,6 +42,11 @@ const Wallet = () => {
 
           <Charthold>
             <h3>Income</h3>
+            <Since>
+              <Icon1 cl="#FF0000" fs="" ml=""><MdOutlineArrowDownward /></Icon1>
+              <h5>16.21%</h5>
+              <p>SInce last week</p>
+            </Since>
           </Charthold>
         </Right>
         <Left>
@@ -52,6 +58,21 @@ const Wallet = () => {
 }
 
 export default Wallet
+const Since = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  p{
+    color: #797979;
+    font-size: 12px;
+    margin-left: 7px;
+  }
+  h5{
+    color: #FF0000;
+    font-size: 13px;
+    margin-left: 7px;
+  }
+`
 const Charthold = styled.div`
   width: 100%;
   padding: 10px 10px;
