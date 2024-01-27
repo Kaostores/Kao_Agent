@@ -114,7 +114,17 @@ const Wallet = () => {
           </Charthold>
         </Right>
         <Left>
-
+          <Transactionhold>
+            <Balancehold>
+              <Balance>
+                <h3>Transactions</h3>
+              </Balance>
+              <Kao>
+                <h3 style={{color: "#797979"}}>This Year</h3>
+                <Icon1 cl="#0030AD" fs="" ml="5px"><IoIosArrowDown /></Icon1>
+              </Kao>
+            </Balancehold>
+          </Transactionhold>
         </Left>
       </Wrapper>
     </Container>
@@ -122,6 +132,14 @@ const Wallet = () => {
 }
 
 export default Wallet
+const Transactionhold = styled.div`
+  width: 100%;
+  padding: 10px 10px;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`
 const Holder = styled.div`
   width: 100%;
   margin-top: 10px;
