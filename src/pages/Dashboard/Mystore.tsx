@@ -492,6 +492,7 @@ const Mystore = () => {
                         <h4> <HiOutlineDocumentArrowUp />Upload</h4>
                         <Right><BsArrowRight /></Right>
                     </h5>
+                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange4} style={{ display: "none" }} />
                     <Button2 htmlFor='fileinput2'>
                       {selectedFile4 ? (
                         <>
