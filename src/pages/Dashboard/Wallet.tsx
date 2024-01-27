@@ -96,7 +96,7 @@ const Wallet = () => {
             <Holder>
             <LineChart
             style={{marginLeft: "-20px"}}
-            width={400} height={250}
+            width={400} height={220}
             data={data}
             margin={{
               top: 5,
