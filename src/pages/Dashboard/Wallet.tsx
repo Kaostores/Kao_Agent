@@ -3,8 +3,53 @@ import styled from 'styled-components'
 import { IoWalletOutline } from "react-icons/io5";
 import { IoIosArrowDown, IoMdArrowUp } from "react-icons/io";
 import { MdOutlineArrowDownward } from "react-icons/md";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 
 const Wallet = () => {
+  const data = [
+  {
+    name: "Mon",
+    cl: 3000,
+    c2: 2400,
+    c3: 1400,
+  },
+  {
+    name: "Tue",
+    cl: 2000,
+    c2: 1000,
+    c3: 2210,
+  },
+  {
+    name: "Wed",
+    cl: 1400,
+    c2: 10100,
+    c3: 1290,
+  },
+  {
+    name: "Thu",
+    cl: 3120,
+    c2: 4400,
+    c3: 1000,
+  },
+  {
+    name: "Fri",
+    cl: 2200,
+    c2: 1840,
+    c3: 2210,
+  },
+  {
+    name: "Sat",
+    cl: 4480,
+    c2: 2220,
+    c3: 1110,
+  },
+  {
+    name: "Sun",
+    cl: 2220,
+    c2: 1230,
+    c3: 2569,
+  },
+]
   return (
     <Container>
       <Wrapper>
@@ -47,6 +92,25 @@ const Wallet = () => {
               <h5>16.21%</h5>
               <p>SInce last week</p>
             </Since>
+
+            <Holder>
+            <LineChart
+            style={{marginLeft: "-20px"}}
+            width={400} height={250}
+            data={data}
+            margin={{
+              top: 5,
+              right: 50,
+              bottom: 5
+            }}>
+            <CartesianGrid strokeDasharray='3 ' />
+            <XAxis dataKey='name' tick={{ fontSize: 12 }}/>
+            <YAxis tick={{ fontSize: 12 }}/>
+            <Tooltip />
+            <Legend />
+                <Line type="monotone" dataKey="c3" stroke="#0030AD" />
+          </LineChart>
+          </Holder>
           </Charthold>
         </Right>
         <Left>
@@ -58,6 +122,10 @@ const Wallet = () => {
 }
 
 export default Wallet
+const Holder = styled.div`
+  width: 100%;
+  margin-top: 10px;
+`
 const Since = styled.div`
   display: flex;
   align-items: center;
