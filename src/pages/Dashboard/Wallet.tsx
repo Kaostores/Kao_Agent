@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IoWalletOutline } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Wallet = () => {
   return (
@@ -10,7 +11,7 @@ const Wallet = () => {
           <Top>
             <Balancehold>
               <Balance>
-                <Icon1><IoWalletOutline /></Icon1>
+                <Icon1 cl="#0030AD" fs="20px" ml=""><IoWalletOutline /></Icon1>
                 <h3>Balance</h3>
               </Balance>
               <Kao>
@@ -19,6 +20,9 @@ const Wallet = () => {
               </Kao>
             </Balancehold>
             <Amount><h2>KAO 54,000.00</h2></Amount>
+            <Profithold>
+              <p>Profit today <Icon1 cl="#0030AD" fs="" ml="5px"><IoIosArrowDown /></Icon1></p>
+            </Profithold>
           </Top>
         </Right>
         <Left>
@@ -30,6 +34,18 @@ const Wallet = () => {
 }
 
 export default Wallet
+const Profithold = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 23px;
+  p{
+    color: #797979;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+  }
+`
 const Amount = styled.div`
   margin-top: 22px;
   h2{
@@ -52,9 +68,10 @@ const Kao = styled.div`
     margin-left: 5px;
   }
 `
-const Icon1 = styled.div`
-  color: #0030AD;
-  font-size: 20px;
+const Icon1 = styled.div<{ cl: string; fs: string;  ml: string}>`
+  color: ${({cl}) => cl};
+  font-size: ${({fs}) => fs};
+  margin-left: ${({ml}) => ml};
 `
 const Balance = styled.div`
   display: flex;
