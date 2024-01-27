@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IoWalletOutline } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoMdArrowUp } from "react-icons/io";
 
 const Wallet = () => {
   return (
@@ -22,6 +22,10 @@ const Wallet = () => {
             <Amount><h2>KAO 54,000.00</h2></Amount>
             <Profithold>
               <p>Profit today <Icon1 cl="#0030AD" fs="" ml="5px"><IoIosArrowDown /></Icon1></p>
+              <Balancehold>
+                <h2>KAO 5,000</h2>
+                <h4><Icon1 cl="#008348" fs="" ml=""><IoMdArrowUp /></Icon1>1.27%</h4>
+              </Balancehold>
             </Profithold>
           </Top>
         </Right>
@@ -87,6 +91,16 @@ const Balancehold = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  h4{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #008348;
+  }
+  h2{
+    color: #008348;
+    font-size: 13px;
+  }
 `
 const Top = styled.div`
   width: 100%;
