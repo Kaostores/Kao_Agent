@@ -38,6 +38,10 @@ const Wallet = () => {
               </Balancehold>
             </Profithold>
           </Exchange>
+
+          <Charthold>
+            <h3>Income</h3>
+          </Charthold>
         </Right>
         <Left>
 
@@ -48,6 +52,19 @@ const Wallet = () => {
 }
 
 export default Wallet
+const Charthold = styled.div`
+  width: 100%;
+  padding: 10px 10px;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 20px;
+  h3{
+    color: #797979;
+    font-size: 15px;
+  }
+`
 const Exchange = styled.div`
   width: 100%;
   padding: 10px 10px;
