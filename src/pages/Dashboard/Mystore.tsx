@@ -478,7 +478,18 @@ const Mystore = () => {
                         <h4> <HiOutlineDocumentArrowUp />Upload</h4>
                         <Right><BsArrowRight /></Right>
                     </h5>
-                    <input type="text" placeholder='First Name'/>
+                    <Button2 htmlFor='fileinput2'>
+                      {selectedFile4 ? (
+                        <>
+                          {selectedFile4.name}
+                        </>
+                      ) : (
+                        <>
+                          <p>Upload the titled document here</p>
+                          <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
+                        </>
+                      )}
+                    </Button2>
                   </Address>
                 </Inputhold>
             </Card>
@@ -496,7 +507,7 @@ const Address = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 10px;
   h3{
     font-size: 14px;
     color: #797979;
