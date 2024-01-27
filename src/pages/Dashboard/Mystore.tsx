@@ -25,6 +25,9 @@ const Mystore = () => {
     const Toggle = () => {
         setShow(!show)
     }
+    const Close = () => {
+        setShow(false)
+    }
     const tableItems = [
         {
             name: "1",
@@ -466,7 +469,7 @@ const Mystore = () => {
             <Card>
                 <Add>
                   <h3>Edit Store</h3>
-                  <Cancle><MdOutlineCancel /></Cancle>
+                  <Cancle onClick={Close}><MdOutlineCancel /></Cancle>
                 </Add>
                 
                 <Camerahold>
