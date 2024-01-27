@@ -20,7 +20,7 @@ const Wallet = () => {
               </Kao>
             </Balancehold>
             <Amount><h2>KAO 54,000.00</h2></Amount>
-            <Profithold>
+            <Profithold mt="23px">
               <p>Profit today <Icon1 cl="#0030AD" fs="" ml="5px"><IoIosArrowDown /></Icon1></p>
               <Balancehold>
                 <h2>KAO 5,000</h2>
@@ -30,7 +30,7 @@ const Wallet = () => {
           </Top>
 
           <Exchange>
-            <Profithold>
+            <Profithold mt="">
               <p>Exchange rate</p>
               <Balancehold>
                 <h2>KAO 1.01 = NGN 5.00</h2>
@@ -57,11 +57,11 @@ const Exchange = styled.div`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-top: 20px;
 `
-const Profithold = styled.div`
+const Profithold = styled.div<{mt: string}>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 23px;
+  margin-top: ${({mt}) => mt};
   p{
     color: #797979;
     font-size: 10px;
