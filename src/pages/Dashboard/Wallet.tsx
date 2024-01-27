@@ -18,19 +18,20 @@ const Wallet = () => {
 
 export default Wallet
 const Left = styled.div`
-  width: 60%;
-  height: 40px;
-  background-color: green;
+  width: 53%;
+  display: flex;
+  flex-direction: column;
 `
 const Right = styled.div`
-  width: 38%;
-  height: 40px;
-  background-color: red;
+  width: 44%;
+  display: flex;
+  flex-direction: column;
 `
 const Wrapper = styled.div`
   width: 95%;
   display: flex;
   background-color: #fff;
+  justify-content: space-between;
   padding: 13px 13px;
 `
 const Container = styled.div`
