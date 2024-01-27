@@ -18,6 +18,7 @@ const Wallet = () => {
                 <p>NGN</p>
               </Kao>
             </Balancehold>
+            <Amount><h2>KAO 54,000.00</h2></Amount>
           </Top>
         </Right>
         <Left>
@@ -29,6 +30,14 @@ const Wallet = () => {
 }
 
 export default Wallet
+const Amount = styled.div`
+  margin-top: 22px;
+  h2{
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+  }
+`
 const Kao = styled.div`
   display: flex;
   align-items: center;
