@@ -5,21 +5,33 @@ const Wallet = () => {
   return (
     <Container>
       <Wrapper>
+        <Right>
 
+        </Right>
+        <Left>
+
+        </Left>
       </Wrapper>
     </Container>
   )
 }
 
 export default Wallet
+const Left = styled.div`
+  width: 60%;
+  height: 40px;
+  background-color: green;
+`
+const Right = styled.div`
+  width: 38%;
+  height: 40px;
+  background-color: red;
+`
 const Wrapper = styled.div`
   width: 95%;
   display: flex;
-  flex-direction: column;
   background-color: #fff;
   padding: 13px 13px;
-  height: 40px;
-  background-color: red;
 `
 const Container = styled.div`
   width: 100%;
