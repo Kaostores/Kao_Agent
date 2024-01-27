@@ -28,6 +28,16 @@ const Wallet = () => {
               </Balancehold>
             </Profithold>
           </Top>
+
+          <Exchange>
+            <Profithold>
+              <p>Exchange rate</p>
+              <Balancehold>
+                <h2>KAO 1.01 = NGN 5.00</h2>
+                <h4><Icon1 cl="#008348" fs="" ml=""><IoMdArrowUp /></Icon1>3.27%</h4>
+              </Balancehold>
+            </Profithold>
+          </Exchange>
         </Right>
         <Left>
 
@@ -38,6 +48,15 @@ const Wallet = () => {
 }
 
 export default Wallet
+const Exchange = styled.div`
+  width: 100%;
+  padding: 10px 10px;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 20px;
+`
 const Profithold = styled.div`
   width: 100%;
   display: flex;
