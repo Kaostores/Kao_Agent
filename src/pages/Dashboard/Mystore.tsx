@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, ChangeEvent } from 'react'
 import styled from 'styled-components';
 import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
 import { IoCameraOutline } from "react-icons/io5";
@@ -7,6 +7,20 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Mystore = () => {
     const [show, setShow] = useState(false)
+    const [selectedFile4, setSelectedFile4] = useState<File | null>(null)
+
+  const handleFileChange4 = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+
+    if (files && files.length > 0) {
+      const selected = files[0];
+      setSelectedFile4(selected);
+      handleFileUpload(selected);
+    }
+  };
+  const handleFileUpload = (file: File) => {
+    console.log('File uploaded:', file);
+  };
 
     const Toggle = () => {
         setShow(!show)
@@ -500,6 +514,24 @@ const Mystore = () => {
 }
 
 export default Mystore
+const Button2 = styled.label`
+  cursor: pointer;
+  width: 100%;
+  height: 33px;
+  border: 1px solid #0030AD;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #797979;
+  font-size: 14px;
+  margin-top: 5px;
+  p{
+    color: #0030AD;
+    font-size: 14px;
+    font-style: italic;
+  }
+`
 const Right = styled.div`
     color: #0030AD;
 `
