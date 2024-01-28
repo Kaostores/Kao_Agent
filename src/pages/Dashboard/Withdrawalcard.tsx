@@ -23,7 +23,11 @@ const Withdrawalcard = () => {
 
           <Boxhold>
               <Bankhold>
-                  <Icon3><IoIosArrowDown /></Icon3>
+                  <div>
+                      <Icon3><IoIosArrowDown /></Icon3>
+                  <p>First Bank - Acc: ***1010</p>
+                  </div>
+                  <Button>Send</Button>
               </Bankhold>
           </Boxhold>
     </Container>
@@ -31,6 +35,18 @@ const Withdrawalcard = () => {
 }
 
 export default Withdrawalcard
+const Button = styled.button`
+    width: 80px;
+    height: 32px;
+    background-color: #0030AD;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+`
 const Icon3 = styled.div`
     color: #0030AD;
 `
@@ -43,6 +59,11 @@ const Bankhold = styled.div`
     border-radius: 5px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    p{
+        font-size: 14px;
+        margin-left: 5px;
+    }
 `
 const Boxhold = styled.div`
     display: flex;
