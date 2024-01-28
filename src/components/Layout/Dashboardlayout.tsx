@@ -1,9 +1,8 @@
 import React from 'react'
-import { Outlet, useLocation } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import { Sidebar, Dashboardhead } from '../Static'
 
 const Dashboardlayout: React.FC = () => {
-  const location = useLocation();
   return (
     <>
       <div className='w-full h-screen relative flex max-[800px]:hidden bg-[#F3F3F3]'>
