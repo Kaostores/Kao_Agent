@@ -28,9 +28,9 @@ const Transactiontable = () => {
         },
         {
             name: "Dolce  Gabbana",
-            items: "3000",
-            type: "3000",
-            amount: "N1,898,000",
+            items: "2.3.2023",
+            type: "Withdrawal",
+            amount: "KAO 13,000",
         },
       ]
   return (
@@ -51,7 +51,14 @@ const Transactiontable = () => {
                                     <td className="pr-6 pl-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.id}</td>
                                     <td className="pr-6 pl-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.date}</td>
                                     <td className="pr-6 pl-6  py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.type}</td>
-                                    <td className="pr-6 pl-6  py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.amount}</td>
+                                    <td className="pr-6 pl-6  py-2 whitespace-nowrap text-[#797979] text-[13px]">
+                                        <span className={` ${
+                                        item.amount === "KAO 300" || item.amount === "KAO 13,000" ?
+                                        "text-[#008348]" :
+                                        "text-[#EF3E42]"
+                                        }`}>{item.amount}</span>
+                                    </td>
+                                    
                                 </tr>
                             ))
                         }
