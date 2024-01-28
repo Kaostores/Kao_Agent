@@ -3,28 +3,33 @@ import React from 'react'
 const Transactiontable = () => {
     const tableItems = [
         {
-            name: "Mera mera",
-            items: "7,540",
-            amount: "N1,898,000",
+            id: "0984933",
+            date: "2.3.2023",
+            type: "Deposit",
+            amount: "KAO 300",
         },
         {
             name: "Philip Morris International",
             items: "6011",
+            type: "6011",
             amount: "N1,898,000",
         },
         {
             name: "Donna Karan",
             items: "6001",
+            type: "6001",
             amount: "N1,898,000",
         },
         {
             name: "Marco Pollo",
             items: "4500",
+            type: "4500",
             amount: "N1,898,000",
         },
         {
             name: "Dolce  Gabbana",
             items: "3000",
+            type: "3000",
             amount: "N1,898,000",
         },
       ]
@@ -43,8 +48,9 @@ const Transactiontable = () => {
                         {
                             tableItems.map((item, idx) => (
                                 <tr key={idx}>
-                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.name}</td>
-                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.items}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.id}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.date}</td>
+                                    <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.type}</td>
                                     <td className="pr-6 py-2 whitespace-nowrap text-[#797979] text-[13px]">{item.amount}</td>
                                 </tr>
                             ))
