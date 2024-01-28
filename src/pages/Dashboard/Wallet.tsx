@@ -4,6 +4,7 @@ import { IoWalletOutline } from "react-icons/io5";
 import { IoIosArrowDown, IoMdArrowUp } from "react-icons/io";
 import { MdOutlineArrowDownward } from "react-icons/md";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
+import Transactiontable from './Transactiontable';
 
 const Wallet = () => {
   const data = [
@@ -124,6 +125,8 @@ const Wallet = () => {
                 <Icon1 cl="#0030AD" fs="" ml="5px"><IoIosArrowDown /></Icon1>
               </Kao>
             </Balancehold>
+
+            <Transactiontable />
           </Transactionhold>
         </Left>
       </Wrapper>
