@@ -5,6 +5,7 @@ import { IoIosArrowDown, IoMdArrowUp } from "react-icons/io";
 import { MdOutlineArrowDownward } from "react-icons/md";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import Transactiontable from './Transactiontable';
+import Withdrawalcard from './Withdrawalcard';
 
 const Wallet = () => {
   const data = [
@@ -128,6 +129,8 @@ const Wallet = () => {
 
             <Transactiontable />
           </Transactionhold>
+
+          <Withdrawalcard />
         </Left>
       </Wrapper>
     </Container>
