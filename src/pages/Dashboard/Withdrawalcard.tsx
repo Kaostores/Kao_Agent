@@ -40,7 +40,7 @@ export default Withdrawalcard
 const Icon4 = styled.div`
     color: #0030AD;
 `
-const Button2 = styled.div`
+const Button2 = styled.button`
     width: 120px;
     height: 38px;
     border: 1px solid #0030AD;
@@ -48,6 +48,7 @@ const Button2 = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
     p{
         margin-left: 3px;
         color: #0030AD;
@@ -170,7 +171,10 @@ const Balancehold = styled.div`
 
 const Container = styled.div`
     width: 100%;
-    padding: 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
     flex-direction: column;
     background-color: #fff;
     border-radius: 7px;
