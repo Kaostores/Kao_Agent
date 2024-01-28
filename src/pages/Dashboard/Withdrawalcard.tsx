@@ -30,7 +30,7 @@ const Withdrawalcard = () => {
                   </Holder>
                   <Button>Send</Button>
               </Bankhold>
-              <Button2><Icon4><FaPlus /></Icon4></Button2>
+              <Button2><Icon4><FaPlus /></Icon4><p>New Acc</p></Button2>
           </Boxhold>
     </Container>
   )
@@ -38,12 +38,21 @@ const Withdrawalcard = () => {
 
 export default Withdrawalcard
 const Icon4 = styled.div`
+    color: #0030AD;
 `
 const Button2 = styled.div`
     width: 120px;
     height: 38px;
     border: 1px solid #0030AD;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        margin-left: 3px;
+        color: #0030AD;
+        font-size: 15px;
+    }
 `
 const Holder = styled.div`
     display: flex;
@@ -84,6 +93,7 @@ const Boxhold = styled.div`
     align-items: center;
     width: 100%;
     margin-top: 20px;
+    justify-content: space-between;
 `
 const Rate = styled.div`
     margin-top: 2px;
