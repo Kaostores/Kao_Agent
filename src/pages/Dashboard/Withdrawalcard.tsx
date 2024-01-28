@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { TbArrowsExchange2 } from "react-icons/tb";
-import { SlArrowDown } from "react-icons/sl";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Withdrawalcard = () => {
   return (
@@ -16,14 +16,22 @@ const Withdrawalcard = () => {
             <Amount>
                 <h3><span>KAO</span> 0.00</h3>
                 <Icon><TbArrowsExchange2 /></Icon>
-                <h2><span><Icon2><SlArrowDown /></Icon2>NGN </span> <p>0.00</p></h2>
+                <h2><span><Icon2><IoIosArrowDown /></Icon2>NGN </span> <p>0.00</p></h2>
             </Amount>
+            <Rate><h4>Exchange rate KAO 1.01 = NGN 5.00 </h4></Rate>
           </Amountholder>
     </Container>
   )
 }
 
 export default Withdrawalcard
+const Rate = styled.div`
+    margin-top: 3px;
+    h4{
+        color: #008348;
+        font-size: 13px;
+    }
+`
 const Icon2 = styled.div`
     color: #0030AD;
     margin-right: 3px;
