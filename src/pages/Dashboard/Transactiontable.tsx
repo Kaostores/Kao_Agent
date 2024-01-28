@@ -44,6 +44,18 @@ const Transactiontable = () => {
             type: "Deposit",
             amount: "KAO 300",
         },
+        {
+            id: "",
+            date: "2.3.2023",
+            type: "Withdrawal",
+            amount: "KAO 13,000",
+        },
+        {
+            id: "",
+            date: "2.3.2023",
+            type: "Withdrawal",
+            amount: "KAO 13,000",
+        },
       ]
   return (
     <div className="relative h-[280px] overflow-auto mt-[10px]">
