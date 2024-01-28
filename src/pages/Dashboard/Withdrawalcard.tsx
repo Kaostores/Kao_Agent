@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaPlus } from "react-icons/fa6";
 
 const Withdrawalcard = () => {
   return (
@@ -23,18 +24,35 @@ const Withdrawalcard = () => {
 
           <Boxhold>
               <Bankhold>
-                  <div>
+                  <Holder>
                       <Icon3><IoIosArrowDown /></Icon3>
                   <p>First Bank - Acc: ***1010</p>
-                  </div>
+                  </Holder>
                   <Button>Send</Button>
               </Bankhold>
+              <Button2><Icon4><FaPlus /></Icon4></Button2>
           </Boxhold>
     </Container>
   )
 }
 
 export default Withdrawalcard
+const Icon4 = styled.div`
+`
+const Button2 = styled.div`
+    width: 120px;
+    height: 38px;
+    border: 1px solid #0030AD;
+    border-radius: 5px;
+`
+const Holder = styled.div`
+    display: flex;
+    align-items: center;
+    p{
+        font-size: 14px;
+        margin-left: 5px;
+    }
+`
 const Button = styled.button`
     width: 80px;
     height: 32px;
@@ -51,7 +69,7 @@ const Icon3 = styled.div`
     color: #0030AD;
 `
 const Bankhold = styled.div`
-    width: 300px;
+    width: 320px;
     height: 38px;
     border: 1px solid #0030AD;
     padding-left: 8px;
@@ -60,10 +78,6 @@ const Bankhold = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    p{
-        font-size: 14px;
-        margin-left: 5px;
-    }
 `
 const Boxhold = styled.div`
     display: flex;
