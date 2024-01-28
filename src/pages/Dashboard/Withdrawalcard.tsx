@@ -16,7 +16,7 @@ const Withdrawalcard = () => {
             <Amount>
                 <h3><span>KAO</span> 0.00</h3>
                 <Icon><TbArrowsExchange2 /></Icon>
-                <h3><span><Icon2><SlArrowDown /></Icon2>NGN</span> 0.00</h3>
+                <h2><span><Icon2><SlArrowDown /></Icon2>NGN </span> <p>0.00</p></h2>
             </Amount>
           </Amountholder>
     </Container>
@@ -26,6 +26,8 @@ const Withdrawalcard = () => {
 export default Withdrawalcard
 const Icon2 = styled.div`
     color: #0030AD;
+    margin-right: 3px;
+    font-size: 16px;
 `
 const Icon = styled.div`
     margin-left: 20px;
@@ -34,6 +36,22 @@ const Icon = styled.div`
 const Amount = styled.div`
     display: flex;
     align-items: center;
+    h2{
+        color: #000;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        p{
+            margin-left: 5px;
+            font-weight: 500;
+        }
+        span{
+            color: #0030AD;
+            display: flex;
+            align-items: center;
+        }
+    }
     h3{
         color: #000;
         font-size: 20px;
