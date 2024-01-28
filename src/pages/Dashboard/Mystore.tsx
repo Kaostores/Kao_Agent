@@ -656,7 +656,8 @@ const Modal = styled.div`
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: #f3f3f3b2;
+  background-color: #ffffff1f;
+  backdrop-filter: blur(2px);
   top: 0;
   left: 0;
   z-index: 10;
