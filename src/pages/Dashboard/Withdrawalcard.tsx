@@ -20,13 +20,38 @@ const Withdrawalcard = () => {
             </Amount>
             <Rate><h4>Exchange rate KAO 1.01 = NGN 5.00 </h4></Rate>
           </Amountholder>
+
+          <Boxhold>
+              <Bankhold>
+                  <Icon3><IoIosArrowDown /></Icon3>
+              </Bankhold>
+          </Boxhold>
     </Container>
   )
 }
 
 export default Withdrawalcard
+const Icon3 = styled.div`
+    color: #0030AD;
+`
+const Bankhold = styled.div`
+    width: 300px;
+    height: 38px;
+    border: 1px solid #0030AD;
+    padding-left: 8px;
+    padding-right: 12px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+`
+const Boxhold = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+`
 const Rate = styled.div`
-    margin-top: 3px;
+    margin-top: 2px;
     h4{
         color: #008348;
         font-size: 13px;
