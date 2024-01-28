@@ -8,19 +8,39 @@ const Withdrawalcard = () => {
               <Balance>
                 <h3>Withdrawal</h3>
               </Balance>
-            </Balancehold>
+          </Balancehold>
+          
+          <Amountholder>
+            <Amount>
+                <h3><span>KAO</span> 0.00</h3>
+            </Amount>
+          </Amountholder>
     </Container>
   )
 }
 
 export default Withdrawalcard
+const Amount = styled.div`
+    display: flex;
+    align-items: center;
+    h3{
+        color: #000;
+        font-size: 20px;
+        span{
+            color: #0030AD;
+        }
+    }
+`
+const Amountholder = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 const Balance = styled.div`
   display: flex;
   align-items: center;
   h3{
     color: #797979;
     font-size: 15px;
-    margin-left: 7px;
   }
 `
 const Balancehold = styled.div`
