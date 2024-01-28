@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { TbArrowsExchange2 } from "react-icons/tb";
+import { SlArrowDown } from "react-icons/sl";
 
 const Withdrawalcard = () => {
   return (
@@ -13,6 +15,8 @@ const Withdrawalcard = () => {
           <Amountholder>
             <Amount>
                 <h3><span>KAO</span> 0.00</h3>
+                <Icon><TbArrowsExchange2 /></Icon>
+                <h3><span><Icon2><SlArrowDown /></Icon2>NGN</span> 0.00</h3>
             </Amount>
           </Amountholder>
     </Container>
@@ -20,6 +24,13 @@ const Withdrawalcard = () => {
 }
 
 export default Withdrawalcard
+const Icon2 = styled.div`
+    color: #0030AD;
+`
+const Icon = styled.div`
+    margin-left: 20px;
+    font-size: 18px;
+`
 const Amount = styled.div`
     display: flex;
     align-items: center;
@@ -34,6 +45,7 @@ const Amount = styled.div`
 const Amountholder = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 `
 const Balance = styled.div`
   display: flex;
