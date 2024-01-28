@@ -33,9 +33,10 @@ const Transactiontable = () => {
                 <table className="w-full table-auto text-sm text-left">
                     <thead className="text-gray-600 font-medium border-b">
                         <tr>
-                            <th className="py-3 pr-6 text-[14px] text-[#000]">Name</th>
-                            <th className="py-3 pr-6 text-[14px] text-[#000]">Items</th>
-                            <th className="py-3 pr-6 text-[14px] text-[#000]">Amount</th>
+                            <th className="py-3 pr-6 text-[14px] text-[#797979]">ID Number</th>
+                            <th className="py-3 pr-6 text-[14px] text-[#797979]">Date</th>
+                            <th className="py-3 pr-6 text-[14px] text-[#797979]">Type</th>
+                            <th className="py-3 pr-6 text-[14px] text-[#797979]">Amount</th>
                         </tr>
                     </thead>
                     <tbody className="text-gray-600 divide-y">
