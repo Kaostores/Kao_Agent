@@ -24,24 +24,13 @@ const Sidebar = () => {
           <h3>Home</h3>
         </Home>
 
-
-      <NavLink to="stores" style={({ isActive }) => {
-        return {
-          height: isActive ? "50px" : "50px",
-          width: isActive ? "100%" : "100%",
-          backgroundColor: isActive ? "#fff" : "",
-          marginTop: isActive ? "10px" : "10px",
-          paddingLeft: isActive ? "30px" : "30px",
-          color: isActive ? "#0030AD" : "#fff",
-          alignItems: isActive ? "center" : "center",
-          display: isActive ? "flex" : "flex"
-        }
-      }}>
-        <Home>
+      <Home className={`${active === "/add/dashboard/stores" && "active"}`} onClick={() => {
+        navigate("/app/dashboard/stores")
+        }}>
           <Icon><BiStoreAlt /></Icon>
           <h3>Stores</h3>
         </Home>
-      </NavLink>
+
 
       <NavLink to="/dashboard/wallet" style={({ isActive }) => {
         return {
@@ -115,6 +104,25 @@ const Circle = styled.div`
 const Icon = styled.div`
   font-size: 23px;
 `
+const Home2 = styled.div`
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  color: #fff;
+
+  &.active{
+    background-color: #fff;
+    color: #0030AD;
+  }
+  h3{
+    margin-left: 20px;
+    font-size: 18px;
+  }
+`
 const Home = styled.div`
   width: 100%;
   min-height: 50px;
@@ -123,6 +131,7 @@ const Home = styled.div`
   padding-left: 30px;
   cursor: pointer;
   margin-bottom: 5px;
+  margin-top: 40px;
   color: #fff;
 
   &.active{
