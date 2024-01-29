@@ -39,7 +39,7 @@ const Sidebar = () => {
         </Home2>
 
         <Home2 className={`${active === "/app/dashboard/messages" && "active"}`} onClick={() => {
-          navigate("/app/dashboatd/messages")
+          navigate("/app/dashboard/messages")
         }}>
           <Icon><LuMessagesSquare /></Icon>
           <h3>Messages</h3>
