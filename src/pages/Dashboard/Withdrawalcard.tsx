@@ -6,6 +6,10 @@ import { FaPlus } from "react-icons/fa6";
 
 const Withdrawalcard = () => {
     const [show, setShow] = useState(false)
+    const [show2, setShow2] = useState(false)
+    const Toggle2 = () => {
+        setShow2(!show2)
+    }
     const Toggle = () => {
         setShow(!show)
     }
@@ -34,7 +38,7 @@ const Withdrawalcard = () => {
                   </Holder>
                   <Button onClick={Toggle}>Send</Button>
               </Bankhold>
-              <Button2><Icon4><FaPlus /></Icon4><p>New Acc</p></Button2>
+              <Button2 onClick={Toggle2}><Icon4><FaPlus /></Icon4><p>New Acc</p></Button2>
           </Boxhold>
 
           {show ? (
@@ -45,6 +49,12 @@ const Withdrawalcard = () => {
                     <Button3>Send</Button3>
                 </Inputhold>
             </Card>
+          </Modal>
+          ) : null}
+
+          {show2 ? (
+            <Modal>
+            
           </Modal>
           ) : null}
     </Container>
