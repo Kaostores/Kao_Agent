@@ -18,7 +18,8 @@ const Dashboardhead = () => {
         </Inputhold>
 
         <Calendar>
-          <input type="week" />
+          <Inputhold2>
+          </Inputhold2>
         </Calendar>
         </First>
         <Second>
@@ -48,6 +49,9 @@ const Dashboardhead = () => {
 }
 
 export default Dashboardhead
+const Inputhold2 = styled.div`
+  
+`
 const Second = styled.div`
   display: flex;
   align-items: center;
@@ -129,14 +133,14 @@ const Downloadholder = styled.div`
   display: flex;
 `
 const Calendar = styled.div`
-  input{
-    width: 200px;
-    height: 35px;
-    border: 1px solid #DEE3E9;
-    border-radius: 5px;
-    outline: none;
-    margin-left: 15px;
-  }
+  width: 250px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #DEE3E9;
+  display: flex;
+  align-items: center;
+  margin-left: 13px;
 `
 const Icon = styled.div`
   color: #0030AD;
