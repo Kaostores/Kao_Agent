@@ -31,7 +31,7 @@ const Welcome = () => {
                 <Forgot>
                     <p>Forgot Password?</p>
                 </Forgot>
-                  <NavLink to="/dashboard">
+                  <NavLink to="/app/dashboard">
                     <Button bg="#0030AD" cl="#fff" fs="16px">
                     Log In
                 </Button>

@@ -123,6 +123,7 @@ const Home = styled.div`
   padding-left: 30px;
   cursor: pointer;
   margin-bottom: 5px;
+  color: #fff;
 
   &.active{
     background-color: #fff;
