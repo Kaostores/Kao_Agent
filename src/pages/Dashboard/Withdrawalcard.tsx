@@ -41,7 +41,7 @@ const Withdrawalcard = () => {
               <Modal>
             <Card>
                 <Inputhold>
-                    <input type="text" />
+                    <input type="text" placeholder='Enter OTP'/>
                     <Button3>Send</Button3>
                 </Inputhold>
             </Card>
@@ -52,7 +52,7 @@ const Withdrawalcard = () => {
 }
 
 export default Withdrawalcard
-const Button3 = styled.div`
+const Button3 = styled.button`
     width: 84px;
     height: 35px;
     background-color: #0030AD;
@@ -75,8 +75,10 @@ const Inputhold = styled.div`
     overflow: hidden;
     justify-content: space-between;
     input{
-        width: 180px;
+        width: 200px;
         height: 100%;
+        padding-left: 10px;
+        outline: none;
     }
 `
 const Card = styled.div`
