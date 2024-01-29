@@ -31,24 +31,12 @@ const Sidebar = () => {
           <h3>Stores</h3>
         </Home2>
 
-
-      <NavLink to="/dashboard/wallet" style={({ isActive }) => {
-        return {
-          height: isActive ? "50px" : "50px",
-          width: isActive ? "100%" : "100%",
-          backgroundColor: isActive ? "#fff" : "",
-          marginTop: isActive ? "10px" : "10px",
-          paddingLeft: isActive ? "30px" : "30px",
-          color: isActive ? "#0030AD" : "#fff",
-          alignItems: isActive ? "center" : "center",
-          display: isActive ? "flex" : "flex"
-        }
-      }}>
-        <Home>
+        <Home2 className={`${active === "/app/dashboard/wallet" && "active"}`} onClick={() => {
+          navigate("/app/dashboard/wallet")
+        }}>
           <Icon><IoWalletOutline /></Icon>
           <h3>Wallet</h3>
-        </Home>
-      </NavLink>
+        </Home2>
 
       <NavLink to="/dashboard/messages" style={({ isActive }) => {
         return {
