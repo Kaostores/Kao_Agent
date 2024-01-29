@@ -24,12 +24,12 @@ const Sidebar = () => {
           <h3>Home</h3>
         </Home>
 
-      <Home className={`${active === "/add/dashboard/stores" && "active"}`} onClick={() => {
+      <Home2 className={`${active === "/app/dashboard/stores" && "active"}`} onClick={() => {
         navigate("/app/dashboard/stores")
         }}>
           <Icon><BiStoreAlt /></Icon>
           <h3>Stores</h3>
-        </Home>
+        </Home2>
 
 
       <NavLink to="/dashboard/wallet" style={({ isActive }) => {
