@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
@@ -14,23 +14,7 @@ const Withdrawalcard = () => {
         setShow(!show)
     }
 
-     const [lastSevenDays, setLastSevenDays] = useState<Date[]>([]);
-
-  useEffect(() => {
-    const today = new Date();
-    const sevenDaysAgo = new Date(today);
-    sevenDaysAgo.setDate(today.getDate() - 6); // Get date 7 days ago
-
-    const daysArray: Date[] = [];
-
-    for (let i = 0; i < 7; i++) {
-      const currentDate = new Date(sevenDaysAgo);
-      currentDate.setDate(sevenDaysAgo.getDate() + i);
-      daysArray.push(currentDate);
-    }
-
-    setLastSevenDays(daysArray);
-  }, []);
+    
   return (
     <Container>
         <Balancehold>
@@ -73,23 +57,7 @@ const Withdrawalcard = () => {
           {show2 ? (
             <Modal>
             <Box>
-                <div>
-      <h2>Last Seven Days Calendar</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {lastSevenDays.map((day, index) => (
-            <tr key={index}>
-              <td>{day.toDateString()}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+                
             </Box>
           </Modal>
           ) : null}
