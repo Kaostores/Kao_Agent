@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { IoSearch } from "react-icons/io5";
 import { LuPrinter, LuFolderOpenDot  } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import DatePicker from "react-datepicker"
 
 const Dashboardhead = () => {
+  const [date, setDate] = useState(new Date())
   return (
     <Container>
       <Wrapper>
