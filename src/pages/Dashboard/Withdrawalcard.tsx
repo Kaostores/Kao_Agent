@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 
 const Withdrawalcard = () => {
+    const [show, setShow] = useState(false)
   return (
     <Container>
         <Balancehold>
@@ -32,11 +33,29 @@ const Withdrawalcard = () => {
               </Bankhold>
               <Button2><Icon4><FaPlus /></Icon4><p>New Acc</p></Button2>
           </Boxhold>
+
+          <Modal>
+            
+          </Modal>
     </Container>
   )
 }
 
 export default Withdrawalcard
+const Modal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff1f;
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 350ms ease-in-out;
+`
 const Icon4 = styled.div`
     color: #0030AD;
 `
