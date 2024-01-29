@@ -41,7 +41,7 @@ const Withdrawalcard = () => {
               <Modal>
             <Card>
                 <Inputhold>
-
+                    <input type="text" />
                 </Inputhold>
             </Card>
           </Modal>
@@ -53,9 +53,13 @@ const Withdrawalcard = () => {
 export default Withdrawalcard
 const Inputhold = styled.div`
     width: 300px;
-    height: 40px;
-    border-radius: 5px;
+    height: 50px;
+    border-radius: 7px;
     border: 1px solid #0030AD;
+    input{
+        width: 180px;
+        height: 100%;
+    }
 `
 const Card = styled.div`
     width: 430px;
