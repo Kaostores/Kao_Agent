@@ -6,9 +6,11 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import DatePicker from "react-datepicker"
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Dashboardhead = () => {
-  const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState<Date | null>(null)
+
   return (
     <Container>
       <Wrapper>
@@ -20,6 +22,17 @@ const Dashboardhead = () => {
 
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
+          <div>
+            {date ? (
+                <DatePicker selected={date} onChange={(date: Date | null) => setDate(date)} />
+            ) : (
+              <input 
+                type='text'
+                placeholder='Select a date'
+                onClick={() => setDate(new Date())}
+              />
+            )}
+          </div>
         </Calendar>
         </First>
         <Second>
