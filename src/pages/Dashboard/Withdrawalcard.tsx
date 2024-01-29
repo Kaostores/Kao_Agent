@@ -50,10 +50,14 @@ const Withdrawalcard = () => {
 
 export default Withdrawalcard
 const Card = styled.div`
-    width: 300px;
+    width: 430px;
     height: 200px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 const Modal = styled.div`
   position: absolute;
