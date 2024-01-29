@@ -6,6 +6,9 @@ import { FaPlus } from "react-icons/fa6";
 
 const Withdrawalcard = () => {
     const [show, setShow] = useState(false)
+    const Toggle = () => {
+        setShow(!show)
+    }
   return (
     <Container>
         <Balancehold>
