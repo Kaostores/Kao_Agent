@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { LuPrinter, LuFolderOpenDot  } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { MdOutlineCalendarToday } from "react-icons/md";
 import DatePicker from "react-datepicker"
 
 const Dashboardhead = () => {
@@ -18,8 +19,7 @@ const Dashboardhead = () => {
         </Inputhold>
 
         <Calendar>
-          <Inputhold2>
-          </Inputhold2>
+          <Icon2><MdOutlineCalendarToday /></Icon2>
         </Calendar>
         </First>
         <Second>
@@ -49,8 +49,8 @@ const Dashboardhead = () => {
 }
 
 export default Dashboardhead
-const Inputhold2 = styled.div`
-  
+const Icon2 = styled.div`
+  color: #0030AD;
 `
 const Second = styled.div`
   display: flex;
@@ -141,6 +141,8 @@ const Calendar = styled.div`
   display: flex;
   align-items: center;
   margin-left: 13px;
+  padding-left: 5px;
+  padding-right: 5px;
 `
 const Icon = styled.div`
   color: #0030AD;
