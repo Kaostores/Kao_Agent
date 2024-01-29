@@ -8,13 +8,18 @@ import { LuMessagesSquare } from "react-icons/lu";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const active = location?.pathname;
   return (
     <Container>
       <Imageholder>
         <img src={img} alt="" />
       </Imageholder>
 
-        <Home>
+      <Home className={`${active === "/app/dashboard" && "active"}`} onClick={() => {
+        navigate("/app/dashboard")
+        }}>
           <Icon><FiHome /></Icon>
           <h3>Home</h3>
         </Home>
@@ -117,6 +122,12 @@ const Home = styled.div`
   align-items: center;
   padding-left: 30px;
   cursor: pointer;
+  margin-bottom: 5px;
+
+  &.active{
+    background-color: #fff;
+    color: #0030AD;
+  }
   h3{
     margin-left: 20px;
     font-size: 18px;
