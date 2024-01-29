@@ -32,14 +32,16 @@ const Withdrawalcard = () => {
                       <Icon3><IoIosArrowDown /></Icon3>
                   <p>First Bank - Acc: ***1010</p>
                   </Holder>
-                  <Button>Send</Button>
+                  <Button onClick={Toggle}>Send</Button>
               </Bankhold>
               <Button2><Icon4><FaPlus /></Icon4><p>New Acc</p></Button2>
           </Boxhold>
 
-          <Modal>
+          {show ? (
+              <Modal>
             
           </Modal>
+          ) : null}
     </Container>
   )
 }
