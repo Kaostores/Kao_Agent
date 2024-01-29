@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { FaCalendar, FaAngleDown } from 'react-icons/fa';
 
 const Withdrawalcard = () => {
     const [show, setShow] = useState(false)
@@ -14,7 +17,18 @@ const Withdrawalcard = () => {
         setShow(!show)
     }
 
-    
+    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+    const [isCalendarOpen, setCalendarOpen] = useState(false);
+
+  // Function to handle date selection
+  const handleDateChange = (date: Date | null) => {
+    setSelectedDate(date);
+    setCalendarOpen(false);
+  };
+
+  const toggleCalendar = () => {
+    setCalendarOpen(!isCalendarOpen);
+  }
   return (
     <Container>
         <Balancehold>
@@ -57,7 +71,29 @@ const Withdrawalcard = () => {
           {show2 ? (
             <Modal>
             <Box>
-                
+                <div className="calendar-container">
+      {/* Calendar Input */}
+      <div className="calendar-input" onClick={toggleCalendar}>
+        <FaCalendar className="icon" />
+        <input
+          readOnly
+          value={selectedDate ? selectedDate.toDateString() : 'Last Seven Days'}
+        />
+        <FaAngleDown className="icon" />
+      </div>
+
+      {/* Calendar Popup */}
+      {isCalendarOpen && (
+        <DatePicker
+          selected={selectedDate}
+          onChange={handleDateChange}
+          selectsStart
+          startDate={selectedDate}
+          endDate={new Date()}
+        //   onClose={() => setCalendarOpen(false)}
+        />
+      )}
+    </div>
             </Box>
           </Modal>
           ) : null}
