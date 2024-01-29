@@ -5,7 +5,7 @@ import { FiHome } from "react-icons/fi";
 import { BiStoreAlt } from "react-icons/bi";
 import { IoWalletOutline } from "react-icons/io5";
 import { LuMessagesSquare } from "react-icons/lu";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -14,23 +14,11 @@ const Sidebar = () => {
         <img src={img} alt="" />
       </Imageholder>
 
-      <NavLink to="/dashboard" style={({ isActive }) => {
-        return {
-          height: isActive ? "50px" : "50px",
-          width: isActive ? "100%" : "100%",
-          backgroundColor: isActive ? "#fff" : "transparent",
-          marginTop: isActive ? "50px" : "50px",
-          paddingLeft: isActive ? "30px" : "30px",
-          color: isActive ? "#0030AD" : "#fff",
-          alignItems: isActive ? "center" : "center",
-          display: isActive ? "flex" : "flex"
-        }
-      }}>
         <Home>
           <Icon><FiHome /></Icon>
           <h3>Home</h3>
         </Home>
-      </NavLink>
+
 
       <NavLink to="stores" style={({ isActive }) => {
         return {
@@ -123,7 +111,11 @@ const Icon = styled.div`
   font-size: 23px;
 `
 const Home = styled.div`
+  width: 100%;
+  min-height: 50px;
   display: flex;
+  align-items: center;
+  padding-left: 30px;
   cursor: pointer;
   h3{
     margin-left: 20px;
