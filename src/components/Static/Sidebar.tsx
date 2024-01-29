@@ -38,24 +38,13 @@ const Sidebar = () => {
           <h3>Wallet</h3>
         </Home2>
 
-      <NavLink to="/dashboard/messages" style={({ isActive }) => {
-        return {
-          height: isActive ? "50px" : "50px",
-          width: isActive ? "100%" : "100%",
-          backgroundColor: isActive ? "#fff" : "",
-          marginTop: isActive ? "10px" : "10px",
-          paddingLeft: isActive ? "30px" : "30px",
-          color: isActive ? "#0030AD" : "#fff",
-          alignItems: isActive ? "center" : "center",
-          display: isActive ? "flex" : "flex"
-        }
-      }}>
-        <Home>
+        <Home2 className={`${active === "/app/dashboard/messages" && "active"}`} onClick={() => {
+          navigate("/app/dashboatd/messages")
+        }}>
           <Icon><LuMessagesSquare /></Icon>
           <h3>Messages</h3>
           <Circle>1</Circle>
-        </Home>
-      </NavLink>
+        </Home2>
 
       <Logout>
         Logout
