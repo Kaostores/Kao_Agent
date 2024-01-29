@@ -18,7 +18,7 @@ const Routes = () => {
             element: <Welcome />
         },
         {
-           path: "/dashboard",
+           path: "/app/dashboard",
            element: <Dashboardlayout />,
            children: [
                {
@@ -30,11 +30,11 @@ const Routes = () => {
                    element: <Stores />
                },
                {
-                   path: "/dashboard/wallet",
+                   path: "wallet",
                    element: <Wallet />
                },
                {
-                   path: "/dashboard/messages",
+                   path: "messages",
                    element: <Messages />
                }
            ]
