@@ -53,8 +53,16 @@ const Withdrawalcard = () => {
 
 export default Withdrawalcard
 const Button3 = styled.div`
-    width: 80px;
-    height: 33px;
+    width: 84px;
+    height: 35px;
+    background-color: #0030AD;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
 `
 const Inputhold = styled.div`
     width: 330px;
@@ -64,6 +72,8 @@ const Inputhold = styled.div`
     display: flex;
     align-items: center;
     padding-right: 10px;
+    overflow: hidden;
+    justify-content: space-between;
     input{
         width: 180px;
         height: 100%;
