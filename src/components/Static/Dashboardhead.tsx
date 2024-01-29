@@ -9,7 +9,7 @@ import DatePicker from "react-datepicker"
 import 'react-datepicker/dist/react-datepicker.css';
 
 const Dashboardhead = () => {
-  const [date, setDate] = useState<Date | null>(null)
+  const [date, setDate] = useState<Date>(new Date())
 
   return (
     <Container>
@@ -24,7 +24,7 @@ const Dashboardhead = () => {
           <Icon2><MdOutlineCalendarToday /></Icon2>
           <div>
             {date ? (
-                <DatePicker selected={date} onChange={(date: Date | null) => setDate(date)} />
+                <DatePicker selected={date} onChange={(date: Date | null) => setDate(date || new Date())} />
             ) : (
               <input 
                 type='text'
