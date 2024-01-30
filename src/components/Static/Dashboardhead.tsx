@@ -7,9 +7,14 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Dashboardhead = () => {
-  const lastSevenDays = new Date();
-  lastSevenDays.setDate(lastSevenDays.getDate() - 6);
+interface DateOption {
+  label: string;
+  value: string;
+}
+
+const Dashboardhead: React.FC = () => {
+  const [options, setOptions] = useState<DateOption[]>([])
+  const [selectedDate, setSelectedDate] = useState<string>("")
 
   return (
     <Container>
