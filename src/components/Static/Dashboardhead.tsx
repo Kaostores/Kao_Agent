@@ -5,6 +5,7 @@ import { LuPrinter, LuFolderOpenDot  } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { MdOutlineCalendarToday } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
 import DatePicker from "react-datepicker"
 
 const Dashboardhead = () => {
@@ -27,11 +28,12 @@ const Dashboardhead = () => {
             ) : (
               <input 
                 type='text'
-                placeholder='Select a date'
+                placeholder='Last 7 days'
                 onClick={() => setDate(new Date())}
               />
             )}
           </div>
+          <Icon3><IoIosArrowDown /></Icon3>
         </Calendar>
         </First>
         <Second>
@@ -61,6 +63,9 @@ const Dashboardhead = () => {
 }
 
 export default Dashboardhead
+const Icon3 = styled.div`
+  
+`
 const Icon2 = styled.div`
   color: #0030AD;
 `
@@ -155,6 +160,15 @@ const Calendar = styled.div`
   margin-left: 13px;
   padding-left: 5px;
   padding-right: 5px;
+  overflow: hidden;
+  input{
+    height: 100%;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    margin-top: 3px;
+    flex: 1;
+  }
 `
 const Icon = styled.div`
   color: #0030AD;
