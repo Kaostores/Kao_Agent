@@ -9,7 +9,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import DatePicker from "react-datepicker"
 
 const Dashboardhead = () => {
-  const [date, setDate] = useState<Date | null>(null)
+  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
+  const lastSevenDays = new Date();
+  lastSevenDays.setDate(lastSevenDays.getDate() - 6);
 
   return (
     <Container>
@@ -23,15 +25,14 @@ const Dashboardhead = () => {
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
           <div>
-            {date ? (
-                <DatePicker selected={date} onChange={(date: Date) => setDate(date)} />
-            ) : (
-              <input 
-                type='text'
-                placeholder='Last 7 days'
-                onClick={() => setDate(new Date())}
-              />
-            )}
+                <DatePicker
+                  selected={dateRange}
+                  onChange={(dates: [Date | null, Date | null]) => setDateRange(dates)}
+                  startDate={lastSevenDays} // Set the start date for the date picker
+              endDate={new Date()} // Set the end date for the date picker
+              maxDate={new Date()} // Set the maximum selectable date
+              selectsRange
+                />
           </div>
           <Icon3><IoIosArrowDown /></Icon3>
         </Calendar>
@@ -64,7 +65,7 @@ const Dashboardhead = () => {
 
 export default Dashboardhead
 const Icon3 = styled.div`
-  
+  color: #0030AD;
 `
 const Icon2 = styled.div`
   color: #0030AD;
