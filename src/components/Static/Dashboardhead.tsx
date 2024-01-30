@@ -16,6 +16,16 @@ const Dashboardhead: React.FC = () => {
   const [options, setOptions] = useState<DateOption[]>([])
   const [selectedDate, setSelectedDate] = useState<string>("")
 
+  useEffect(() => {
+    const currentDate = new Date()
+    const dateOptions: DateOption[] = [];
+
+    for (let i = 6; i >= 0; i--) {
+      const date = new Date();
+      date.setDate(currentDate.getDate() - i)
+    }
+  })
+
   return (
     <Container>
       <Wrapper>
