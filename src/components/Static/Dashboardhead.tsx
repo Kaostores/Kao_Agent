@@ -60,7 +60,19 @@ const Dashboardhead: React.FC = () => {
 
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
-          
+          <div>
+            <label>Last & days</label>
+            <select
+              value={selectedDate}
+              onChange={handleDateChange}
+            >
+              {options.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
           <Icon3><IoIosArrowDown /></Icon3>
         </Calendar>
         </First>
