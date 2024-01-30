@@ -23,6 +23,12 @@ const Dashboardhead: React.FC = () => {
     for (let i = 6; i >= 0; i--) {
       const date = new Date();
       date.setDate(currentDate.getDate() - i)
+
+      const option: DateOption = {
+        label: formatDate(date),
+        value: date.toISOString().split("T")[0]
+      };
+      dateOptions.push(option);
     }
   })
 
