@@ -30,7 +30,10 @@ const Dashboardhead: React.FC = () => {
       };
       dateOptions.push(option);
     }
-  })
+
+    setOptions(dateOptions);
+    setSelectedDate(dateOptions[0].value)
+  }, [])
 
   return (
     <Container>
