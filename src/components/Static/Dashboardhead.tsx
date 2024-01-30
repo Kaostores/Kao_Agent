@@ -61,7 +61,7 @@ const Dashboardhead: React.FC = () => {
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
           <div>
-            <label>Last & days</label>
+            <label>Last 7 days</label>
             <select
               value={selectedDate}
               onChange={handleDateChange}
