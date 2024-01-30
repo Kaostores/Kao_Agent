@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { IoSearch } from "react-icons/io5";
 import { LuPrinter, LuFolderOpenDot  } from "react-icons/lu";
@@ -6,10 +6,8 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
-import DatePicker from "react-datepicker"
 
 const Dashboardhead = () => {
-  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
   const lastSevenDays = new Date();
   lastSevenDays.setDate(lastSevenDays.getDate() - 6);
 
@@ -24,16 +22,7 @@ const Dashboardhead = () => {
 
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
-          <div>
-                <DatePicker
-                  selected={dateRange}
-                  onChange={(dates: [Date | null, Date | null]) => setDateRange(dates)}
-                  startDate={lastSevenDays} // Set the start date for the date picker
-              endDate={new Date()} // Set the end date for the date picker
-              maxDate={new Date()} // Set the maximum selectable date
-              selectsRange
-                />
-          </div>
+          
           <Icon3><IoIosArrowDown /></Icon3>
         </Calendar>
         </First>
