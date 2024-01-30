@@ -45,6 +45,10 @@ const Dashboardhead: React.FC = () => {
     return date.toLocaleDateString("en-US", options);
   }
 
+  const handleDateChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedDate(event.target.value);
+  }
+
   return (
     <Container>
       <Wrapper>
