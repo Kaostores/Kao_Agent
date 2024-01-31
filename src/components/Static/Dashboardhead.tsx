@@ -10,6 +10,20 @@ import { IoIosArrowDown } from "react-icons/io";
 const Dashboardhead: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<string>("")
 
+  const getLastSevenDays = (): string[] => {
+    const today = new Date();
+    const lastSevenDays = Array.from({ length: 7 }, (_, index) => {
+      const day = new Date(today);
+      day.setDate(today.getDate() - index);
+      return day.toISOString().split("T")[0]
+    })
+    return lastSevenDays
+  }
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedDate(event.target.value)
+  }
+
   return (
     <Container>
       <Wrapper>
@@ -21,7 +35,14 @@ const Dashboardhead: React.FC = () => {
 
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
-          
+          <select value={selectedDate} onChange={handleSelectChange}>
+            <option disabled value="">Last & days</option>
+            {getLastSevenDays().map((date) => (
+              <option value={date} key={date}>
+                {date}
+              </option>
+            ))}
+          </select>
           <Icon3><IoIosArrowDown /></Icon3>
         </Calendar>
         </First>
