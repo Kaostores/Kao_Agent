@@ -5,7 +5,7 @@ import { FiHome } from "react-icons/fi";
 import { BiStoreAlt } from "react-icons/bi";
 import { IoWalletOutline } from "react-icons/io5";
 import { LuMessagesSquare } from "react-icons/lu";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();

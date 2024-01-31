@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { IoSearch } from "react-icons/io5";
 import { LuPrinter, LuFolderOpenDot  } from "react-icons/lu";
@@ -79,6 +79,9 @@ const Select = styled.select`
   appearance: none;
   padding-left: 10px;
   flex: 1;
+  &:focus{
+    outline: none;
+  }
 `
 const Icon3 = styled.div`
   color: #0030AD;

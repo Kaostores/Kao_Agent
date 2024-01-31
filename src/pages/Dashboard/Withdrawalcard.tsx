@@ -3,9 +3,6 @@ import styled from 'styled-components'
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { FaCalendar, FaAngleDown } from 'react-icons/fa';
 
 const Withdrawalcard = () => {
     const [show, setShow] = useState(false)
