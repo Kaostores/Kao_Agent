@@ -7,47 +7,8 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 
-interface DateOption {
-  label: string;
-  value: string;
-}
-
 const Dashboardhead: React.FC = () => {
-  const [options, setOptions] = useState<DateOption[]>([])
   const [selectedDate, setSelectedDate] = useState<string>("")
-
-  useEffect(() => {
-    const currentDate = new Date()
-    const dateOptions: DateOption[] = [];
-
-    for (let i = 6; i >= 0; i--) {
-      const date = new Date();
-      date.setDate(currentDate.getDate() - i)
-
-      const option: DateOption = {
-        label: formatDate(date),
-        value: date.toISOString().split("T")[0]
-      };
-      dateOptions.push(option);
-    }
-
-    setOptions(dateOptions);
-    setSelectedDate(dateOptions[0].value)
-  }, [])
-
-  const formatDate = (date: Date):string => {
-    const options: any = {
-      weekday: "short",
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    };
-    return date.toLocaleDateString("en-US", options);
-  }
-
-  const handleDateChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedDate(event.target.value);
-  }
 
   return (
     <Container>
@@ -60,19 +21,7 @@ const Dashboardhead: React.FC = () => {
 
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
-          <div>
-            <label>Last 7 days</label>
-            <select
-              value={selectedDate}
-              onChange={handleDateChange}
-            >
-              {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
+          
           <Icon3><IoIosArrowDown /></Icon3>
         </Calendar>
         </First>
