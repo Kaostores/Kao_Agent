@@ -35,14 +35,14 @@ const Dashboardhead: React.FC = () => {
 
         <Calendar>
           <Icon2><MdOutlineCalendarToday /></Icon2>
-          <select value={selectedDate} onChange={handleSelectChange}>
+          <Select value={selectedDate} onChange={handleSelectChange}>
             <option disabled value="">Last & days</option>
             {getLastSevenDays().map((date) => (
               <option value={date} key={date}>
                 {date}
               </option>
             ))}
-          </select>
+          </Select>
           <Icon3><IoIosArrowDown /></Icon3>
         </Calendar>
         </First>
@@ -73,6 +73,13 @@ const Dashboardhead: React.FC = () => {
 }
 
 export default Dashboardhead
+const Select = styled.select`
+  height: 100%;
+  cursor: pointer;
+  appearance: none;
+  padding-left: 10px;
+  flex: 1;
+`
 const Icon3 = styled.div`
   color: #0030AD;
 `
