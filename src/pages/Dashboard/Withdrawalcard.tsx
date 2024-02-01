@@ -57,7 +57,7 @@ const Withdrawalcard = () => {
           {show2 ? (
             <Modal>
             <Box>
-                
+                <Top></Top>
             </Box>
           </Modal>
           ) : null}
@@ -66,6 +66,10 @@ const Withdrawalcard = () => {
 }
 
 export default Withdrawalcard
+const Top = styled.div`
+    display: flex;
+    width: 100%;
+`
 const Box = styled.div`
     width: 430px;
     background-color: #fff;
