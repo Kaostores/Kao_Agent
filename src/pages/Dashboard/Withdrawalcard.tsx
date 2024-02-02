@@ -57,7 +57,7 @@ const Withdrawalcard = () => {
           {show2 ? (
             <Modal>
             <Box>
-                <Top></Top>
+                <Top><h3>New Account</h3></Top>
             </Box>
           </Modal>
           ) : null}
