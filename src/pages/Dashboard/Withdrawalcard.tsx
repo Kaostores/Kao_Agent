@@ -65,6 +65,9 @@ const Withdrawalcard = () => {
                 <Down>
                     <input type="text" placeholder='Account Name'/>   
                 </Down>
+                <Add>
+                    <button>Add</button>
+                </Add>
             </Box>
           </Modal>
           ) : null}
@@ -73,6 +76,22 @@ const Withdrawalcard = () => {
 }
 
 export default Withdrawalcard
+const Add = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    button{
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0030AD;
+        color: #fff;
+        border-radius: 5px;
+        outline: none;
+    }
+`
 const Down = styled.div`
     width: 100%;
     display: flex;
