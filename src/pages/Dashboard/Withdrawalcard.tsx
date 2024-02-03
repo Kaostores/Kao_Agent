@@ -60,6 +60,7 @@ const Withdrawalcard = () => {
                 <Top><h3>New Account</h3></Top>
                 <Hold>
                     <input type="text" placeholder='Bank Name'/>
+                    <input type="text" placeholder='Account Number'/>
                 </Hold>
             </Box>
           </Modal>
@@ -73,13 +74,16 @@ const Hold = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
+    margin-top: 15px;
+    justify-content: space-between;
     input{
         width: 48%;
-        height: 40px;
+        height: 48px;
         padding-left: 7px;
-        border: 1px solid 0030AD;
+        border: 1px solid #0030AD;
         outline: none;
         border-radius: 5px;
+        color: #C7C7C7;
     }
 `
 const Top = styled.div`
@@ -87,13 +91,13 @@ const Top = styled.div`
     width: 100%;
 `
 const Box = styled.div`
-    width: 430px;
+    width: 500px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
-    padding: 10px 10px;
+    padding: 14px 14px;
 `
 const Button3 = styled.button`
     width: 84px;
