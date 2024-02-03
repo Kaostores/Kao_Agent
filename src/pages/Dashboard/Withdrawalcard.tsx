@@ -52,6 +52,7 @@ const Withdrawalcard = () => {
           {show ? (
               <Modal>
             <Card>
+                <Top2><h3>New Account</h3> <Ico onClick={Closemodal}><MdOutlineCancel /></Ico></Top2>
                 <Inputhold>
                     <input type="text" placeholder='Enter OTP'/>
                     <Button3>Send</Button3>
@@ -133,6 +134,17 @@ const Hold = styled.div`
         color: #C7C7C7;
     }
 `
+const Top2 = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    h3{
+        visibility: hidden;
+    }
+`
 const Top = styled.div`
     display: flex;
     width: 100%;
@@ -189,6 +201,7 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 `
 const Modal = styled.div`
   position: absolute;
