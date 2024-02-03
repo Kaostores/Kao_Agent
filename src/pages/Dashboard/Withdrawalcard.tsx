@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
+import { MdOutlineCancel } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 
 const Withdrawalcard = () => {
@@ -57,7 +58,7 @@ const Withdrawalcard = () => {
           {show2 ? (
             <Modal>
             <Box>
-                <Top><h3>New Account</h3></Top>
+                <Top><h3>New Account</h3> <Ico><MdOutlineCancel /></Ico></Top>
                 <Hold>
                     <input type="text" placeholder='Bank Name'/>
                     <input type="text" placeholder='Account Number'/>
@@ -76,6 +77,9 @@ const Withdrawalcard = () => {
 }
 
 export default Withdrawalcard
+const Ico = styled.div`
+    color: #0030AD;
+`
 const Add = styled.div`
     display: flex;
     width: 100%;
