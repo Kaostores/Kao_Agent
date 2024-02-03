@@ -15,6 +15,11 @@ const Withdrawalcard = () => {
         setShow(!show)
     }
 
+    const Closemodal = () => {
+        setShow(false)
+        setShow2(false)
+    }
+
     
   return (
     <Container>
@@ -58,7 +63,7 @@ const Withdrawalcard = () => {
           {show2 ? (
             <Modal>
             <Box>
-                <Top><h3>New Account</h3> <Ico><MdOutlineCancel /></Ico></Top>
+                <Top><h3>New Account</h3> <Ico onClick={Closemodal}><MdOutlineCancel /></Ico></Top>
                 <Hold>
                     <input type="text" placeholder='Bank Name'/>
                     <input type="text" placeholder='Account Number'/>
@@ -79,6 +84,7 @@ const Withdrawalcard = () => {
 export default Withdrawalcard
 const Ico = styled.div`
     color: #0030AD;
+    cursor: pointer;
 `
 const Add = styled.div`
     display: flex;
@@ -130,6 +136,8 @@ const Hold = styled.div`
 const Top = styled.div`
     display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
 `
 const Box = styled.div`
     width: 500px;
