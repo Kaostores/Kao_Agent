@@ -58,6 +58,9 @@ const Withdrawalcard = () => {
             <Modal>
             <Box>
                 <Top><h3>New Account</h3></Top>
+                <Hold>
+                    <input type="text" placeholder='Bank Name'/>
+                </Hold>
             </Box>
           </Modal>
           ) : null}
@@ -66,6 +69,14 @@ const Withdrawalcard = () => {
 }
 
 export default Withdrawalcard
+const Hold = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    input{
+        
+    }
+`
 const Top = styled.div`
     display: flex;
     width: 100%;
