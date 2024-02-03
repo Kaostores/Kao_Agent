@@ -76,7 +76,7 @@ export default Withdrawalcard
 const Down = styled.div`
     width: 100%;
     display: flex;
-    margin-top: 15px;
+    margin-top: 20px;
     input{
         width: 100%;
         height: 48px;
@@ -114,7 +114,10 @@ const Box = styled.div`
     border-radius: 7px;
     display: flex;
     flex-direction: column;
-    padding: 14px 14px;
+    padding-top: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 18px;
 `
 const Button3 = styled.button`
     width: 84px;
