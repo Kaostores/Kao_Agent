@@ -80,6 +80,7 @@ const Add = styled.div`
     display: flex;
     width: 100%;
     justify-content: flex-end;
+    margin-top: 15px;
     button{
         width: 100px;
         height: 50px;
@@ -88,7 +89,7 @@ const Add = styled.div`
         align-items: center;
         background-color: #0030AD;
         color: #fff;
-        border-radius: 5px;
+        border-radius: 7px;
         outline: none;
     }
 `
