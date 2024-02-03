@@ -140,7 +140,8 @@ const Top2 = styled.div`
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    top: 0;
+    top: 10px;
+    right: 10px;
     h3{
         visibility: hidden;
     }
