@@ -74,7 +74,12 @@ const Hold = styled.div`
     display: flex;
     align-items: center;
     input{
-        
+        width: 48%;
+        height: 40px;
+        padding-left: 7px;
+        border: 1px solid 0030AD;
+        outline: none;
+        border-radius: 5px;
     }
 `
 const Top = styled.div`
