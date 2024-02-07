@@ -1,11 +1,16 @@
 import React, {useState} from 'react'
 import styled from "styled-components"
+import { MdOutlineCancel } from "react-icons/md";
 
 const Messages = () => {
   const [show, setShow] = useState(false)
 
   const Toggle = () => {
     setShow(!show)
+  }
+
+  const CancleToggle = () => {
+    setShow(false)
   }
   return (
     <Container>
@@ -81,12 +86,15 @@ const Messages = () => {
               <Modal>
             <Card>
                 <Top>
-                  <Store>
+                  <div style={{display: "flex", alignItems: "center"}}>
+                    <Store>
                     <h4>Store ID: <span>0009021</span></h4>
                   </Store>
                   <Name>
                     <h4>Store Name: <span>Revolutionary Army</span></h4>
                   </Name>
+                  </div>
+                  <Icon onClick={CancleToggle}><MdOutlineCancel /></Icon>
                 </Top>
                 <Top2>
                   <Store>
@@ -116,12 +124,12 @@ const Messages = () => {
                   <option value="">Diciplinary Action</option>
                 </select>
                 <Holds>
-                  <button>
+                  <Button cl="#797979" bd="1px solid #797979" bg="">
                     Send Reply
-                  </button>
-                  <button>
+                  </Button>
+                  <Button cl="#fff" bd="" bg="#0030AD">
                     Done
-                  </button>
+                  </Button>
                 </Holds>
               </Down>
             </Card>
@@ -133,20 +141,27 @@ const Messages = () => {
 }
 
 export default Messages
-const Holds = styled.div`
-  display: flex;
-  align-items: center;
-  button{
-    width: 100px;
+const Icon = styled.div`
+  color: #0030AD;
+  cursor: pointer;
+`
+const Button = styled.button<{ cl: string;  bd: string; bg: string}>`
+  width: 100px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #797979;
+    border: ${({bd}) => bd};
     border-radius: 5px;
     font-size: 14px;
-    color: #797979;
-  }
+    color: ${({ cl }) => cl};
+    background-color: ${({ bg }) => bg};
+    outline: none;
+    margin-left: 15px;
+`
+const Holds = styled.div`
+  display: flex;
+  align-items: center;
 `
 const Down = styled.div`
   width: 100%;
@@ -227,6 +242,7 @@ const Top2 = styled.div`
 const Top = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `
 const Card = styled.div`
     width: 700px;
