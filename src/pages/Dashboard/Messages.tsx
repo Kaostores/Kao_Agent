@@ -107,6 +107,9 @@ const Messages = () => {
               <Textspace>
                 <p>Description: I have paid the required registration amount and was asked by my agent , Mr Solomon to pay 35,000 extra if I want my account verified  before the holidays. I was not officially told this by the company I asked for proof but he was rude to me and left and I am still not verified</p>
               </Textspace>
+              <TextArea>
+                <textarea name="" id=""></textarea>
+              </TextArea>
             </Card>
           </Modal>
           ) : null}
@@ -116,9 +119,24 @@ const Messages = () => {
 }
 
 export default Messages
+const TextArea = styled.div`
+  margin-top: 15px;
+  textarea{
+    width: 100%;
+    display: flex;
+    border: 1px solid #0030AD;
+    border-radius: 5px;
+    resize: none;
+    height: 120px;
+  }
+`
 const Textspace = styled.div`
   width: 100%;
   display: flex;
+  margin-top: 20px;
+  p{
+    font-size: 14px;
+  }
 `
 const Name = styled.div`
   display: flex;
