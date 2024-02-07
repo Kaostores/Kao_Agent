@@ -113,8 +113,13 @@ const Messages = () => {
 
               <Down>
                 <select>
-                  <option value="Diciplinary Action"></option>
+                  <option value="">Diciplinary Action</option>
                 </select>
+                <Holds>
+                  <button>
+                    Send Reply
+                  </button>
+                </Holds>
               </Down>
             </Card>
           </Modal>
@@ -125,6 +130,20 @@ const Messages = () => {
 }
 
 export default Messages
+const Holds = styled.div`
+  display: flex;
+  align-items: center;
+  button{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #797979;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+`
 const Down = styled.div`
   width: 100%;
   display: flex;
@@ -138,6 +157,7 @@ const Down = styled.div`
     outline: none;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 14px;
   }
 `
 const TextArea = styled.div`
