@@ -85,9 +85,25 @@ const Messages = () => {
                     <h4>Store ID: <span>0009021</span></h4>
                   </Store>
                   <Name>
-                    <h4>Store Name: <span>0009021</span></h4>
+                    <h4>Store Name: <span>Revolutionary Army</span></h4>
                   </Name>
                 </Top>
+                <Top2>
+                  <Store>
+                    <h4>Agent ID: <span>34567778</span></h4>
+                  </Store>
+                  <Name>
+                    <h4>Agent Name: <span>Solomon Teach</span></h4>
+                  </Name>
+                </Top2>
+                <Top3>
+                  <Store>
+                    <h4>Complaint Category: <span>Bribery</span></h4>
+                  </Store>
+                  <Name>
+                    <Id3><h4 style={{fontSize: "14px"}}>Time|Date: 11:50 | 26/05/2023</h4></Id3>
+                  </Name>
+                </Top3>
             </Card>
           </Modal>
           ) : null}
@@ -100,10 +116,10 @@ export default Messages
 const Name = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 25px;
   h4{
     color: #000;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     span{
       color: #0030AD;
@@ -115,19 +131,31 @@ const Store = styled.div`
   align-items: center;
   h4{
     color: #000;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     span{
       color: #0030AD;
     }
   }
 `
+const Top3 = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: space-between;
+`
+const Top2 = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+`
 const Top = styled.div`
   display: flex;
   align-items: center;
 `
 const Card = styled.div`
-    width: 650px;
+    width: 700px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 7px;
