@@ -129,6 +129,16 @@ const Down = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  margin-top: 20px;
+  select{
+    width: 190px;
+    height: 40px;
+    border: 1px solid #797979;
+    border-radius: 3px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `
 const TextArea = styled.div`
   margin-top: 15px;
