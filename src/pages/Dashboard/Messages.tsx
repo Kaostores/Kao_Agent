@@ -18,7 +18,7 @@ const Messages = () => {
           <Id2><h4>Agent Name: <span>Solomon Teach</span></h4></Id2>
           <Id3><h4>Time|Date: 11:50 | 26/05/2023</h4></Id3>
           <Buttonhold>
-            <button>View More</button>
+            <button onClick={Toggle}>View More</button>
           </Buttonhold>
         </Box>
         <Box>
@@ -80,7 +80,14 @@ const Messages = () => {
         {show ? (
               <Modal>
             <Card>
-                
+                <Top>
+                  <Store>
+                    <h4>Store ID: <span>0009021</span></h4>
+                  </Store>
+                  <Name>
+                    <h4>Store Name: <span>0009021</span></h4>
+                  </Name>
+                </Top>
             </Card>
           </Modal>
           ) : null}
@@ -90,16 +97,44 @@ const Messages = () => {
 }
 
 export default Messages
+const Name = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  h4{
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    span{
+      color: #0030AD;
+    }
+  }
+`
+const Store = styled.div`
+  display: flex;
+  align-items: center;
+  h4{
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    span{
+      color: #0030AD;
+    }
+  }
+`
+const Top = styled.div`
+  display: flex;
+  align-items: center;
+`
 const Card = styled.div`
-    width: 430px;
-    height: 200px;
+    width: 650px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 7px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    padding: 20px 20px;
+    flex-direction: column;
 `
 const Modal = styled.div`
   position: absolute;
