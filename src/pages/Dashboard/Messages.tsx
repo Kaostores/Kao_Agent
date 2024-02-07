@@ -110,6 +110,12 @@ const Messages = () => {
               <TextArea>
                 <textarea name="" id=""></textarea>
               </TextArea>
+
+              <Down>
+                <select>
+                  <option value="Diciplinary Action"></option>
+                </select>
+              </Down>
             </Card>
           </Modal>
           ) : null}
@@ -119,6 +125,11 @@ const Messages = () => {
 }
 
 export default Messages
+const Down = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`
 const TextArea = styled.div`
   margin-top: 15px;
   textarea{
@@ -128,6 +139,9 @@ const TextArea = styled.div`
     border-radius: 5px;
     resize: none;
     height: 120px;
+    outline: none;
+    padding: 10px 10px;
+    font-size: 14px;
   }
 `
 const Textspace = styled.div`
@@ -242,7 +256,7 @@ const Id2 = styled.div`
   margin-top: 10px;
   h4{
     color: #000000;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     span{
       color: #0030AD;
