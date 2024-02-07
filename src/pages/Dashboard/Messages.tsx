@@ -6,7 +6,12 @@ const Messages = () => {
     <Container>
       <Wrapper>
         <Box>
-          <Id></Id>
+          <Id><h4>Store ID: <span>0009021</span></h4></Id>
+          <Id2><h4>Agent ID: <span>34567778</span></h4></Id2>
+          <Id2><h4>Complaint Category: <span>Bribery</span></h4></Id2>
+          <Id2><h4>Store Name: <span>Revolutionary Army</span></h4></Id2>
+          <Id2><h4>Agent Name: <span>Solomon Teach</span></h4></Id2>
+          <Id3><h4>Time|Date: 11:50 | 26/05/2023</h4></Id3>
         </Box>
       </Wrapper>
     </Container>
@@ -14,15 +19,49 @@ const Messages = () => {
 }
 
 export default Messages
+const Id3 = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+  h4{
+    color: #797979;
+    font-size: 15px;
+    font-weight: 500;
+    span{
+      color: #0030AD;
+    }
+  }
+`
+const Id2 = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+  h4{
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+    span{
+      color: #0030AD;
+    }
+  }
+`
 const Id = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 5px;
+  h4{
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+    span{
+      color: #0030AD;
+    }
+  }
 `
 const Box = styled.div`
   display: flex;
   flex-direction: column;
   width: 270px;
-  height: 20px;
   background-color: #0031ad24;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 5px;
