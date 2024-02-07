@@ -119,6 +119,9 @@ const Messages = () => {
                   <button>
                     Send Reply
                   </button>
+                  <button>
+                    Done
+                  </button>
                 </Holds>
               </Down>
             </Card>
@@ -142,6 +145,7 @@ const Holds = styled.div`
     border: 1px solid #797979;
     border-radius: 5px;
     font-size: 14px;
+    color: #797979;
   }
 `
 const Down = styled.div`
@@ -149,6 +153,7 @@ const Down = styled.div`
   display: flex;
   align-items: center;
   margin-top: 20px;
+  justify-content: space-between;
   select{
     width: 190px;
     height: 40px;
