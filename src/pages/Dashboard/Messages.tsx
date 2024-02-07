@@ -12,6 +12,9 @@ const Messages = () => {
           <Id2><h4>Store Name: <span>Revolutionary Army</span></h4></Id2>
           <Id2><h4>Agent Name: <span>Solomon Teach</span></h4></Id2>
           <Id3><h4>Time|Date: 11:50 | 26/05/2023</h4></Id3>
+          <Buttonhold>
+            <button>View More</button>
+          </Buttonhold>
         </Box>
       </Wrapper>
     </Container>
@@ -19,6 +22,23 @@ const Messages = () => {
 }
 
 export default Messages
+const Buttonhold = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 1px solid #0030AD;
+    color: #0030AD;
+    border-radius: 5px;
+  }
+`
 const Id3 = styled.div`
   display: flex;
   align-items: center;
