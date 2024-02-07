@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from "styled-components"
 
 const Messages = () => {
+  const [show, setShow] = useState(false)
+
+  const Toggle = () => {
+    setShow(!show)
+  }
   return (
     <Container>
       <Wrapper>
@@ -71,12 +76,45 @@ const Messages = () => {
             <button>View More</button>
           </Buttonhold>
         </Box>
+
+        {show ? (
+              <Modal>
+            <Card>
+                
+            </Card>
+          </Modal>
+          ) : null}
       </Wrapper>
     </Container>
   )
 }
 
 export default Messages
+const Card = styled.div`
+    width: 430px;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+`
+const Modal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff1f;
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 350ms ease-in-out;
+`
 const Buttonhold = styled.div`
   width: 100%;
   display: flex;
