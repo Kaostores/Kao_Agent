@@ -27,9 +27,10 @@ const Buttonhold = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
   button{
-    width: 150px;
-    height: 40px;
+    width: 140px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,6 +38,8 @@ const Buttonhold = styled.div`
     border: 1px solid #0030AD;
     color: #0030AD;
     border-radius: 5px;
+    background-color: #fff;
+    font-size: 15px;
   }
 `
 const Id3 = styled.div`
@@ -81,7 +84,7 @@ const Id = styled.div`
 const Box = styled.div`
   display: flex;
   flex-direction: column;
-  width: 270px;
+  width: 250px;
   background-color: #0031ad24;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 5px;
@@ -93,6 +96,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   background-color: #fff;
+  padding: 20px 20px;
 `
 
 const Container = styled.div`
