@@ -103,7 +103,10 @@ const Messages = () => {
                   <Name>
                     <Id3><h4 style={{fontSize: "14px"}}>Time|Date: 11:50 | 26/05/2023</h4></Id3>
                   </Name>
-                </Top3>
+              </Top3>
+              <Textspace>
+                <p>Description: I have paid the required registration amount and was asked by my agent , Mr Solomon to pay 35,000 extra if I want my account verified  before the holidays. I was not officially told this by the company I asked for proof but he was rude to me and left and I am still not verified</p>
+              </Textspace>
             </Card>
           </Modal>
           ) : null}
@@ -113,6 +116,10 @@ const Messages = () => {
 }
 
 export default Messages
+const Textspace = styled.div`
+  width: 100%;
+  display: flex;
+`
 const Name = styled.div`
   display: flex;
   align-items: center;
