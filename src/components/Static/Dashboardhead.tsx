@@ -6,9 +6,32 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
+import { useGetUserDataQuery } from "../../components/services/apiSlice";
+import { Skeleton } from '../ui/skeleton';
+import { Button } from '../ui/button';
+import { LogOut } from "lucide-react"
+import { useNavigate, useLocation } from "react-router-dom"
+import { toast } from "react-toastify"
+import { logoutUser } from "../../components/services/reducers"
+import { useDispatch } from "react-redux"
 
 const Dashboardhead: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<string>("")
+  const { data: userData, isLoading: isUserDataLoading } = useGetUserDataQuery(undefined);
+  const location = useLocation();
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
+
+  const handleLogout = () => {
+    dispatch(logoutUser())
+    toast.success("You have logged out successfully", {
+      autoClose: 3000,
+      closeButton: true,
+      onClose: () => {
+        navigate("/")
+      },
+    })
+  }
 
   const getLastSevenDays = (): string[] => {
     const today = new Date();
@@ -62,10 +85,28 @@ const Dashboardhead: React.FC = () => {
           <IoIosNotificationsOutline />
           <Dot></Dot>
         </Notificationholder>
-        <Profileholder>
-          <Circle></Circle>
-          <h3>Dan Casey</h3>
-        </Profileholder>
+        <div className="">
+									<Button
+									variant="secondary"
+									className="w-full bg-white text-[#0333ae] text-[15px] hover:bg-white/90"
+									onClick={handleLogout}
+									>
+									<LogOut className="mr-2 h-4 w-4" />
+									Logout
+									</Button>
+								</div>
+        <div className='pl-[15px] py-[10px] pr-[15px] bg-[#0333ae] xl:flex sm:flex justify-between items-center rounded-[5px] overflow-hidden ml-[20px]'>
+									<div className='w-[25px] overflow-hidden h-[25px] rounded-[50%] bg-[#fff]'>
+										<img src="" alt="" className="w-[100%] h-[100%] object-cover"/>
+									</div>
+									<div className='xl:text-[16px] text-[#fff] sm:text-[10px] ml-[8px] md:text-[14px]'>
+										{isUserDataLoading ? (
+											<Skeleton className="h-4 w-[80px]" />
+										) : (
+											userData?.data.firstname
+										)}
+									</div>
+							</div>
         </Second>
       </Wrapper>
     </Container>

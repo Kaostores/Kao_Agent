@@ -6,8 +6,72 @@ import styled from "styled-components"
 import { GoPerson } from "react-icons/go";
 import { CiLock } from "react-icons/ci";
 import { NavLink } from 'react-router-dom'
+import { Logins } from '../../components/utils/ApiCalls'
+import { useDispatch } from 'react-redux'
+import Cookies from 'universal-cookie'
+import { z } from 'zod'
+import {zodResolver} from '@hookform/resolvers/zod'
+import {useForm} from "react-hook-form"
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { updateUserDetails } from '../../components/services/reducers'
+import { CgSpinner } from 'react-icons/cg';
+
+const formSchema = z.object({
+    email: z.string().min(2, {
+        message: "email is required",
+    }),
+    password: z.string().min(2, {
+        message: "password is required"
+    })
+})
 
 const Login = () => {
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            email: "",
+            password: ""
+        }
+    })
+
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        setLoad(true);
+        try {
+            const response: any = await Logins(values);
+    
+            if (response?.status === 200) {
+                toast.success("Login Successful");
+                cookies.set("Kao_cookie_admin", response?.data?.token, {
+                    expires: expiryDate,
+                    path: "/",
+                });
+              console.log(response)
+                dispatch(updateUserDetails(response?.data.data));
+                navigate("/app/dashboard");
+            } else if (response?.status === 500) {
+                toast.error("Server error: Details do not match");
+            } else if (response?.response?.status === 401) {
+                toast.info("Unauthorized: Invalid Credentials");
+            } else {
+                toast.info("Unexpected response: " + response?.status);
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            toast.error("An error occurred. Please try again.");
+        } finally {
+            setLoad(false);
+        }
+    }
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const cookies = new Cookies();
+    const expiryDate = new Date();
+    expiryDate.setDate(expiryDate.getDate() + 7);
+    const [load, setLoad] = useState(false);
   return (
     <Container>
         <Left>
@@ -23,15 +87,23 @@ const Login = () => {
         </Left>
         
         <Right>
-            <Box>
+            <Box onSubmit={form.handleSubmit(onSubmit)}>
                 <h2>Welcome!</h2>
                 <Inputhold>
                     <Icon><GoPerson /></Icon>
-                    <input type="text" placeholder='Username'/>
+                    <input 
+                        type="email" 
+                        placeholder='Email'
+                        {...form.register("email")}
+                    />
                 </Inputhold>
                 <Inputhold2>
                     <Icon><CiLock /></Icon>
-                    <input type="password" placeholder='Password'/>
+                    <input 
+                        type="password" 
+                        placeholder='Password'
+                        {...form.register("password")}
+                    />
                 </Inputhold2>
                 <Forgot>
                     <p>Forgot Password?</p>
@@ -40,8 +112,16 @@ const Login = () => {
                     <input type="checkbox" />
                     <p>Remember me</p>
                 </Remember>
-                <Button bg="#0030AD" cl="#fff" fs="16px">
-                    Log In
+                <Button
+                    bg="#0030AD"
+                    cl="#fff"
+                    fs="16px"
+                    type="submit"
+                    disabled={load}
+                    loading={load}
+                >
+                    {load && <LoadingSpinner />}
+                    {load ? 'Logging In...' : 'Log In'}
                 </Button>
                   <NavLink to="/welcome">
                       <Button bg="" cl="#0030AD" fs="14px">
@@ -55,20 +135,49 @@ const Login = () => {
 }
 
 export default Login
-const Button = styled.div<{ bg: string; cl: string;  fs: string}>`
-    width: 300px;
-    height: 40px;
-    background-color: ${({bg}) => bg};
-    border-radius: 5px;
-    display: flex;
-    margin-top: 15px;
-    justify-content: center;
-    align-items: center;
-    color: ${({cl}) => cl};
-    cursor: pointer;
-    font-size: ${({fs}) => fs};
-    font-weight: 400;
-`
+const LoadingSpinner = styled(CgSpinner)`
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+const Button = styled.button<{ bg: string; cl: string; fs: string; loading?: boolean }>`
+  background-color: ${({ bg }) => bg};
+  color: ${({ cl }) => cl};
+  font-size: ${({ fs }) => fs};
+  padding: 10px 20px;
+  border: none;
+  width: 300px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 5px;
+  opacity: ${({ loading }) => (loading ? 0.7 : 1)};
+  cursor: ${({ loading }) => (loading ? 'not-allowed' : 'pointer')};
+  font-weight: 400;
+  border-radius: 5px;
+`;
+// const Button = styled.button<{ bg: string; cl: string;  fs: string}>`
+//     width: 300px;
+//     height: 40px;
+//     background-color: ${({bg}) => bg};
+//     border-radius: 5px;
+//     display: flex;
+//     margin-top: 15px;
+//     justify-content: center;
+//     align-items: center;
+//     color: ${({cl}) => cl};
+//     cursor: pointer;
+//     font-size: ${({fs}) => fs};
+//     font-weight: 400;
+// `
 const Remember = styled.div`
     width: 300px;
     display: flex;
@@ -136,7 +245,7 @@ const Inputhold = styled.div`
         outline: none;
     }
 `
-const Box = styled.div`
+const Box = styled.form`
     width: 400px;
     background-color: #0031ad14;
     border-radius: 5px;

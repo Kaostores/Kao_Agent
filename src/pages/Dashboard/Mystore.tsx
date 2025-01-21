@@ -1,715 +1,300 @@
-import React, { useState, ChangeEvent } from 'react'
-import styled from 'styled-components';
-import { MdOutlineStorefront, MdOutlineCancel } from "react-icons/md";
-import { IoCameraOutline } from "react-icons/io5";
-import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
-import { BsArrowRight } from "react-icons/bs";
+"use client"
 
-const Mystore = () => {
-    const [show, setShow] = useState(false)
-    const [selectedFile4, setSelectedFile4] = useState<File | null>(null)
+import React, { useState, type ChangeEvent, useEffect } from "react"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../components/ui/table"
+import { Button } from "../../components/ui/button"
+import { Input } from "../../components/ui/input"
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../../components/ui/dialog"
+import { Label } from "../../components/ui/label"
+import { MdOutlineStorefront } from "react-icons/md"
+import { IoCameraOutline } from "react-icons/io5"
+import { HiOutlineDocumentArrowUp } from "react-icons/hi2"
+import {
+  useViewAllStoresQuery,
+  useApproveStoreMutation,
+  useSuspendStoreMutation,
+} from "../../components/services/apiSlice"
+import { Skeleton } from "../../components/ui/skeleton"
+import { ChevronLeft, ChevronRight, Pencil, ChevronDown, Trash2 } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../../components/ui/dropdown-menu"
+import { useDeleteStoreByIdMutation } from "../../components/services/apiSlice"
+import { Textarea } from "../../components/ui/textarea"
+import StoreEdit from "../../components/store/EditStore"
 
-  const handleFileChange4 = (event: ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
+interface Store {
+  id: string
+  name: string
+  email: string
+  address: string
+  phone: string
+  status: string
+}
 
-    if (files && files.length > 0) {
-      const selected = files[0];
-      setSelectedFile4(selected);
-      handleFileUpload(selected);
-    }
-  };
-  const handleFileUpload = (file: File) => {
-    console.log('File uploaded:', file);
-  };
-
-    const Toggle = () => {
-        setShow(!show)
-    }
-    const Close = () => {
-        setShow(false)
-    }
-    const tableItems = [
-        {
-            name: "1",
-            date: "2356477",
-            status: "Verified",
-            price: "Zoro Roronoa",
-            plan: "Small Village, East Blue",
-            phone: "+234 02356477",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "2",
-            date: "7688801",
-            status: "Verified",
-            price: "Nico Robin",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 07688801",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "3",
-            date: "0032648",
-            status: "Verified",
-            price: "Sanji Vinsmoke",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "4",
-            date: "9237584",
-            status: "Verified",
-            price: "Tony Chopper",
-            plan: "Vinsmoke Island, East Blue",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "5",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Drum Island, Castle, Geandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "6",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "7",
-            date: "09365322",
-            status: "Verified",
-            price: "Brook",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "8",
-            date: "09533555",
-            status: "Verified",
-            price: "Jinbe",
-            plan: "Lost Ship, Park",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "9",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Atlantia,   Sea barrel ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "10",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Small Village ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "11",
-            date: "2356477",
-            status: "Verified",
-            price: "Zoro Roronoa",
-            plan: "Small Village, East Blue",
-            phone: "+234 02356477",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "12",
-            date: "7688801",
-            status: "Verified",
-            price: "Nico Robin",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 07688801",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "13",
-            date: "0032648",
-            status: "Verified",
-            price: "Sanji Vinsmoke",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "14",
-            date: "9237584",
-            status: "Verified",
-            price: "Tony Chopper",
-            plan: "Vinsmoke Island, East Blue",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "15",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Drum Island, Castle, Geandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "16",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "17",
-            date: "09365322",
-            status: "Verified",
-            price: "Brook",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "18",
-            date: "09533555",
-            status: "Verified",
-            price: "Jinbe",
-            plan: "Lost Ship, Park",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "19",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Atlantia,   Sea barrel ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "20",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Small Village ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "21",
-            date: "2356477",
-            status: "Verified",
-            price: "Zoro Roronoa",
-            plan: "Small Village, East Blue",
-            phone: "+234 02356477",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "22",
-            date: "7688801",
-            status: "Verified",
-            price: "Nico Robin",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 07688801",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "23",
-            date: "0032648",
-            status: "Verified",
-            price: "Sanji Vinsmoke",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "24",
-            date: "9237584",
-            status: "Verified",
-            price: "Tony Chopper",
-            plan: "Vinsmoke Island, East Blue",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "25",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Drum Island, Castle, Geandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "26",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "27",
-            date: "09365322",
-            status: "Verified",
-            price: "Brook",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "28",
-            date: "09533555",
-            status: "Verified",
-            price: "Jinbe",
-            plan: "Lost Ship, Park",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "29",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Atlantia,   Sea barrel ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "30",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Small Village ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "31",
-            date: "2356477",
-            status: "Verified",
-            price: "Zoro Roronoa",
-            plan: "Small Village, East Blue",
-            phone: "+234 02356477",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "32",
-            date: "7688801",
-            status: "Verified",
-            price: "Nico Robin",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 07688801",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "33",
-            date: "0032648",
-            status: "Verified",
-            price: "Sanji Vinsmoke",
-            plan: "The Lost Island, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "34",
-            date: "9237584",
-            status: "Verified",
-            price: "Tony Chopper",
-            plan: "Vinsmoke Island, East Blue",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "35",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Drum Island, Castle, Geandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "36",
-            date: "02938423",
-            status: "Verified",
-            price: "General Franky",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "37",
-            date: "09365322",
-            status: "Verified",
-            price: "Brook",
-            plan: "Water 7, Grandline",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "38",
-            date: "09533555",
-            status: "Verified",
-            price: "Jinbe",
-            plan: "Lost Ship, Park",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "39",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Atlantia,   Sea barrel ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-        {
-            name: "40",
-            date: "23322222",
-            status: "Verified",
-            price: "Usopp",
-            plan: "Small Village ",
-            phone: "+234 00032648",
-            email: "revolutionarmy.gmail.com"
-        },
-  ]
-  
-  const itemsPerPage = 10;
+export default function ApprovedStores() {
   const [currentPage, setCurrentPage] = useState(1)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [editingStore, setEditingStore] = useState<Store | null>(null)
+  const [approvedStores, setApprovedStores] = useState<Store[]>([])
+  const [storeToSuspend, setStoreToSuspend] = useState<string | null>(null)
+  const [suspensionNote, setSuspensionNote] = useState("")
+  const [storeList, setStoreList] = useState<Store[]>([])
+  const [isSuspendModalOpen, setIsSuspendModalOpen] = useState(false)
+  const [selectedStoreUuid, setSelectedStoreUuid] = useState<string | null>(null)
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false)
 
-  const totalPages = Math.ceil(tableItems.length / itemsPerPage)
+  const { data: stores, isLoading, isError, error } = useViewAllStoresQuery({})
 
-  const paginatedItems = tableItems.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  )
+  const [approveStore] = useApproveStoreMutation()
+  const [suspendingStore] = useSuspendStoreMutation()
+  const [deleteStoreById] = useDeleteStoreByIdMutation()
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page)
+  useEffect(() => {
+    if (stores && stores.data) {
+      const filteredStores = stores.data.filter((store: Store) => store.status === "approved")
+      setApprovedStores(filteredStores)
+    }
+  }, [stores])
+
+  const storesPerPage = 10
+
+  const indexOfLastStore = currentPage * storesPerPage
+  const indexOfFirstStore = indexOfLastStore - storesPerPage
+  const currentStores = approvedStores.slice(indexOfFirstStore, indexOfLastStore)
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
+
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files
+    if (files && files.length > 0) {
+      setSelectedFile(files[0])
+    }
   }
+
+  if (isError) {
+    console.error("Error loading store details.", error)
+    return <div>Error loading store details.</div>
+  }
+
+  const handleStatusChange = async (storeUuid: string, newStatus: string) => {
+    try {
+      if (newStatus === "verified") {
+        const response = await approveStore(storeUuid).unwrap()
+        console.log("Store approved response:", response)
+      }
+    } catch (error: any) {
+      console.error(`Error ${newStatus === "verified" ? "approving" : "suspending"} store:`, error.message)
+    }
+
+    setStoreList((prevStores) =>
+      prevStores.map((store) => (store.id === storeUuid ? { ...store, status: newStatus } : store)),
+    )
+  }
+
+  const handleSuspend = async () => {
+    if (storeToSuspend && suspensionNote.trim()) {
+      try {
+        const response = await suspendingStore({
+          store_uuid: storeToSuspend,
+          note: suspensionNote,
+        }).unwrap()
+        console.log("Store suspended response:", response)
+
+        // Remove the suspended store from the approvedStores list
+        setApprovedStores((prevStores) => prevStores.filter((store) => store.id !== storeToSuspend))
+
+        setIsSuspendModalOpen(false)
+        setSuspensionNote("")
+        setStoreToSuspend(null)
+      } catch (error) {
+        console.error("Error suspending store:", error)
+      }
+    } else {
+      console.error("Suspension note is required")
+    }
+  }
+
+  const handleDeleteStore = async (id: string) => {
+    try {
+      await deleteStoreById(id).unwrap()
+      setApprovedStores((prevStores) => prevStores.filter((store) => store.id !== id))
+    } catch (error) {
+      console.error("Error deleting store:", error)
+    }
+  }
+
+  const handleEditClick = (storeUuid: string) => {
+    setSelectedStoreUuid(storeUuid)
+    setIsEditModalOpen(true)
+  }
+
   return (
-    <Container>
-        <div className="max-w-screen-xl mx-auto px-2 md:px-8">
-            <div className="mt-12 relative h-max overflow-auto">
-                <table className="w-full table-auto text-sm text-left">
-                    <thead className="text-gray-600 font-medium border-b">
-                        <tr>
-                            <th className="py-3 pr-6">#</th>
-                            <th className="py-3 pr-6">Store ID</th>
-                            <th className="py-3 pr-6">Store Name</th>
-                            <th className="py-3">Address</th>
-                            <th className="py-3 pr-6">Phone No</th>
-                            <th className="py-3 pr-6">Email</th>
-                            <th className="py-3 pr-6">Status</th>
-                            <th className="py-3 pr-6"></th>
-                        </tr>
-                    </thead>
-                    <tbody className="text-gray-600 divide-y">
-                    {paginatedItems.map((item, idx) => (
-                          <tr key={idx}>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.date}</td>
-                                    <td className="pr-6 py-4 whitespace-nowrap">{item.price}</td>
-                                    <td className="pr-6 py-4">{item.plan}</td>
-                                    <td className=" py-4">{item.phone}</td>
-                                    <td className="pr-6 py-4">{item.email}</td>
-                                    <td className="w-[80px] h-[30px] flex justify-center items-center mt-[20px] whitespace-nowrap">
-                                        <span className={`px-3 py-2 rounded-[3px] font-semibold text-xs ${
-                                            item.status === "Verified" ? "text-[#0030AD] bg-[#0031ad1c]" :
-                                            item.status === "Inspect" ? "text-[#008348] bg-[#00834838]" :
-                                            item.status === "Not Verified" ? "text-[#FF0000] bg-[#ff00002f]" :
-                                            "text-[#797979] bg-[#79797941]"
-                                          }`}>{item.status}
-                                          </span>
-                                    </td>
-                                    <td  className="px-6 py-4 text-[19px] text-[#0030AD] cursor-pointer ml-[30px]"><MdOutlineStorefront onClick={Toggle}/></td>
-                                </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+    <div className="container mx-auto py-10">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="font-[600]">Store Name</TableHead>
+            <TableHead className="font-[600]">Address</TableHead>
+            <TableHead className="font-[600]">Phone No</TableHead>
+            <TableHead className="font-[600]">Email</TableHead>
+            <TableHead className="font-[600]">Status</TableHead>
+            <TableHead className="text-right font-[600]">Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {isLoading ? (
+            Array.from({ length: 5 }).map((_, idx) => (
+              <TableRow key={idx}>
+                <TableCell>
+                  <Skeleton className="h-4 w-24" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-4 w-24" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-4 w-24" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-4 w-24" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-4 w-24" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton className="h-4 w-24" />
+                </TableCell>
+              </TableRow>
+            ))
+          ) : currentStores.length > 0 ? (
+            currentStores.map((store: Store) => (
+              <TableRow key={store.id}>
+                <TableCell>{store.name}</TableCell>
+                <TableCell>{store.address}</TableCell>
+                <TableCell>{store.phone}</TableCell>
+                <TableCell>{store.email}</TableCell>
+                <TableCell className={store.status === "pending" ? "text-red-500" : ""}>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild className="bg-[#fff]">
+                      <Button
+                        variant="outline"
+                        className={`w-full justify-between rounded-full ${
+                          store.status === "approved"
+                            ? "bg-[#0333ae] hover:bg-[#0333ae] hover:text-[#fff] text-white"
+                            : store.status === "suspended"
+                              ? "bg-red-500 hover:bg-red-500 hover:text-[#fff] text-white"
+                              : store.status === "pending"
+                                ? "bg-red-300 text-[#fff]"
+                                : "bg-gray-300 text-white"
+                        }`}
+                      >
+                        {store.status === "pending"
+                          ? "Not Verified"
+                          : store.status.charAt(0).toUpperCase() + store.status.slice(1)}
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem onClick={() => handleStatusChange(store.id, "verified")}>
+                        Approve
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onClick={() => {
+                          setStoreToSuspend(store.id)
+                          setIsSuspendModalOpen(true)
+                        }}
+                      >
+                        Suspend
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </TableCell>
+                <TableCell>
+                  <div className="flex space-x-2">
+                    <Button variant="outline" size="icon" onClick={() => handleEditClick(store.id)}>
+                      <Pencil className="h-4 w-4" />
+                    </Button>
+                    <Button variant="outline" size="icon" onClick={() => handleDeleteStore(store.id)}>
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={6} className="text-center">
+                No approved stores available
+              </TableCell>
+            </TableRow>
+          )}
+        </TableBody>
+      </Table>
+      <div className="flex items-center justify-between space-x-2 py-4">
+        <span className="text-sm text-gray-700">
+          Page {currentPage} of {Math.ceil(approvedStores.length / storesPerPage)}
+        </span>
+        <div className="space-x-2">
+          <Button variant="outline" size="sm" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+            <ChevronLeft className="h-4 w-4 mr-2" />
+            Previous
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => paginate(currentPage + 1)}
+            disabled={currentPage === Math.ceil(approvedStores.length / storesPerPage)}
+          >
+            Next
+            <ChevronRight className="h-4 w-4 ml-2" />
+          </Button>
         </div>
-        <Down>
-              <h3>Showing {Math.min(currentPage * itemsPerPage, tableItems.length)} of{' '} {tableItems.length}</h3>
-              <Pagination>
-              <ul>
-                {Array.from({ length: totalPages }, (_, index) => (
-                  <li
-                    key={index}
-                    onClick={() => handlePageChange(index + 1)}
-                    className={currentPage === index + 1 ? 'active' : ''}
-                  >
-                    {index + 1}
-                  </li>
-                ))}
-              </ul>
-              </Pagination>
-              <Button>gfgfgfgfgfgffg</Button>
-        </Down>
-        
-        {show ? (
-            <Modal>
-            <Card>
-                <Add>
-                  <h3>Edit Store</h3>
-                  <Cancle onClick={Close}><MdOutlineCancel /></Cancle>
-                </Add>
-                
-                <Camerahold>
-                  <Circle><IoCameraOutline /></Circle>
-                  <h3>Store ID - 0002930</h3>
-                </Camerahold>
-                
-                <Inputhold>
-                    <Name>
-                    <h3>Name</h3>
-                    <input type="text" placeholder='Revolutionary Army'/>
-                  </Name>
-                  <Address>
-                    <h3>Phone Number</h3>
-                    <input type="text" placeholder='(234) 708 967 6060'/>
-                  </Address>
-                  <Address>
-                    <h3>Address</h3>
-                    <input type="text" placeholder='First Name'/>
-                  </Address>
-                  <Address>
-                    <h5>
-                        <h4> <HiOutlineDocumentArrowUp />Upload</h4>
-                        <Right><BsArrowRight /></Right>
-                    </h5>
-                    <input id='fileinput2' type="file" accept='.pdf, .doc, .docx' onChange={handleFileChange4} style={{ display: "none" }} />
-                    <Button2 htmlFor='fileinput2'>
-                      {selectedFile4 ? (
-                        <>
-                          {selectedFile4.name}
-                        </>
-                      ) : (
-                        <>
-                          <p>Upload the titled document here</p>
-                          <HiOutlineDocumentArrowUp style={{ marginLeft: '4px', fontSize: "20px" }} color='#0030AD'/>
-                        </>
-                      )}
-                    </Button2>
-                  </Address>
-                </Inputhold>
-            </Card>
-        </Modal>
-        ) : null}
-    </Container>
+      </div>
+
+      <Dialog open={isSuspendModalOpen} onOpenChange={setIsSuspendModalOpen}>
+        <DialogContent className="bg-[#fff]">
+          <DialogHeader>
+            <DialogTitle className="mb-[20px]">Suspend Store</DialogTitle>
+          </DialogHeader>
+          <Textarea
+            value={suspensionNote}
+            onChange={(e) => setSuspensionNote(e.target.value)}
+            placeholder="Enter suspension note..."
+            className="min-h-[100px] resize-none mb-[20px] outline-none"
+          />
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsSuspendModalOpen(false)}>
+              Cancel
+            </Button>
+            <Button variant="destructive" onClick={handleSuspend} className="bg-[#0333ae] text-[#fff]">
+              Suspend
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {selectedStoreUuid && (
+        <StoreEdit
+          isOpen={isEditModalOpen}
+          onClose={() => setIsEditModalOpen(false)}
+          storeUuid={selectedStoreUuid}
+          updateStoreInList={(updatedStore: Store) => {
+            const updatedList = storeList.map((store) => (store.id === updatedStore.id ? updatedStore : store))
+            setStoreList(updatedList)
+          }}
+          storeDetails={storeList.find((store) => store.id === selectedStoreUuid)}
+        />
+      )}
+    </div>
   )
 }
 
-export default Mystore
-const Button2 = styled.label`
-  cursor: pointer;
-  width: 100%;
-  height: 33px;
-  border: 1px solid #0030AD;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  color: #797979;
-  font-size: 14px;
-  margin-top: 5px;
-  p{
-    color: #0030AD;
-    font-size: 14px;
-    font-style: italic;
-  }
-`
-const Right = styled.div`
-    color: #0030AD;
-`
-const Address = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  h3{
-    font-size: 14px;
-    color: #797979;
-  }
-  h4{
-    font-size: 14px;
-    color: #0030AD;
-    display: flex;
-    align-items: center;
-  }
-  h5{
-    justify-content: space-between;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  input{
-    width: 100%;
-    height: 33px;
-    border-radius: 5px;
-    border: 1px solid #DEE3E9;
-    padding-left: 10px;
-    font-size: 12px;
-    margin-top: 3px;
-    outline: none;
-  }
-`
-const Name = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  h3{
-    font-size: 14px;
-    color: #797979;
-  }
-  input{
-    width: 100%;
-    height: 33px;
-    border-radius: 5px;
-    border: 1px solid #DEE3E9;
-    padding-left: 10px;
-    font-size: 12px;
-    margin-top: 3px;
-    outline: none;
-  }
-`
-const Inputhold = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-`
-const Circle = styled.div`
-  width: 55px;
-  height: 55px;
-  border-radius: 100px;
-  background-color: #F2F2F2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-  color: #0030AD;
-  font-size: 22px;
-`
-const Camerahold = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  h3{
-    color: #0030AD;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-`
-const Cancle = styled.div`
-  color: #0030AD;
-  cursor: pointer;
-`
-const Add = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  h3{
-    color: #797979;
-    font-size: 16px;
-  }
-`
-const Card = styled.div`
-  width: 350px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  border: 1px solid #0030AD;
-  flex-direction: column;
-  h4{
-    color: #0030AD;
-    font-size: 14px;
-    margin-top: 6px;
-  }
-  p{
-    color: #797979;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-`
-const Modal = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background-color: #ffffff1f;
-  backdrop-filter: blur(2px);
-  top: 0;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 350ms ease-in-out;
-`
-const Button = styled.div`
-  visibility: hidden;
-`
-const Pagination = styled.div`
-  margin-top: 10px;
-  ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    li {
-      cursor: pointer;
-      margin-right: 5px;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      &.active {
-        background-color: #0030ad;
-        color: #fff;
-      }
-    }
-  }
-`
-const Down = styled.div`
-  width: 100%;
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  h3{
-    font-size: 15px;
-    font-weight: 500;
-    color: #000;
-  }
-`
-const Container = styled.div`
-    width: 100%;
-    margin-top: 20px;
-    padding-top: 10px;
-    flex-direction: column;
-    p{
-        font-size: 14px;
-        font-style: italic;
-        color: #000000;
-        margin-bottom: 0;
-        margin-top: 5px;
-    }
-`
